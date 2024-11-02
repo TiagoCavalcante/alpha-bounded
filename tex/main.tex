@@ -12,6 +12,8 @@
 % \hypersetup{colorlinks=true, linkcolor=blue}
 \usepackage{booktabs, diagbox, adjustbox, siunitx}
 \usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{calc}
 \usepackage[left=3cm,top=3cm,right=2cm,bottom=2cm]{geometry}
 \pagestyle{myheadings}
 \allowdisplaybreaks
@@ -61,6 +63,8 @@
 \tableofcontents
 
 \newpage
+
+\input{pages/notations.tex}
 
 \pagenumbering{arabic}
 \setcounter{page}{8}
@@ -198,18 +202,18 @@ Em diversos casos, pode-se utilizar a norma do operador em $l^2(\mathbb{Z}_{> 0}
 Isso é particularmente utilizado para resolver sistemas lineares usando o conhecido método da seção finita. Esse método possui diversas aplicações em áreas como o processamento de sinais.
 
 \begin{definition*}
-  Uma matriz de Toeplitz \( M \in \mathbb{C}^{n \times n} \) é dita \textit{de banda \( k \)} se \( m_{ij} = 0 \) para todo \( i, j \in \{1, \dots, n\} \) tal que \( |i - j| > k \).
+  Uma matriz de Toeplitz $ M \in \mathbb{C}^{n \times n} $ é dita \textit{de banda $ k $} se $ m_{ij} = 0 $ para todo $ i, j \in \{1, \dots, n\} $ tal que $ |i - j| > k $.
 \end{definition*}
 
 \begin{theorem*}[Norma de Matrizes de Toeplitz de Banda]
-  Seja \( M \in \mathbb{C}^{n \times n} \) uma matriz de Toeplitz de banda \( k \). Então, a norma espectral de \( M \) satisfaz
+  Seja $ M \in \mathbb{C}^{n \times n} $ uma matriz de Toeplitz de banda $ k $. Então, a norma espectral de $ M $ satisfaz
   \[
     \| M \|_2 \le (2k + 1) \max_{|i - j| \le k} |m_{ij}|.
   \]
 \end{theorem*}
 
 \begin{proof}
-  Observe que cada linha de \( M \) possui no máximo \( 2k + 1 \) elementos não nulos. Aplicando a desigualdade de Cauchy-Schwarz para cada linha, temos:
+  Observe que cada linha de $ M $ possui no máximo $ 2k + 1 $ elementos não nulos. Aplicando a desigualdade de Cauchy-Schwarz para cada linha, temos:
   \[
     \| M \|_2 \le \max_{1 \le i \le n} \sum_{j = \max\{1, i - k\}}^{\min\{n, i + k\}} |m_{ij}| \le (2k + 1) \max_{|i - j| \le k} |m_{ij}|.
   \]
@@ -222,7 +226,7 @@ Desse modo esse teorema pode ser usado para generalizar o limite superior de \re
 As matrizes circulantes são um caso especial de matrizes de Toeplitz, onde cada linha é uma rotação cíclica da linha anterior. Elas possuem propriedades espectrais que facilitam a análise, especialmente no contexto de autovalores e autovetores.
 
 \begin{definition*}
-  Uma matriz de Toeplitz \( C \in \mathbb{C}^{n \times n} \) é dita \textit{circulante} se cada linha subsequente é uma rotação cíclica da linha anterior. Ou seja,
+  Uma matriz de Toeplitz $ C \in \mathbb{C}^{n \times n} $ é dita \textit{circulante} se cada linha subsequente é uma rotação cíclica da linha anterior. Ou seja,
   \[
     C = \begin{pmatrix}
       c_0     & c_{n-1} & \cdots  & c_2    & c_1     \\
@@ -326,7 +330,7 @@ Para cada par de inteiros positivos $n$ e $k$, $a(n,k)$ denota a quantidade de f
 
 Nós utilizaremos a notação $\chi_k(i, j) = \begin{cases} 1 & \text{se } \lvert i - j\rvert \le k \\ 0 & \text{se } \lvert i - j\rvert > k \end{cases}$.
 
-Também definiremos $M_{n,k} \in \mathbb{Z}^{n \times n}$ para denotar a matriz definida por $m_{ij} = \chi_k(i, j)$ e $\mathbf{1}_n \in \mathbb{Z}^n$ como um vetor coluna com $n$ uns.
+Também definiremos $M_{n,k} \in \mathbb{Z}^{n \times n}$ para denotar a matriz definida por $m_{ij} = \chi_k(i, j)$.
 
 \begin{theorem} \label{th:matrix-form-n-to-n} $a(n,k)$, para $0 \le k \le n - 1$, é dado por $\mathbf{1}_n^\intercal M_{n,k}^{n-1} \mathbf{1}_n$. \end{theorem}
 
@@ -376,6 +380,7 @@ Note que o limite inferior poderia também ser estabelecido usando somente resul
 
 \newpage
 \section*{Próximos Passos}
+\addcontentsline{toc}{section}{Próximos Passos}
 \vspace{1cm}
 
 Pode-se usar o teorema de Blakley-Roy para provar uma versão mais forte do limite inferior do \ref*{th:asymptotic} aplicado a uma classe mais ampla de matrizes de Toeplitz que não requer que os coeficientes da matriz assumam valores apenas em $\{0, 1\}$. Isso pode ser combinado com uma análise dos casos de igualdade da desigualdade de Bernstein, que afirma que se $a$ é um polinômio trigonométrico com coeficientes de Fourier $\{a_n\}$, então $\|a\|_\infty \le \sum_{n \in \mathbb{Z}} \lvert a_n\rvert$, para provar uma versão mais forte da caracterização assintótica, novamente aplicada a matrizes de Toeplitz mais gerais.
