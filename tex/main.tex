@@ -81,13 +81,13 @@ Este resultado é provado usando propriedades de matrizes de Toeplitz e uma cota
 \newpage
 \section{Definições}
 \vspace{1cm}
-A definição para funções $(\alpha,\lambda)$-limitadas é inicialmente declarada como uma propriedade pontual, assim como a definição de continuidade: \begin{definition} Sejam $\alpha, \lambda \ge 0$, $(X, d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X} \subseteq X$. Uma função $f : \mathcal{X} \to Y$ é dita $(\alpha,\lambda)$-limitada no ponto $x \in \mathcal{X}$ quando, para todo $\tilde{x} \in \mathcal{X}$ tal que $d_X(x, \tilde{x}) \le \lambda$, temos $d_Y(f(x), f(\tilde{x})) \le \alpha$. \end{definition}
+A definição para funções $(\alpha,\lambda)$-limitadas é inicialmente apresentada como uma propriedade pontual, assim como a definição de continuidade: \begin{definition} Sejam $\alpha, \lambda \ge 0$, $(X, d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X} \subseteq X$. Uma função $f : \mathcal{X} \to Y$ é dita $(\alpha,\lambda)$-limitada no ponto $x \in \mathcal{X}$ quando, para todo $\tilde{x} \in \mathcal{X}$ tal que $d_X(x, \tilde{x}) \le \lambda$, temos $d_Y(f(x), f(\tilde{x})) \le \alpha$. \end{definition}
 
 \begin{definition} Sejam $\alpha, \lambda \ge 0$, $(X, d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X} \subseteq X$. Uma função $f : \mathcal{X} \to Y$ é dita $(\alpha,\lambda)$-limitada quando, para todo $x$ em $\mathcal{X}$, $f$ é $(\alpha,\lambda)$-limitada no ponto $x$. \end{definition}
 
 Note que, para $\lambda = 1$, a definição acima estende naturalmente a condição de Hölder para a ordem $0$ e coeficiente $\alpha$ (veja \cite{holder}). Também é importante notar que muitos resultados de funções contínuas não se estendem para funções $(\alpha, \lambda)$-limitadas. Veja o exemplo abaixo.
 
-Ao alterar a métrica, podemos considerar $\lambda = 1$ na definição acima sem perda de generalidade, porque $(X, d_X)$ é um espaço métrico se, e somente se, $(X, \lambda d_X)$ é um espaço métrico para todo $\lambda > 0$. Se desejarmos ter $d_X(x, \tilde{x}) \le \lambda$ para algum $\lambda > 0$, então podemos considerar o espaço métrico $(X, \frac{1}{\lambda} d_X)$ em vez de $(X, d_X)$. Como nosso principal interesse neste artigo são as funções $(k,1)$-limitadas, usaremos $\alpha$-limitada para denotar $(\alpha,1)$-limitada.
+Ao alterar a métrica, podemos considerar $\lambda = 1$ na definição acima sem perda de generalidade, porque $(X, d_X)$ é um espaço métrico se, e somente se, $(X, \lambda d_X)$ é um espaço métrico para todo $\lambda > 0$. Se desejarmos ter $d_X(x, \tilde{x}) \le \lambda$ para algum $\lambda > 0$, então podemos considerar o espaço métrico $(X, \frac{1}{\lambda} d_X)$ ao invés de $(X, d_X)$. Como nosso principal interesse neste artigo são as funções $(k,1)$-limitadas, usaremos $\alpha$-limitada para denotar $(\alpha,1)$-limitada.
 
 \begin{example} Considere $V$ um conjunto de Vitali. A função $f : [0, 1] \to \mathbb{R}$, definida por $f(x) = 1_V$ se $x \in (0, 1)$ e $f(x) = 1 - x$ caso contrário, é $1$-limitada (considerando a métrica usual) mas não é contínua, não possui pontos fixos e não é Lebesgue integrável (veja \cite{vitali}). \end{example}
 
@@ -100,15 +100,15 @@ Abaixo estão alguns resultados imediatos da definição de $\alpha$-limitado.
 \begin{theorem} Toda função $\alpha$-limitada é $(\alpha+\epsilon)$-limitada para todo $\epsilon > 0$. \end{theorem} \begin{proof} Evidente. \end{proof}
 
 \begin{theorem} Sejam $(X, d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X} \subseteq X$. Toda função Lipschitz contínua, com constante $K$, $f : \mathcal{X} \to Y$ é $K$-limitada. \end{theorem} \begin{proof} Para todo $x_1 \in \mathcal{X}$, $x_2 \in \mathcal{X}, d_X(x_1, x_2) \le 1$ e consequentemente $d_Y(f(x_1), f(x_2)) \le K d_X(x_1, x_2) \le K$. \end{proof}
-Note que nem todas as funções $\alpha$-Hölder contínuas são $\beta$-limitadas para algum $\beta > 0$. O exemplo da função $\sqrt{\cdot} : \mathbb{R}^+ \to \mathbb{R}$ constitui um contraexemplo (considerando a métrica usual) pelo mesmo motivo mencionado no exemplo \ref{two_to_n}.
+Note que nem todas as funções $\alpha$-Hölder contínuas são $\beta$-limitadas para algum $\beta > 0$. A função $\sqrt{\cdot} : \mathbb{R}^+ \to \mathbb{R}$ constitui um contraexemplo (considerando a métrica usual) pelo mesmo motivo mencionado no exemplo \ref{two_to_n}.
 
-\begin{theorem} Sejam $(X, d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X} \subseteq X$, $f : \mathcal{X} \to Y$ qualquer função. Se para todo $\epsilon > 0$ existe um $\alpha \in (0, \epsilon]$ tal que $f$ é $\alpha$-limitada, então $f$ é contínua. \end{theorem} \begin{proof} Com efeito, para cada $x \in \mathcal{X}, \epsilon > 0$, existe algum $\alpha \in (0, \epsilon]$ tal que $\tilde{x} \in \mathcal{X}, d_X(x, \tilde{x}) \le 1 \implies d_Y(f(x), f(\tilde{x})) \le \alpha \le \epsilon$. \end{proof}
+\begin{theorem} Sejam $(X, d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X} \subseteq X$, e $f : \mathcal{X} \to Y$ uma função. Se para todo $\epsilon > 0$ existe um $\alpha \in (0, \epsilon]$ tal que $f$ é $\alpha$-limitada, então $f$ é contínua. \end{theorem} \begin{proof} Com efeito, para cada $x \in \mathcal{X}, \epsilon > 0$, existe algum $\alpha \in (0, \epsilon]$ tal que $\tilde{x} \in \mathcal{X}, d_X(x, \tilde{x}) \le 1 \implies d_Y(f(x), f(\tilde{x})) \le \alpha \le \epsilon$. \end{proof}
 
 \begin{theorem} Sejam $(X, d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X} \subseteq X$. Se $(f_n) \to f$ ponto a ponto, $f_n : \mathcal{X} \to Y$ são $\alpha$-limitadas para todo $n \in \mathbb{N}$, então $f$ é $\alpha$-limitada. \end{theorem} \begin{proof} Suponha, por contradição, que $f$ não seja $\alpha$-limitada. Então existem $x_1, x_2 \in \mathcal{X}$, $d_X(x_1, x_2) \le 1$, tal que $d_Y(f(x_1), f(x_2)) \coloneqq k > \alpha$. Como $(f_n) \to f$, existe algum $n \in \mathbb{N}$ com $d_Y(f_n(x_1), f(x_1)) < \frac{k - \alpha}{2}$ e $d_Y(f_n(x_2), f(x_2)) < \frac{k - \alpha}{2}$. Consequentemente, $d_Y(f_n(x_1), f_n(x_2)) > k - \frac{k - \alpha}{2} - \frac{k - \alpha}{2} = \alpha$, uma contradição. \end{proof}
 
 As funções $\alpha$-limitadas podem não ser o limite pontual de qualquer sequência de funções contínuas.
 
-\begin{example} A função de Dirichlet $1_\mathbb{Q} : [0, 1] \to \mathbb{R}$ é $1$-limitada, considerando a métrica usual do $\mathbb{R} \supset [0, 1]$, mas não é o limite pontual de nenhuma sequência de funções contínuas, pois é uma função da classe 2 de Baire (veja \cite{baire}). \end{example}
+\begin{example} A função de Dirichlet $1_\mathbb{Q} : [0, 1] \to \mathbb{R}$ é $1$-limitada, considerando a métrica usual de $\mathbb{R} \supset [0, 1]$, mas não é o limite pontual de nenhuma sequência de funções contínuas, pois é uma função da classe 2 de Baire (veja \cite{baire}). \end{example}
 
 A aritmética com funções $\alpha$-limitadas não é a mesma que com funções contínuas definidas em $\mathbb{R}$.
 
@@ -118,7 +118,9 @@ O teorema acima permite considerar espaços vetoriais de mapas entre dois espaç
 
 O produto de duas funções $\alpha$-limitadas (com o mesmo domínio e contradomínio) pode não ser $\beta$-limitado para nenhum $\beta > 0$, assim como o recíproco de uma função $\alpha$-limitada (quando definido).
 
-\begin{example} $f : \mathbb{N} \to \mathbb{N}$ dada por $f(n) = n$ é $1$-limitada (considerando a métrica usual), mas $f^2$ coincide com $g : \mathbb{R} \to \mathbb{R}$, $g(x) = x^2$, portanto não é $\alpha$-limitada para nenhum $\alpha > 0$. \end{example} \begin{example} $f : (0, 1] \to \mathbb{R}$ dada por $f(x) = \frac{1}{x^2}$ é $1$-limitada, mas $\frac{1}{f}$ coincide com $g : \mathbb{R} \to \mathbb{R}$, $g(x) = x^2$, portanto não é $\alpha$-limitada para nenhum $\alpha > 0$. \end{example}
+\begin{example} $f : \mathbb{N} \to \mathbb{N}$ dada por $f(n) = n$ é $1$-limitada (considerando a métrica usual), mas $f^2$ coincide com $g : \mathbb{R} \to \mathbb{R}$, $g(x) = x^2$, portanto não é $\alpha$-limitada para nenhum $\alpha > 0$. \end{example}
+
+\begin{example} $f : [1, +\infty) \to \mathbb{R}$ dada por $f(x) = \frac{1}{x^2}$ é $1$-limitada, mas $\frac{1}{f}$ coincide com $g : \mathbb{R} \to \mathbb{R}$, $g(x) = x^2$, portanto não é $\alpha$-limitada para nenhum $\alpha > 0$. \end{example}
 
 O teorema de extensão para funções $\alpha$-limitadas não é muito forte.
 
@@ -126,15 +128,19 @@ Os exemplos abaixo ilustram por que as condições do teorema são necessárias.
 
 \begin{example} Seja $X \coloneqq \{(x, \pm 1) \mid x \in \mathbb{Z}\} \subset \mathbb{Z}^2$. Considere $f : X \to \mathbb{Z}$ dada por $f(x, 1) = x$ e $f(x, -1) = 0$ para qualquer $x \in \mathbb{Z}$. Claramente, $f$ é $1$-limitada, considerando a métrica usual, mas $f$ não tem nenhuma extensão $\alpha$-limitada, para qualquer $\alpha$, ao conjunto $\{(x, y) \mid x \in \mathbb{Z}, y \in \{-1,0,1\}\}$, pois $\overline{B}_1((x, 0)) \supset \{ (x, 1), (x, -1) \}$ e $f(x, 1) = x$, $f(x, -1) = 0$. \end{example}
 
-\begin{example} Seja $s_n \in l^2(\mathbb{R})$ a sequência com um $1$ na posição $n$-ésima e $0$'s nos outros lugares, e $X = { s_n \mid n \in \mathbb{Z}_{> 0} }$. $f : X \to \mathbb{Z}$ dada por $f(s_n) = n$ é $1$-contínua considerando a norma $l^2$, mas não tem nenhuma extensão $\alpha$-contínua ao conjunto $X \cup {(0, 0, 0, \dots)}$ para qualquer $\alpha \ge 0$. \end{example}
+\begin{example} Seja $s_n \in l^2(\mathbb{R})$ a sequência com um $1$ na posição $n$-ésima e $0$'s nas outras posições, e $X = \{ s_n \mid n \in \mathbb{Z}_{> 0} \}$. $f : X \to \mathbb{Z}$ dada por $f(s_n) = n$ é $1$-contínua considerando a norma $l^2$, mas não tem nenhuma extensão $\alpha$-contínua ao conjunto $X \cup \{(0, 0, 0, \dots)\}$ para qualquer $\alpha \ge 0$. \end{example}
 
-\begin{theorem} \label{tietze} Sejam $(X,d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X}, \tilde{\mathcal{X}} \subset X$, onde $\tilde{\mathcal{X}}$ é finito, e seja $f : \mathcal{X} \to Y$ uma função $(\alpha,\lambda)$-limitada. Existe $\beta \ge 0$ tal que $f$ tem uma extensão $(\beta,\lambda)$-limitada para $\mathcal{X} \cup \tilde{\mathcal{X}}$ se e somente se $f$ é limitada em $\overline{B}_{\lambda\tilde{x}} \cap \mathcal{X}$ para cada $\tilde{x} \in \tilde{\mathcal{X}}$. \end{theorem} \begin{proof} Podemos supor que $\tilde{\mathcal{X}} \cap \mathcal{X} = \varnothing$, já que obviamente $f$ é limitada em $\overline{B}_{\lambda x}$ para cada $x \in \mathcal{X}$.
+\begin{theorem} \label{tietze} Sejam $(X,d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X}, \tilde{\mathcal{X}} \subset X$, onde $\tilde{\mathcal{X}}$ é finito, e seja $f : \mathcal{X} \to Y$ uma função $(\alpha,\lambda)$-limitada. Existe $\beta \ge 0$ tal que $f$ tem uma extensão $(\beta,\lambda)$-limitada para $\mathcal{X} \cup \tilde{\mathcal{X}}$ se e somente se $f$ é limitada em $\overline{B}_{\lambda}(\tilde{x}) \cap \mathcal{X}$ para cada $\tilde{x} \in \tilde{\mathcal{X}}$. \end{theorem}
+
+\begin{proof} A necessidade dessa condição é evidente. Vamos então provar que ela é suficiente.
+
+  Podemos supor que $\tilde{\mathcal{X}} \cap \mathcal{X} = \varnothing$, já que obviamente $f$ é limitada em $\overline{B}_{\lambda x}$ para cada $x \in \mathcal{X}$.
 
   Procederemos por indução sobre $n$.
 
   Para $n = 0$, o resultado é óbvio. Suponha que o resultado seja verdade para $n$, e $\tilde{\mathcal{X}}$ tenha $n+1$ elementos.
 
-  Fixe $\tilde{x} \in \tilde{\mathcal{X}}$ e $y \in Y$. Pela hipótese, $f$ tem uma extensão $(\beta,\lambda)$-limitada para $\mathcal{X} \cup (\tilde{\mathcal{X}} \setminus {\tilde{x}})$. Defina $\tilde{f} : \mathcal{X} \cup \tilde{\mathcal{X}}$ por $\tilde{f}(\tilde{x}) = y$ e $\tilde{f}(x) = f(x)$ para cada $x \in \mathcal{X} \cup (\tilde{\mathcal{X}} \setminus {\tilde{x}})$. Claramente existe $\gamma \ge 0$ tal que $\tilde{f}$ é $(\gamma,\lambda)$-limitada em $x$ para cada $x$ diferente de $\tilde{x}$. Mas como $f$ é limitada em $\overline{B}_{\lambda \tilde{x}} \cap \mathcal{X}$, existe $M \ge 0$ tal que $|f(x)| \le M$ para cada $x \in \overline{B}_{\lambda \tilde{x}} \cap \mathcal{X}$. Portanto, $|\tilde{f}(x)-\tilde{f}(\tilde{x})| \le |f(x)| + |-y| \le M + |-y|$ para cada $x \in \overline{B}_{\lambda\tilde{x}} \cap \mathcal{X}$, e consequentemente, $\tilde{f}$ é $(\max\{M + |-y|, \gamma\},\lambda)$-limitada. Assim, o resultado também é verdade para $n+1$. \end{proof}
+  Fixe $\tilde{x} \in \tilde{\mathcal{X}}$ e $y \in Y$. Pela hipótese, $f$ tem uma extensão $(\beta,\lambda)$-limitada para $\mathcal{X} \cup (\tilde{\mathcal{X}} \setminus {\tilde{x}})$. Defina $\tilde{f} : \mathcal{X} \cup \tilde{\mathcal{X}}$ por $\tilde{f}(\tilde{x}) = y$ e $\tilde{f}(x) = f(x)$ para cada $x \in \mathcal{X} \cup (\tilde{\mathcal{X}} \setminus {\tilde{x}})$. Claramente existe $\gamma \ge 0$ tal que $\tilde{f}$ é $(\gamma,\lambda)$-limitada em $x$ para cada $x$ diferente de $\tilde{x}$. Mas como $f$ é limitada em $\overline{B}_{\lambda}(\tilde{x}) \cap \mathcal{X}$, existe $M \ge 0$ tal que $\lvert f(x) \rvert \le M$ para cada $x \in \overline{B}_{\lambda}(\tilde{x}) \cap \mathcal{X}$. Portanto, $\lvert \tilde{f}(x)-\tilde{f}(\tilde{x})\rvert \le \lvert f(x)\rvert + \lvert -y\rvert \le M + \lvert-y\rvert$ para cada $x \in \overline{B}_{\lambda}(\tilde{x}) \cap \mathcal{X}$, e consequentemente, $\tilde{f}$ é $(\max\{M + \lvert-y\rvert, \gamma\},\lambda)$-limitada. Assim, o resultado também é verdade para $n+1$. \end{proof}
 
 Este corolário e os exemplos subsequentes ilustram algumas propriedades interessantes das funções $\alpha$-limitadas, especialmente como elas podem ser estendidas de conjuntos compactos para conjuntos finitos.
 
@@ -156,19 +162,19 @@ Um exemplo comum de função $\alpha$-limitada é o seguinte:
 
 Para cada par de inteiros positivos $n$ e $k$, $a(n,k)$ denota a quantidade de funções $k$-limitadas de $[n]$ para $[n]$.
 
-Nós utilizaremos a notação $\chi(i, j) = \begin{cases} 1 & \text{se } |i - j| \le k \\ 0 & \text{se } |i - j| > k \end{cases}$.
+Nós utilizaremos a notação $\chi_k(i, j) = \begin{cases} 1 & \text{se } \lvert i - j\rvert \le k \\ 0 & \text{se } \lvert i - j\rvert > k \end{cases}$.
 
-Também definiremos $M_n \in \mathbb{Z}^{n \times n}$ para denotar a matriz definida por $m_{ij} = \chi(i, j)$ e $\mathbf{1}_n \in \mathbb{Z}^n$ como um vetor coluna com $n$ uns.
+Também definiremos $M_{n,k} \in \mathbb{Z}^{n \times n}$ para denotar a matriz definida por $m_{ij} = \chi_k(i, j)$ e $\mathbf{1}_n \in \mathbb{Z}^n$ como um vetor coluna com $n$ uns.
 
-\begin{theorem} \label{th:matrix-form-n-to-n} $a(n,k)$, para $0 \le k \le n - 1$, é dado por $\mathbf{1}_n^\intercal M_n^{n-1} \mathbf{1}_n$. \end{theorem}
+\begin{theorem} \label{th:matrix-form-n-to-n} $a(n,k)$, para $0 \le k \le n - 1$, é dado por $\mathbf{1}_n^\intercal M_{n,k}^{n-1} \mathbf{1}_n$. \end{theorem}
 
 \begin{proof}
 
-  Provaremos o fato mais forte de que o número de funções $k$-limitadas $f : [r] \to [n]$, $r \in [n]$, é dado por $\mathbf{1}_n^\intercal M_n^{r - 1} \mathbf{1}_n$, e que o número de tais funções com $f(r) = i$ é dado por $(M_n^{r - 1} \mathbf{1}_n)_i$. Procederemos por indução sobre $r$.
+  Provaremos o fato mais forte de que o número de funções $k$-limitadas $f : [r] \to [n]$, $r \in [n]$, é dado por $\mathbf{1}_n^\intercal M_{n,k}^{r - 1} \mathbf{1}_n$, e que o número de tais funções com $f(r) = i$ é dado por $(M_{n,k}^{r - 1} \mathbf{1}_n)_i$. Procederemos por indução sobre $r$.
 
-  De fato, se $r = 1$, toda função $f : [r] \to [n]$ é constante, portanto há $n$ tais funções (uma para cada elemento de $[n]$), e $n = \mathbf{1}_n^\intercal I \mathbf{1}_n = \mathbf{1}_n^\intercal A^{1 - 1} \mathbf{1}_n$, como queríamos.
+  De fato, se $r = 1$, toda função $f : [r] \to [n]$ é constante, portanto há $n$ tais funções (uma para cada elemento de $[n]$), e $n = \mathbf{1}_n^\intercal I \mathbf{1}_n = \mathbf{1}_n^\intercal M_{n,k}^{1 - 1} \mathbf{1}_n$, como queríamos.
 
-  Se isso é válido para $r - 1$, então podemos encontrar o número de funções $f : [r] \to [n]$ contando o número de funções $k$-limitadas $g : [r-1] \to [n]$ das quais elas podem ser extensões. Se $f(r) = i$, então $f(r - 1) \in \{i - k, i - k + 1, \dots, i + k\} \cap [n]$, portanto a quantidade de tais funções $f$ é dada pela soma da quantidade de funções $k$-limitadas $g : [r-1] \to [n]$ com $g(r-1) \in \{i - k, i - k + 1, \dots, i + k\} \cap [n]$, que é $\sum_{j = 0}^{n-1} \chi(i, j) (A^{r-1} \mathbf{1}_n)_i$, que pela definição de multiplicação de matrizes é igual a $(M_n (M_n^{r-1} \mathbf{1}_n))_i = (M_n^r \mathbf{1}_n)_i$. Consequentemente, o número de todas as funções $k$-limitadas $f : [r] \to [n]$ é dado por $\mathbf{1}_n^\intercal M_n^r \mathbf{1}_n$, e o resultado segue para $n$, conforme desejado.
+  Se isso é válido para $r - 1$, então podemos encontrar o número de funções $f : [r] \to [n]$ contando o número de funções $k$-limitadas $g : [r-1] \to [n]$ das quais elas podem ser extensões. Se $f(r) = i$, então $f(r - 1) \in \{i - k, i - k + 1, \dots, i + k\} \cap [n]$, portanto a quantidade de tais funções $f$ é dada pela soma da quantidade de funções $k$-limitadas $g : [r-1] \to [n]$ com $g(r-1) \in \{i - k, i - k + 1, \dots, i + k\} \cap [n]$, que é $\sum_{j = 0}^{n-1} \chi_k(i, j) (M_{n,k}^{r-1} \mathbf{1}_n)_i$, que pela definição de multiplicação de matrizes é igual a $(M_{n,k} (M_{n,k}^{r-1} \mathbf{1}_n))_i = (M_{n,k}^r \mathbf{1}_n)_i$. Consequentemente, o número de todas as funções $k$-limitadas $f : [r] \to [n]$ é dado por $\mathbf{1}_n^\intercal M_{n,k}^r \mathbf{1}_n$, e o resultado segue para $n$, como queríamos.
 
 \end{proof}
 
@@ -180,25 +186,25 @@ O código para calcular esses valores pode ser encontrado em \cite{github}. Valo
 
 Agora apresentamos a caracterização assintótica desta fórmula.
 
-\begin{theorem} \label{th:asymptotic} Seja $k$ um inteiro positivo fixo. Então, $a(n, k) \sim n(2k+1)^{n-1}$. \end{theorem} \begin{proof} Claramente, $M_n$ é a matriz de adjacência de um grafo com $n$ vértices, com o grau médio $\overline{d}$ igual a $(2k + 1) - \mathcal{O}(\frac{1}{n})$. Agora, pela desigualdade de Ërdos-Simonovits (veja \cite{erdos-simonovits}), $n \overline{d}^{n-1} \le w_{n-1}$, onde $w_{n-1}$ é a quantidade de caminhos com comprimento $n-1$ no grafo. É fácil ver que $w_{n-1} = a(n, k)$. Portanto, $n ((2k + 1) - \mathcal{O}(\frac{1}{n}))^{n-1} \le a(n, k)$.
+\begin{theorem} \label{th:asymptotic} Seja $k$ um inteiro positivo fixo. Então, $a(n, k) \sim n(2k+1)^{n-1}$. \end{theorem} \begin{proof} Claramente, $M_{n,k}$ é a matriz de adjacência de um grafo com $n$ vértices, com o grau médio $\overline{d}$ igual a $(2k + 1) - \mathcal{O}(\frac{1}{n})$. Agora, pela desigualdade de Ërdos-Simonovits (veja \cite{erdos-simonovits}), $n \overline{d}^{n-1} \le w_{n-1}$, onde $w_{n-1}$ é a quantidade de caminhos com comprimento $n-1$ no grafo. É fácil ver que $w_{n-1} = a(n, k)$. Portanto, $n ((2k + 1) - \mathcal{O}(\frac{1}{n}))^{n-1} \le a(n, k)$.
 
-  Seja \[M = \begin{pmatrix} a_{0} & a_{-1} & a_{-2} & \cdots \\ a_{1} & a_{0} & a_{-1} & \cdots \\ a_2 & a_{1} & a_{0} & \cdots \\ \vdots & \vdots & \vdots & \ddots \end{pmatrix}\] a matriz infinita definida por $m_{ij} = \chi(i, j)$.
+  Seja \[M_k = \begin{pmatrix} a_{0} & a_{-1} & a_{-2} & \cdots \\ a_{1} & a_{0} & a_{-1} & \cdots \\ a_2 & a_{1} & a_{0} & \cdots \\ \vdots & \vdots & \vdots & \ddots \end{pmatrix}\] a matriz infinita definida por $m_{ij} = \chi_k(i, j)$.
 
-  Claramente apenas finitamente muitos ${a_n}$ têm um número finito de termos não nulos, e consequentemente os termos de ${ a_n }$ são os coeficientes de Fourier do polinômio trigonométrico $a(x) = \sum_{n = -N}^N a_n e^{i n x}$, e pelo resultado bem conhecido de Toeplitz \cite{toeplitz}, $M$ define um operador limitado em $l^2(\mathbb{Z}_{\ge 0})$, então $\|M\|_2 = \| a \|_{\infty}$ existe, já que todo polinômio trigonométrico é contínuo e consequentemente limitado em $\mathbb{T}$.
+  Claramente apenas uma quantidade finita de termos de $\{a_n\}$ são não nulos, e consequentemente os termos de $\{ a_n \}$ são os coeficientes de Fourier do polinômio trigonométrico $a(x) = \sum_{n = -N}^N a_n e^{i n x}$, e pelo resultado bem conhecido de Toeplitz \cite{toeplitz}, $M_k$ define um operador limitado em $l^2(\mathbb{Z}_{\ge 0})$, então $\|M_k\|_2 = \| a \|_{\infty}$ existe, já que todo polinômio trigonométrico é contínuo e consequentemente limitado em $\mathbb{T}$.
 
   Agora, pela desigualdade de Cauchy e a propriedade submultiplicativa de $\| \cdot \|_2$, temos que
   \begin{align*}
-    \mathbf{1}_n^\intercal M_n^{n-1} \mathbf{1}_n & = |\mathbf{1}_n^\intercal M_n^{n-1} \mathbf{1}_n|                 \\
-                                                  & \le \| \mathbf{1}_n^\intercal \|_2 \| M_n^{n-1} \mathbf{1}_n \|_2 \\
-                                                  & = \sqrt{n} \| M_n^{n-1} \mathbf{1}_n \|_2                         \\
-                                                  & \le \sqrt{n} \| M_n^{n-1} \|_2 \| \mathbf{1}_n \|_2               \\
-                                                  & = n \| M_n^{n-1} \|_2                                             \\
-                                                  & \le n \| M_n \|_2^{n-1}
+    \mathbf{1}_n^\intercal M_{n,k}^{n-1} \mathbf{1}_n & = \lvert \mathbf{1}_n^\intercal M_{n,k}^{n-1} \mathbf{1}_n\rvert      \\
+                                                      & \le \| \mathbf{1}_n^\intercal \|_2 \| M_{n,k}^{n-1} \mathbf{1}_n \|_2 \\
+                                                      & = \sqrt{n} \| M_{n,k}^{n-1} \mathbf{1}_n \|_2                         \\
+                                                      & \le \sqrt{n} \| M_{n,k}^{n-1} \|_2 \| \mathbf{1}_n \|_2               \\
+                                                      & = n \| M_{n,k}^{n-1} \|_2                                             \\
+                                                      & \le n \| M_{n,k} \|_2^{n-1}
   \end{align*}
 
-  Por \cite{bottcher} temos que $\| M_n \| \le \| M \|$.
+  Por \cite{bottcher} temos que $\| M_{n,k} \| \le \| M_k \|$.
 
-  Mas os coeficientes de Fourier de $a$ são os coeficientes de Fourier do kernel de Dirichlet $D_k$, e $\| a \|_{\infty} = \esssup{t \in T} |a(t)| = \sup_{t \in T} |a(t)|$. É fato conhecido que $\sup_{t \in T} |D_k(t)| = 2k + 1$. Portanto, $\| M \| = 2k + 1$.
+  Mas os coeficientes de Fourier de $a$ são os coeficientes de Fourier do kernel de Dirichlet $D_k$, e $\| a \|_{\infty} = \esssup{t \in T} \lvert a(t)\rvert = \sup_{t \in T} \lvert a(t)\rvert$. É fato conhecido que $\sup_{t \in T} \lvert D_k(t)\rvert = 2k + 1$. Portanto, $\| M_k \| = 2k + 1$.
 
   Concluímos a prova aplicando o teorema do aperto a ambas as desigualdades. \end{proof}
 
@@ -208,9 +214,9 @@ Observe que o limite inferior da prova acima pode ser facilmente estendido a qua
 \section*{Próximos Passos}
 \vspace{1cm}
 
-Pode-se usar a versão original do teorema de Blakley-Roy para provar uma versão mais forte do limite inferior do \ref*{th:asymptotic} aplicado a uma classe mais ampla de matrizes de Toeplitz que não requer que os coeficientes da matriz assumam valores apenas em ${0, 1}$. Isso pode ser combinado com uma análise dos casos de igualdade da desigualdade de Bernstein, que afirma que se $a$ é um polinômio trigonométrico com coeficientes de Fourier ${a_n}$, então $\|a\|_\infty \le \sum_{n \in \mathbb{Z}} |a_n|$, para provar uma versão mais forte da caracterização assintótica, novamente aplicada a matrizes de Toeplitz mais gerais.
+Pode-se usar o teorema de Blakley-Roy para provar uma versão mais forte do limite inferior do \ref*{th:asymptotic} aplicado a uma classe mais ampla de matrizes de Toeplitz que não requer que os coeficientes da matriz assumam valores apenas em $\{0, 1\}$. Isso pode ser combinado com uma análise dos casos de igualdade da desigualdade de Bernstein, que afirma que se $a$ é um polinômio trigonométrico com coeficientes de Fourier $\{a_n\}$, então $\|a\|_\infty \le \sum_{n \in \mathbb{Z}} \lvert a_n\rvert$, para provar uma versão mais forte da caracterização assintótica, novamente aplicada a matrizes de Toeplitz mais gerais.
 
-Também é possível estudar as propriedades topológicas das funções $(\alpha, \lambda)$-limitadas, possivelmente entendendo se o espaço topológico induzido pelo espaço vetorial das aplicações $(\alpha, \lambda)$-limitadas entre dois espaços métricos herda propriedades dos espaços topológicos induzidos por esses espaços métricos.
+Também é possível estudar as propriedades topológicas das funções $(\alpha, \lambda)$-limitadas, possivelmente entendendo se é o caso que o espaço topológico induzido pelo espaço vetorial das aplicações $(\alpha, \lambda)$-limitadas entre dois espaços métricos herda propriedades dos espaços topológicos induzidos por esses espaços métricos.
 
 \newpage
 \normalsize
