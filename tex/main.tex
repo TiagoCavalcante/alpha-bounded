@@ -197,7 +197,78 @@ Em diversos casos, pode-se utilizar a norma do operador em $l^2(\mathbb{Z}_{> 0}
 
 Isso é particularmente utilizado para resolver sistemas lineares usando o conhecido método da seção finita. Esse método possui diversas aplicações em áreas como o processamento de sinais.
 
-Mostramos agora um resultado importante sobre a inversa de uma matriz de Toeplitz, que é claro, é de grande utilidade na solução dos sistemas mencionados anteriormente.
+\begin{definition*}
+  Uma matriz de Toeplitz \( M \in \mathbb{C}^{n \times n} \) é dita \textit{de banda \( k \)} se \( m_{ij} = 0 \) para todo \( i, j \in \{1, \dots, n\} \) tal que \( |i - j| > k \).
+\end{definition*}
+
+\begin{theorem*}[Norma de Matrizes de Toeplitz de Banda]
+  Seja \( M \in \mathbb{C}^{n \times n} \) uma matriz de Toeplitz de banda \( k \). Então, a norma espectral de \( M \) satisfaz
+  \[
+    \| M \|_2 \le (2k + 1) \max_{|i - j| \le k} |m_{ij}|.
+  \]
+\end{theorem*}
+
+\begin{proof}
+  Observe que cada linha de \( M \) possui no máximo \( 2k + 1 \) elementos não nulos. Aplicando a desigualdade de Cauchy-Schwarz para cada linha, temos:
+  \[
+    \| M \|_2 \le \max_{1 \le i \le n} \sum_{j = \max\{1, i - k\}}^{\min\{n, i + k\}} |m_{ij}| \le (2k + 1) \max_{|i - j| \le k} |m_{ij}|.
+  \]
+\end{proof}
+
+A matriz $ M_{n,k} $ definida em \ref{th:matrix-form-n-to-n} é um exemplo de matriz de Toeplitz de banda $ k $, onde os elementos $ m_{ij} $ são iguais a $ 1 $ se $ |i - j| \le k $ e $ 0 $ caso contrário. A norma espectral dessa matriz satisfaz $ \| M_{n,k} \|_2 = 2k + 1 $, conforme utilizado no \ref{th:asymptotic}.
+
+Desse modo esse teorema pode ser usado para generalizar o limite superior de \ref{th:matrix-form-n-to-n} em casos onde não conseguimos calcular diretamente a norma da matrix de Toeplitz relacionada ao sistema.
+
+As matrizes circulantes são um caso especial de matrizes de Toeplitz, onde cada linha é uma rotação cíclica da linha anterior. Elas possuem propriedades espectrais que facilitam a análise, especialmente no contexto de autovalores e autovetores.
+
+\begin{definition*}
+  Uma matriz de Toeplitz \( C \in \mathbb{C}^{n \times n} \) é dita \textit{circulante} se cada linha subsequente é uma rotação cíclica da linha anterior. Ou seja,
+  \[
+    C = \begin{pmatrix}
+      c_0     & c_{n-1} & \cdots  & c_2    & c_1     \\
+      c_1     & c_0     & c_{n-1} & \cdots & c_2     \\
+      \vdots  & c_1     & c_0     & \ddots & \vdots  \\
+      c_{n-2} & \vdots  & \ddots  & \ddots & c_{n-1} \\
+      c_{n-1} & c_{n-2} & \cdots  & c_1    & c_0     \\
+    \end{pmatrix}.
+  \]
+\end{definition*}
+
+\begin{theorem*}[Diagonalização de Matrizes Circulantes]
+  Toda matriz circulante $ C \in \mathbb{C}^{n \times n} $ pode ser diagonalizada pela matriz de Fourier $ F_n $, ou seja,
+  \[
+    C = F_n \Lambda F_n^{-1},
+  \]
+  onde $ \Lambda $ é uma matriz diagonal cujos elementos são os valores de Fourier do vetor de primeira linha de $ C $.
+
+  Em particular, os autovalores de $ C $ são dados por:
+  \[
+    \lambda_m = \sum_{j=0}^{n-1} c_j \omega_n^{jm}, \quad m = 0, 1, \dots, n-1,
+  \]
+  onde $ \omega_n = e^{2\pi i / n} $ é a raiz $ n $-ésima da unidade.
+\end{theorem*}
+
+A prova desse teorema é sugerida como exercício em \cite[p. 100]{horn2013matrix}.
+
+% \begin{example}
+%   Considere a matriz circulante $ C $ de ordem $ 3 $:
+%   \[
+%     C = \begin{pmatrix}
+%       c_0 & c_2 & c_1 \\
+%       c_1 & c_0 & c_2 \\
+%       c_2 & c_1 & c_0 \\
+%     \end{pmatrix}.
+%   \]
+%   Seus autovalores são:
+%   \[
+%     \lambda_0 = c_0 + c_1 + c_2, \quad \lambda_1 = c_0 + c_1 \omega_3 + c_2 \omega_3^2, \quad \lambda_2 = c_0 + c_1 \omega_3^2 + c_2 \omega_3,
+%   \]
+%   onde $ \omega_3 = e^{2\pi i / 3} $.
+% \end{example}
+
+As propriedades espectrais simplificadas das matrizes circulantes tornam-nas úteis para entender comportamentos assintóticos em contextos como o do Capítulo 3.
+
+Mostramos agora um resultado importante sobre a inversa de uma matriz de Toeplitz, que é claro, é de grande utilidade na solução dos sistemas lineares mencionados anteriormente.
 
 A fórmula de Gohberg-Semencul fornece uma representação explícita para a inversa de uma matriz de Toeplitz invertível, permitindo calcular inversas aproximadas de matrizes de Toeplitz de grandes dimensões.
 \begin{theorem*}[Fórmula de Gohberg-Semencul]
@@ -240,7 +311,7 @@ Por fim, apresentados a fatoração de Wiener-Hopf, uma técnica que permite dec
 \begin{theorem*}[Fatoração de Wiener-Hopf]
   Se $a \in L^\infty(\mathbb{T})$ é invertível e $\log a \in L^1(\mathbb{T})$, então existe uma fatoração única $a(e^{i\theta}) = a_-(e^{i\theta}) a_+(e^{i\theta})$, onde $a_-$ e $a_+$ são funções com extensões analíticas dentro e fora do círculo unitário, respectivamente.
 \end{theorem*}
-Paa uma prova, veja \cite{wiener1931}.
+Para uma prova, veja \cite{wiener1931}.
 
 A fatoração de Wiener-Hopf é aplicada na resolução de problemas em física matemática e engenharia, onde a estrutura de convolução é predominante.
 
