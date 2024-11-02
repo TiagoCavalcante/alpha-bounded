@@ -1,0 +1,64 @@
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}
+      \fill (0,0) circle (0.07);
+      \node at ([shift={(1cm, 0)}] 0,0) {(\(0, 0, \dots)\)};
+
+      % Constants
+      \def\n{10} % Number of surrounding points
+      \def\k{3.2}  % Constant k in the angle formula
+      \def\startOffset{13}
+
+      % Loop to place points in a circular arrangement
+      \foreach \i in {1,...,\n} {
+          % Calculate angle for the point using (2 * pi / k) * log(N)
+          \pgfmathsetmacro{\angle}{\startOffset + (360 / \k) * ln(\i + 1)}
+          \pgfmathsetmacro{\angleout}{\startOffset + (360 / \k) * ln(\i)}
+
+
+          % Coordinates of the surrounding point at radius 2
+          \path (\angle:5) coordinate (P\i);
+          \draw[dashed] (0, 0) -- (P\i);
+          \ifnum\i>1
+            \pgfmathtruncatemacro{\prev}{\i-1}
+            % Calculate the start and end angles for each arc
+            \pgfmathsetmacro{\startAngle}{\startOffset + (360 / \k) * ln(\prev + 1)}
+            \pgfmathsetmacro{\endAngle}{\angle}
+            \ifnum\i<4
+              \draw[dashed]
+              (P\prev) arc[start angle=\startAngle, end angle=\endAngle, radius=5]
+              node[midway, above left] {\(\sqrt{2}\)}; % Label at midpoint of each edge
+            \else
+              \ifnum\i>4
+                \draw[dashed]
+                (P\prev) arc[start angle=\startAngle, end angle=\endAngle, radius=5]; % Label at midpoint of each edge
+              \else
+                \draw[dashed]
+                (P\prev) arc[start angle=\startAngle, end angle=\endAngle, radius=5]
+                node[midway, left] {\(\sqrt{2}\)}; % Label at midpoint of each edge
+              \fi
+            \fi
+          \fi
+
+
+          % Draw the point and label it
+          %\fill (P\i) circle (0.05) node[below left] {$s_{\i}$};
+
+          \ifnum\i<5
+            \fill[font=\bfseries] (P\i) circle (0.05) node[above left] {$s_{\i}$};
+          \else
+            \ifnum\i>9
+              \fill (P\i) circle (0.05) node[below] {$s_{\i}$};
+            \else
+              \fill (P\i) circle (0.05) node[below left] {$s_{\i}$};
+            \fi
+          \fi
+        }
+
+      \node at ([shift={(0.5cm, 0)}] P10) {\dots};
+
+    \end{tikzpicture}
+    \captionsetup{justification=centering}
+    \caption{Sequência de pontos de $l^2(\mathbb{Z})$ na esfera unitária. A escala dos angulos que os pontos $s_n$ formam com o eixo $x$ é logarítimica em $n$.}
+  \end{center}
+\end{figure}

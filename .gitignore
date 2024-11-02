@@ -1,3 +1,4 @@
 pdf/*
 !pdf/*.pdf
 **/svg-inkscape/*
+*.log
