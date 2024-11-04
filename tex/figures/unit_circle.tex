@@ -2,12 +2,12 @@
   \begin{center}
     \begin{tikzpicture}
       \fill (0,0) circle (0.07);
-      \node at ([shift={(1cm, 0)}] 0,0) {(\(0, 0, \dots)\)};
+      \node at ([shift={(1cm, -0.5cm)}] 0,0) {$(0, 0, \dots)$};
 
       % Constants
       \def\n{10} % Number of surrounding points
       \def\k{3.2}  % Constant k in the angle formula
-      \def\startOffset{13}
+      \def\startOffset{-77}
 
       % Loop to place points in a circular arrangement
       \foreach \i in {1,...,\n} {
@@ -55,7 +55,7 @@
           \fi
         }
 
-      \node at ([shift={(0.5cm, 0)}] P10) {\dots};
+      \node at ([shift={(0.5cm, -0.7cm)}] P10) {$\ddots$};
 
     \end{tikzpicture}
     \captionsetup{justification=centering}
