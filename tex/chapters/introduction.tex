@@ -1,11 +1,20 @@
 \section*{Introdução}
 \addcontentsline{toc}{section}{Introdução} % Adds "Introduction" to the ToC without a chapter number
 
-%
+% 
 
 \vspace{1cm}
 \normalsize
-É fato conhecido que toda função definida em um subconjunto discreto de $\mathbb{R}$ é contínua considerando a norma induzida. Desta forma, o conceito de continuidade não é muito útil ao analisar funções definidas em conjuntos discretos, motivando assim a introdução de um novo conceito, que chamaremos de funções $(\alpha,\lambda)$-limitadas. No âmbito da ciência da computação, onde as funções frequentemente operam em espaços discretos e finitos, como alocação de memória, compressão de dados e processamento de sinais digitais, a introdução das funções $(\alpha,\lambda)$-limitadas fornece outra ferramenta para formalizar e analisar a estabilidade e robustez de algoritmos e sistemas. Elas podem ser particularmente vantajosas em cenários onde variações leves de entrada devido a fatores como ruído, erros de compressão de dados ou pequenas perturbações nos processos computacionais não devem afetar desproporcionalmente as saídas.
+
+É fato conhecido que toda função definida em um subconjunto discreto de $\mathbb{R}$ é contínua considerando a norma induzida. Desta forma, o conceito de continuidade não é muito útil ao analisar funções definidas em conjuntos discretos, motivando assim a introdução de um novo conceito, que chamaremos de funções $(\alpha,\lambda)$-limitadas.
+
+A introdução de propriedades alternativas para funções em espaços discretos não é inédita na literatura matemática. Conceitos como funções de variação limitada e funções de descontinuidade controlada têm sido explorados para analisar comportamentos específicos em contextos combinatórios e algorítmicos. No entanto, as funções $(\alpha,\lambda)$-limitadas se distinguem por sua flexibilidade em parametrizar a restrição de variação, permitindo uma análise mais granular.
+
+Além disso, a utilização de matrizes de Toeplitz na análise de propriedades funcionais tem sido amplamente estudada em áreas como processamento de sinais e teoria dos operadores. Trabalhos como \cite{bottcher} demonstram a eficácia dessas matrizes na caracterização de operadores e na obtenção de estimativas assintóticas. Este estudo aproveita essas ferramentas para investigar a contagem assintótica de funções $(k,1)$-limitadas, estabelecendo mais uma ponte entre essas áreas aparentemente distintas.
+
+No âmbito da ciência da computação, onde as funções frequentemente operam em espaços discretos e finitos, como alocação de memória, compressão de dados e processamento de sinais digitais, a introdução das funções $(\alpha,\lambda)$-limitadas fornece outra ferramenta para formalizar e analisar a estabilidade e robustez de algoritmos e sistemas. Elas podem ser particularmente vantajosas em cenários onde variações leves de entrada devido a fatores como ruído, erros de compressão de dados ou pequenas perturbações nos processos computacionais não devem afetar desproporcionalmente as saídas.
+
+A capacidade de contar e caracterizar funções definidas em espaços discretos com restrições específicas, como as impostas pelas funções $(\alpha,\lambda)$-limitadas, é crucial para o desenvolvimento de resultados que exigem controle preciso sobre a variação das funções. Além disso, a análise assintótica da quantidade de funções $(k,1)$-limitadas fornece ideias valiosas sobre o comportamento de sistemas discretos à medida que seu tamanho cresce, permitindo a identificação de padrões e tendências que podem não ser evidentes em análises de casos específicos. Essa compreensão é essencial para o avanço de teorias combinatórias e para a resolução de problemas que envolvem grandes estruturas discretas. O uso de matrizes de Toeplitz e a aplicação da teoria dos grafos neste contexto destacam a combinação de diferentes áreas necessária para abordar problemas complexos em matemática.
 
 No primeiro capítulo, introduzimos essa nova definição, mostramos alguns exemplos e provamos resultados simples que mostram o contraste entre funções $(\alpha,\lambda)$-limitadas e funções contínuas.
 
