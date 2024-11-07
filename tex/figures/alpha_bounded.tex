@@ -1,0 +1,36 @@
+\begin{figure}[h!]
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+      % \node (x) at (0, 1) {x};
+      %\draw (0, 1) ellipse (1cm and 1.2cm) node[left, xshift=-1cm] {$\lambda$};
+      %\draw (6, 1) ellipse (1cm and 1.2cm) node[left, xshift=-1cm] {$\alpha$};
+
+      %\draw[->, thick, line width=1mm] (2, 0) -- (4, 0);
+
+      %\draw[thick] (0, 0) ellipse (2cm and 3cm) node[above, yshift=3cm]{X};
+      %\draw[thick] (6, 0) ellipse (2cm and 3cm) node[above, yshift=3cm]{Y};
+
+      \node (X) at (-2.8, 3.3) {$X$};
+      \node (Y) at (11.8, 3.3) {$Y$};
+
+      \draw (-3.6, -3.6) rectangle (3.6, 3.6);
+      \draw (6.4, -3.6) rectangle (13, 3.6);
+
+
+      \node (x) at (-0.8, 0.8) {$x$};
+      \node (y) at (10, 0.8) {$f(x)$};
+      \draw[dashed] (0, 0) ellipse (3cm and 3cm) node[above right, xshift=2.2cm, yshift=2cm] {$\mathcal{X}$};
+      \draw[] (-0.8, 0.8) ellipse (1.5cm and 1.5cm);
+      \draw[<->, thick] (x) -- ++(0.9, 0.9) node[midway, below right] {$\lambda$};
+      \draw[] (10, 0.8) ellipse (1.5cm and 1.5cm);
+      \draw[<->, thick] (y) -- ++(0.9, 0.9) node[midway, below right] {$\alpha$};
+      \draw[->, thick] (4, 0.8) -- (6.3, 0.8) node[midway, above] {$f$};
+
+
+
+
+    \end{tikzpicture}
+  \end{center}
+  \captionsetup{justification=centering}
+  \caption{Função $f : \mathcal{X} \to Y$ \textit{$(\alpha, \lambda)$-limitada} em $x$.}
+\end{figure}

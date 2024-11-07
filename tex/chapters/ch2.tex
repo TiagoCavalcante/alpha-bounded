@@ -1,0 +1,136 @@
+\section{Resultados da teoria de matrizes de Toeplitz} \vspace{1cm}
+
+\par Em \cite{Toeplitz1911} Otto Toeplitz apresenta as $L$-formas, anteriormente estudadas em sua tese de habilitação para a universidade Universidade de Göttingen. Posteriormente seus estudos foram adaptados para o que hoje chamamos de matrizes de Toeplitz.
+
+Uma matriz de Toeplitz é uma matriz possivelmente infinita da forma \[ \begin{pmatrix} a_{0} & a_{-1} & a_{-2} & \cdots \\ a_{1} & a_{0} & a_{-1} & \cdots \\ a_2 & a_{1} & a_{0} & \cdots \\ \vdots & \vdots & \vdots & \ddots \end{pmatrix}\text{.} \]
+
+As matrizes de Toeplitz possuem uma ampla gama de aplicações, que vão desde teoria dos operadores, análise harmonica, teoria da informação e processamento de sinais à mecânica quântica.
+
+Essas matrizes são especialmente úteis quando a sequência $\{a_n\}$ determina os coeficientes de Fourier de uma determinada função, uma vez que isso possibilita utilizar ferramentas da análise para calcular, por exemplo, a norma do operador em $l^2(\mathbb{Z}_{> 0})$ que a matriz representa.
+
+Em \cite{Toeplitz1911} Toeplitz mostra uma condição necessária e suficiente para que uma matriz de Toeplitz induza um operador limitado em $l^2(\mathbb{Z}_{> 0})$, é claro, utilizando a linguagem das $L$-formas.
+
+\begin{theorem*}[Operadores limitados induzidos por matrizes de Toeplitz]
+  A matriz infinita \[A = \begin{pmatrix} a_{0} & a_{-1} & a_{-2} & \cdots \\ a_{1} & a_{0} & a_{-1} & \cdots \\ a_2 & a_{1} & a_{0} & \cdots \\ \vdots & \vdots & \vdots & \ddots \end{pmatrix}\] induz um operador limitado em $l^2(\mathbb{Z}_{>0})$ se e somente se os números $\{a_n\}$ são os coeficientes de Fourier de uma função integrável $a \in L^\infty(\mathbb{T})$ definida no círculo unitário complexo, \[a_n = \frac{1}{2\pi} \int_{0}^{2\pi} a(e^{i \theta})e^{-i n \theta} \d{\theta}, \quad n \in \mathbb{Z}\text{.}\]
+  Nesse caso, a norma do operador $A$ é igual à \[\|a\|_{\infty} \coloneqq \esssup_{t \in \mathbb{T}}\lvert a(t)\rvert\text{.}\]
+\end{theorem*}
+
+Essa formulação e uma prova com notação moderna são encontrados em \cite[p. 1]{bottcher}.
+
+O \textit{símbolo} de uma matriz de Toeplitz é a função $a \in L^\infty(\mathbb{T})$ que gera a matriz através de seus coeficientes de Fourier. Esse símbolo encapsula toda a informação necessária para caracterizar as propriedades espectrais e operacionais da matriz de Toeplitz.
+
+Vamos agora apresentar a definição de uma álgebra $C^\ast$, que generalizam a álgebra de operadores limitados em um espaço de Hilbert. A teoria das álgebras $C^\ast$ é utilizada na prova de diversos resultados não apenas acerca de matrizes de Toeplitz, mas em toda a teoria dos operadores.
+
+\begin{definition*} Uma \textit{álgebra $C^\ast$} é uma álgebra de Banach complexa $\mathcal{A}$ munida de uma operação $^\ast : \mathcal{A} \to \mathcal{A}$, chamada de involução, tal que, para todos $a, b \in \mathcal{A}$ e $\lambda \in \mathbb{C}$, as seguintes propriedades são satisfeitas:
+  \begin{enumerate} \item $(a + b)^\ast = a^\ast + b^\ast$; \item $(\lambda a)^\ast = \overline{\lambda} a^\ast$; \item $(ab)^\ast = b^\ast a^\ast$; \item $(a^\ast)^\ast = a$; \item $|a^\ast a| = |a|^2$.
+  \end{enumerate}
+\end{definition*}
+
+Em diversos casos, pode-se utilizar a norma do operador em $l^2(\mathbb{Z}_{> 0})$ induzido por uma matriz de Toeplitz para estudar o limite da sequência das normas de matrizes que são ou estão relacionadas à matrizes de Toeplitz, ou vice-versa. Grande parte dos teoremas acerca dessa relação são provados usando a teoria das álgebras $C^\ast$, assim como outros resultados da teoria das matrizes de Toeplitz. Essa estratégia é apresentada com profundidade em \cite{bottcher}. Na prova de \ref{th:asymptotic} usamos um resultado básico sobre essa relação.
+
+Vamos agora a mais um tipo de matriz de Toeplitz. As matrizes de banda surgem naturalmente em diversas aplicações, como na discretização de operadores diferenciais e em algoritmos eficientes de processamento de sinais. No contexto das matrizes de Toeplitz, a restrição de banda permite simplificar a análise espectral e facilita a obtenção de estimativas de norma, tornando-as ferramentas valiosas para a análise assintótica e a resolução de sistemas lineares estruturados.
+
+\begin{definition*}
+  Uma matriz de Toeplitz $ M $ com entradas complexas é dita \textit{de banda $ k $} se $ m_{ij} = 0 $ para todos $ i \in I$ e $j \in J $, sendo $I$ o conjunto dos índices das linhas de $M$ e $J$ o conjunto dos índices das colunas, tais que $ |i - j| > k $.
+\end{definition*}
+
+\begin{theorem*}[Norma de matrizes de Toeplitz de banda] Seja \( M \) uma matriz de Toeplitz possivelmente infinita com entradas complexas e banda \( k \). Então, a norma espectral de \( M \), denotada por \( \| M \|_2 \), satisfaz \[ \| M \|_2 \leq (2k + 1) \cdot \max_{|i - j| \leq k} |m_{ij}|. \] \end{theorem*}
+\begin{proof}
+É fato conhecido que para qualquer matriz $M$ temos $\| M \|_2 \leq \| M \|_\infty$.
+
+Em cada linha $i$, existem no máximo $2k + 1$ entradas não nulas, correspondentes aos índices $j$ tais que $\lvert i - j \rvert \leq k$.
+
+Portanto, sendo $I$ o conjunto dos índices das linhas de $M$ e $J$ o conjunto dos índices das colunas, temos \[ \| M \|_2 \le \| M \|_\infty = \sup_{i \in I} \sum_{j \in J} |m_{ij}| \leq (2k + 1) \cdot \max_{|i - j| \leq k} |m_{ij}| \]
+\end{proof}
+
+A matriz $ M_{n,k} $ definida em \ref{th:matrix-form-n-to-n} é um exemplo de matriz de Toeplitz de banda $ k $, onde os elementos $ m_{ij} $ são iguais a $ 1 $ se $ |i - j| \le k $ e $ 0 $ caso contrário. A norma espectral dessa matriz satisfaz $ \| M_{n,k} \|_2 = 2k + 1 $, conforme utilizado no \ref{th:asymptotic}.
+
+Desse modo esse teorema pode ser usado para generalizar o limite superior de \ref{th:matrix-form-n-to-n} em casos onde não conseguimos calcular diretamente a norma da matrix de Toeplitz relacionada ao sistema.
+
+As matrizes circulantes são um caso especial de matrizes de Toeplitz, onde cada linha é uma rotação cíclica da linha anterior. Elas possuem propriedades espectrais que facilitam a análise, especialmente no contexto de autovalores e autovetores.
+
+\begin{definition*}
+  Uma matriz de Toeplitz $ C \in \mathbb{C}^{n \times n} $ é dita \textit{circulante} se cada linha subsequente é uma rotação cíclica da linha anterior. Ou seja,
+  \[
+    C = \begin{pmatrix}
+      c_0     & c_{n-1} & \cdots  & c_2    & c_1     \\
+      c_1     & c_0     & c_{n-1} & \cdots & c_2     \\
+      \vdots  & c_1     & c_0     & \ddots & \vdots  \\
+      c_{n-2} & \vdots  & \ddots  & \ddots & c_{n-1} \\
+      c_{n-1} & c_{n-2} & \cdots  & c_1    & c_0     \\
+    \end{pmatrix}.
+  \]
+\end{definition*}
+
+\begin{theorem*}[Diagonalização de matrizes circulantes]
+  Toda matriz circulante $ C \in \mathbb{C}^{n \times n} $ pode ser diagonalizada pela matriz de Fourier $ F_n $ cujas entradas são dadas por
+  \[
+    (F_n)_{jk} = \frac{1}{\sqrt{n}} \omega_n^{jk},
+  \]
+  onde $ \omega_n = e^{2\pi i / n} $.
+
+  Ou seja,
+  \[
+    C = F_n \Lambda F_n^{-1},
+  \]
+  onde $ \Lambda $ é uma matriz diagonal cujos elementos são os valores de Fourier do vetor de primeira linha de $ C $.
+
+  Em particular, os autovalores de $ C $ são dados por
+  \[
+    \lambda_m = \sum_{j=0}^{n-1} c_j \omega_n^{jm}, \quad m = 0, 1, \dots, n-1,
+  \]
+  onde $ \omega_n = e^{2\pi i / n} $ é a raiz $ n $-ésima da unidade.
+\end{theorem*}
+
+A prova desse teorema é sugerida como exercício em \cite[p. 100]{horn2013matrix}.
+
+As propriedades espectrais simplificadas das matrizes circulantes tornam-nas úteis para entender comportamentos assintóticos em contextos como o do terceiro capítulo.
+
+Mostramos agora um resultado importante sobre a inversa de uma matriz de Toeplitz, que é claro, é de grande utilidade na solução de sistemas lineares que podem ser representados por matrizes de Toeplitz.
+
+A fórmula de Gohberg-Semencul fornece uma representação explícita para a inversa de uma matriz de Toeplitz invertível, permitindo calcular inversas aproximadas de matrizes de Toeplitz de grandes dimensões.
+\begin{theorem*}[Fórmula de Gohberg-Semencul]
+  Seja $ T_n(a)$ uma matriz de Toeplitz $ n \times n$ gerada por um símbolo $ a \in L^\infty(\mathbb{T})$, tal que $ T_n(a)$ é invertível. Então, a inversa de $ T_n(a)$ pode ser expressa como
+  \[
+    T_n(a)^{-1} = X_n - U_n V_n^T,
+  \]
+  onde $ X_n$ é uma matriz de Toeplitz gerada pelo símbolo $1 / a$, e $ U_n$, $ V_n$ são vetores apropriados em $ \mathbb{C}^n$.
+\end{theorem*}
+Para uma prova, veja \cite{gohberg1972}.
+Essa fórmula é particularmente útil em problemas de processamento de sinais e resolução de sistemas lineares com estruturas especiais.
+
+Um resultado importante provado por Szegö em \cite{szego1915} e futuramente melhorado por ele e diversos outros matemáticos é o seguinte:
+\begin{theorem*}[Teorema do limite de Szegő]
+  Seja $A$ a matriz de Toeplitz correspondente à função real $a \in L^1(\mathbb{T})$, e $A_n$ sua seção finita $n \times n$. Se $\log a \in L^1(\mathbb{T})$ e $a(x) > 0$ para todo $x \in \mathbb{T}$, então \[\lim_{n\to \infty} \frac{\det A_n}{\det A_{n-1}} = \exp\left(\frac{1}{2\pi} \int_{0}^{2\pi} \log a\left(e^{i\theta}\right) \right)\text{.}\]
+\end{theorem*}
+
+Esse teorema e principalmente suas versões mais fortes tem aplicações na caracterização assintótica do espectro das matrizes $A_n$.
+
+Como mencionado, sob certas condições as matrizes de Toeplitz definem um operador limitado em $l^2(\mathbb{Z}_{> 0})$. Evidentemente generalizações desse fato foram estudadas para espaços de Hilbert. Isso motiva a definição de operadores de Toeplitz.
+
+Um operador de Toeplitz é um operador linear contínuo definido em um espaço de Hilbert, frequentemente relacionado a funções analíticas no círculo unitário. A conexão entre matrizes de Toeplitz e operadores de Toeplitz é estabelecida através da identificação de matrizes finitas com operadores lineares em espaços de dimensão finita.
+\begin{definition*}
+  Seja $H^2(\mathbb{T})$ o espaço de Hardy de funções na circunferência unitária $\mathbb{T}$. Para uma função limitada $a \in L^\infty(\mathbb{T})$, o \textit{operador de Toeplitz} $T(a) : H^2(\mathbb{T}) \to H^2(\mathbb{T})$ é definido por $T(a)f=P(af)$, onde $P : L^2(\mathbb{T}) \to H^2(\mathbb{T})$ é o operador de projeção de Szegő, que projeta uma função em $L^2(\mathbb{T})$ sobre o subespaço de Hardy $H^2(\mathbb{T})$.
+\end{definition*}
+De modo similar a definição para matrizes de Teoplitz, o símbolo $a$ do operador de Toeplitz $T(a)$ é a função em $L^\infty(\mathbb{T})$ a partir da qual o operador é definido. Esse símbolo desempenha um papel crucial na determinação das propriedades do operador.
+
+Apresentamos agora um resultado importante sobre o espectro de operadores de Toeplitz. O teorema do mapeamento espectral relaciona o espectro de um operador com o espectro de sua imagem através de uma função contínua.
+\begin{theorem*}[Teorema do Espectro de Toeplitz]
+  Seja $T(a)$ um operador de Toeplitz com símbolo $a \in L^\infty(\mathbb{T})$. Então, o espectro de $T(a)$, denotado por $\sigma(T(a))$, satisfaz $\sigma(T(a))=a(T)$, onde $\overline{a(\mathbb{T})}$ é o fecho da imagem de $a$ em $\mathbb{C}$.
+\end{theorem*}
+
+Veja \cite[p. 85]{Douglas1998} para a prova de um teorema mais geral, do qual este é um corolário imediato. O teorema apresentado em \cite{Douglas1998} é formulado utilizando álgebras $C^\ast$, e sua prova é completamente baseada em suas propriedades.
+
+Esse resultado permite determinar o espectro de um operador de Toeplitz diretamente a partir de seu símbolo, facilitando a análise espectral desses operadores.
+
+Os operadores de Toeplitz possuem aplicações em problemas do valor de borda de funções analíticas e equações integrais singulares.
+
+Por fim, apresentados a fatoração de Wiener-Hopf, uma técnica que permite decompor uma função em fatores que são analíticos dentro e fora do círculo unitário, o que é essencial na solução de certas equações integrais e na teoria de operadores de Toeplitz.
+\begin{theorem*}[Fatoração de Wiener-Hopf]
+  Se $a \in L^\infty(\mathbb{T})$ é invertível e $\log a \in L^1(\mathbb{T})$, então existe uma fatoração única $a(e^{i\theta}) = a_-(e^{i\theta}) a_+(e^{i\theta})$, onde $a_-$ e $a_+$ são funções com extensões analíticas dentro e fora do círculo unitário, respectivamente.
+\end{theorem*}
+Para uma prova, veja \cite{wiener1931}.
+
+A fatoração de Wiener-Hopf é aplicada na resolução de problemas em física matemática e engenharia, onde a estrutura de convolução é predominante.
+
+Os resultados apresentados neste capítulo destacam a profundidade e a riqueza da teoria de matrizes de Toeplitz. Como dito esses objetos possuem uma ampla gama de aplicações em diversas áreas, e são de extrema importância para a análise assintótica de diversas quantidades.

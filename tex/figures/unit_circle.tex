@@ -27,15 +27,15 @@
             \ifnum\i<4
               \draw[dashed]
               (P\prev) arc[start angle=\startAngle, end angle=\endAngle, radius=5]
-              node[midway, above left] {\(\sqrt{2}\)}; % Label at midpoint of each edge
+              node[midway, above right] {\(\sqrt{2}\)}; % Label at midpoint of each edge
             \else
               \ifnum\i>4
                 \draw[dashed]
-                (P\prev) arc[start angle=\startAngle, end angle=\endAngle, radius=5]; % Label at midpoint of each edge
+                (P\prev) arc[start angle=\startAngle, end angle=\endAngle, radius=5];
               \else
                 \draw[dashed]
                 (P\prev) arc[start angle=\startAngle, end angle=\endAngle, radius=5]
-                node[midway, left] {\(\sqrt{2}\)}; % Label at midpoint of each edge
+                node[midway, above] {\(\sqrt{2}\)}; % Label at midpoint of each edge
               \fi
             \fi
           \fi
@@ -59,6 +59,6 @@
 
     \end{tikzpicture}
     \captionsetup{justification=centering}
-    \caption{Sequência de pontos de $l^2(\mathbb{Z})$ na esfera unitária. A escala dos angulos que os pontos $s_n$ formam com o eixo $x$ é logarítimica em $n$.}
+    \caption{Sequência de pontos de $l^2(\mathbb{Z}_{> 0})$ na esfera unitária. A escala dos angulos que os pontos $s_n$ formam com o eixo $x$ é logarítimica em $n$.}
   \end{center}
 \end{figure}

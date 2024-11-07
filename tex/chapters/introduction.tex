@@ -1,0 +1,20 @@
+\section*{Introdução}
+\addcontentsline{toc}{section}{Introdução} % Adds "Introduction" to the ToC without a chapter number
+
+%
+
+\vspace{1cm}
+\normalsize
+É fato conhecido que toda função definida em um subconjunto discreto de $\mathbb{R}$ é contínua considerando a norma induzida. Desta forma, o conceito de continuidade não é muito útil ao analisar funções definidas em conjuntos discretos, motivando assim a introdução de um novo conceito, que chamaremos de funções $(\alpha,\lambda)$-limitadas. No âmbito da ciência da computação, onde as funções frequentemente operam em espaços discretos e finitos, como alocação de memória, compressão de dados e processamento de sinais digitais, a introdução das funções $(\alpha,\lambda)$-limitadas fornece outra ferramenta para formalizar e analisar a estabilidade e robustez de algoritmos e sistemas. Elas podem ser particularmente vantajosas em cenários onde variações leves de entrada devido a fatores como ruído, erros de compressão de dados ou pequenas perturbações nos processos computacionais não devem afetar desproporcionalmente as saídas.
+
+No primeiro capítulo, introduzimos essa nova definição, mostramos alguns exemplos e provamos resultados simples que mostram o contraste entre funções $(\alpha,\lambda)$-limitadas e funções contínuas.
+
+No segundo capítulo abordamos a teoria de matrizes de Toeplitz, apresentado alguns resultados relevantes.
+
+Por fim, no terceiro capítulo, estendemos um resultado de \cite{coulson} ao encontrar a caracterização assintótica da quantidade de funções $(k,1)$-limitadas em $[n]$:
+
+\begin{theorem*} Seja $k \ge 0$ um inteiro fixo, e seja $a(n, k)$ a quantidade de funções $k$-limitadas de $[n]\to[n]$. Então, $a(n,k) \sim n(2k+1)^{n-1}$. \end{theorem*}
+
+Este resultado é provado usando propriedades de matrizes de Toeplitz e uma cota bem conhecida da teoria dos grafos.
+
+Desejamos com este trabalho mostrar como uma combinação de matrizes de Toeplitz e teoria dos grafos podem ser usadas para obter estimativas assintóticas precisas de certas quantidades.
