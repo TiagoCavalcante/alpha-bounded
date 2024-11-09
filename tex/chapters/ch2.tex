@@ -43,11 +43,11 @@ Em cada linha $i$, existem no máximo $2k + 1$ entradas não nulas, corresponden
 Portanto, sendo $I$ o conjunto dos índices das linhas de $M$ e $J$ o conjunto dos índices das colunas, temos \[ \| M \|_2 \le \| M \|_\infty = \sup_{i \in I} \sum_{j \in J} |m_{ij}| \leq (2k + 1) \cdot \max_{|i - j| \leq k} |m_{ij}| \]
 \end{proof}
 
-A matriz $ M_{n,k} $ definida em \ref{th:matrix-form-n-to-n} é um exemplo de matriz de Toeplitz de banda $ k $, onde os elementos $ m_{ij} $ são iguais a $ 1 $ se $ |i - j| \le k $ e $ 0 $ caso contrário. A norma espectral dessa matriz satisfaz $ \| M_{n,k} \|_2 = 2k + 1 $, conforme utilizado no \ref{th:asymptotic}.
+A matriz $ M_{n,k} $ definida em \ref{th:matrix-form-n-to-n} é um exemplo de matriz de Toeplitz de banda $ k $, em que os elementos $ m_{ij} $ são iguais a $ 1 $ se $ |i - j| \le k $ e $ 0 $ caso contrário. A norma espectral dessa matriz satisfaz $ \| M_{n,k} \|_2 = 2k + 1 $, conforme utilizado no \ref{th:asymptotic}.
 
-Desse modo esse teorema pode ser usado para generalizar o limite superior de \ref{th:matrix-form-n-to-n} em casos onde não conseguimos calcular diretamente a norma da matrix de Toeplitz relacionada ao sistema.
+Desse modo esse teorema pode ser usado para generalizar o limite superior de \ref{th:matrix-form-n-to-n} em casos em que não conseguimos calcular diretamente a norma da matrix de Toeplitz relacionada ao sistema.
 
-As matrizes circulantes são um caso especial de matrizes de Toeplitz, onde cada linha é uma rotação cíclica da linha anterior. Elas possuem propriedades espectrais que facilitam a análise, especialmente no contexto de autovalores e autovetores.
+As matrizes circulantes são um caso especial de matrizes de Toeplitz, em que cada linha é uma rotação cíclica da linha anterior. Elas possuem propriedades espectrais que facilitam a análise, especialmente no contexto de autovalores e autovetores.
 
 \begin{definition*}
   Uma matriz de Toeplitz $ C \in \mathbb{C}^{n \times n} $ é dita \textit{circulante} se cada linha subsequente é uma rotação cíclica da linha anterior. Ou seja,
