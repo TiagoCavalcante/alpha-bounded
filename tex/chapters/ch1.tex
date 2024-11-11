@@ -1,30 +1,54 @@
 \section{Definições}
 \vspace{1cm}
-A definição de $(\alpha,\lambda)$-limitada é inicialmente apresentada como uma propriedade pontual, assim como a definição de continuidade: \begin{definition} Sejam $\alpha, \lambda \ge 0$, $(X, d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X} \subseteq X$. Uma função $f : \mathcal{X} \to Y$ é dita \textit{$(\alpha,\lambda)$-limitada no ponto $x \in \mathcal{X}$} quando, para todo $\tilde{x} \in \mathcal{X}$ tal que $d_X(x, \tilde{x}) \le \lambda$, temos $d_Y(f(x), f(\tilde{x})) \le \alpha$. \end{definition}
+A definição de $(\alpha,\lambda)$-limitada é inicialmente apresentada como uma propriedade pontual, assim como a definição de continuidade:
+\begin{definition}
+  Sejam $\alpha, \lambda \ge 0$, $(X, d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X} \subseteq X$. Uma função $f : \mathcal{X} \to Y$ é dita \textit{$(\alpha,\lambda)$-limitada no ponto $x \in \mathcal{X}$} quando, para todo $\tilde{x} \in \mathcal{X}$ tal que $d_X(x, \tilde{x}) \le \lambda$, temos $d_Y(f(x), f(\tilde{x})) \le \alpha$.
+\end{definition}
 
 \input{figures/alpha_bounded}
 \vspace{1cm}
 
-\begin{definition} Sejam $\alpha, \lambda \ge 0$, $(X, d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X} \subseteq X$. Uma função $f : \mathcal{X} \to Y$ é dita \textit{$(\alpha,\lambda)$-limitada} quando, para todo $x$ em $\mathcal{X}$, $f$ é $(\alpha,\lambda)$-limitada no ponto $x$. \end{definition}
+\begin{definition}
+  Sejam $\alpha, \lambda \ge 0$, $(X, d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X} \subseteq X$. Uma função $f : \mathcal{X} \to Y$ é dita \textit{$(\alpha,\lambda)$-limitada} quando, para todo $x$ em $\mathcal{X}$, $f$ é $(\alpha,\lambda)$-limitada no ponto $x$.
+\end{definition}
 
 Note que, para $\lambda = 1$, a definição acima estende naturalmente a condição de Hölder para a ordem $0$ e coeficiente $\alpha$ (veja \cite{holder}). Também é importante notar que muitos resultados de funções contínuas não se estendem para funções $(\alpha, \lambda)$-limitadas. Veja o exemplo \ref{vitali}.
 
 Ao alterar a métrica, podemos considerar $\lambda = 1$ na definição acima sem perda de generalidade, porque $(X, d_X)$ é um espaço métrico se, e somente se, $(X, \lambda d_X)$ é um espaço métrico para todo $\lambda > 0$. Se desejarmos ter $d_X(x, \tilde{x}) \le \lambda$ para algum $\lambda > 0$, então podemos considerar o espaço métrico $(X, \frac{1}{\lambda} d_X)$ ao invés de $(X, d_X)$. Como nosso principal interesse neste trabalho são as funções $(k,1)$-limitadas, usaremos $\alpha$-limitada para denotar $(\alpha,1)$-limitada.
 
-\begin{example} \label{vitali} Considere $V$ um conjunto de Vitali. A função $f : [0, 1] \to \mathbb{R}$, definida por $f(x) = 1_V$ se $x \in (0, 1)$ e $f(x) = 1 - x$ caso contrário, é $1$-limitada (considerando a métrica usual) mas não é contínua, não possui pontos fixos e não é Lebesgue integrável (veja \cite{vitali}). \end{example}
+\begin{example} \label{vitali}
+  Considere $V$ um conjunto de Vitali. A função $f : [0, 1] \to \mathbb{R}$, definida por $f(x) = 1_V$ se $x \in (0, 1)$ e $f(x) = 1 - x$ caso contrário, é $1$-limitada (considerando a métrica usual) mas não é contínua, não possui pontos fixos e não é Lebesgue integrável (veja \cite{vitali}).
+\end{example}
 
 Toda função $f : X \to \mathbb{R}$ definida em um subconjunto discreto de $\mathbb{R}$ é contínua considerando a métrica induzida por $\mathbb{R}$, mas pode não ser $\alpha$-limitada para qualquer $\alpha > 0$. Veja a seguir.
 
-\begin{example} \label{two_to_n} $f : \mathbb{Z} \to \mathbb{Z}$ dada por $n \mapsto 2^n$ não é $\alpha$-limitada (considerando a métrica usual) para nenhum $\alpha > 0$, pois $f(n + 1) - f(n) = 2^{n}$ é ilimitada. \end{example}
+\begin{example} \label{two_to_n}
+  $f : \mathbb{Z} \to \mathbb{Z}$ dada por $n \mapsto 2^n$ não é $\alpha$-limitada (considerando a métrica usual) para nenhum $\alpha > 0$, pois $f(n + 1) - f(n) = 2^{n}$ é ilimitada.
+\end{example}
 
 Abaixo estão alguns resultados imediatos da definição de $\alpha$-limitado.
 
-\begin{theorem} Toda função $\alpha$-limitada é $(\alpha+\epsilon)$-limitada para todo $\epsilon > 0$. \end{theorem} \begin{proof} Evidente. \end{proof}
+\begin{theorem}
+  Toda função $\alpha$-limitada é $(\alpha+\epsilon)$-limitada para todo $\epsilon > 0$.
+\end{theorem}
+\begin{proof}
+  Evidente.
+\end{proof}
 
-\begin{theorem} Sejam $(X, d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X} \subseteq X$. Toda função Lipschitz contínua, com constante $K$, $f : \mathcal{X} \to Y$ é $K$-limitada. \end{theorem} \begin{proof} Para todo $x_1 \in \mathcal{X}$, $x_2 \in \mathcal{X}, d_X(x_1, x_2) \le 1$ e consequentemente $d_Y(f(x_1), f(x_2)) \le K d_X(x_1, x_2) \le K$. \end{proof}
+\begin{theorem}
+  Sejam $(X, d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X} \subseteq X$. Toda função Lipschitz contínua, com constante $K$, $f : \mathcal{X} \to Y$ é $K$-limitada.
+\end{theorem}
+\begin{proof}
+  Para todo $x_1 \in \mathcal{X}$, $x_2 \in \mathcal{X}, d_X(x_1, x_2) \le 1$ e consequentemente $d_Y(f(x_1), f(x_2)) \le K d_X(x_1, x_2) \le K$.
+\end{proof}
 Note que nem todas as funções $\alpha$-Hölder contínuas são $\beta$-limitadas para algum $\beta > 0$. A função $\sqrt{\cdot} : \mathbb{R}^+ \to \mathbb{R}$ constitui um contraexemplo (considerando a métrica usual) pelo mesmo motivo mencionado no exemplo \ref{two_to_n}.
 
-\begin{theorem} Sejam $(X, d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X} \subseteq X$, e $f : \mathcal{X} \to Y$ uma função. Se para todo $\epsilon > 0$ existe um $\alpha \in (0, \epsilon]$ tal que $f$ é $\alpha$-limitada, então $f$ é contínua. \end{theorem} \begin{proof} Com efeito, para cada $x \in \mathcal{X}, \epsilon > 0$, existe algum $\alpha \in (0, \epsilon]$ tal que $\tilde{x} \in \mathcal{X}, d_X(x, \tilde{x}) \le 1 \implies d_Y(f(x), f(\tilde{x})) \le \alpha \le \epsilon$. \end{proof}
+\begin{theorem}
+  Sejam $(X, d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X} \subseteq X$, e $f : \mathcal{X} \to Y$ uma função. Se para todo $\epsilon > 0$ existe um $\alpha \in (0, \epsilon]$ tal que $f$ é $\alpha$-limitada, então $f$ é contínua.
+\end{theorem}
+\begin{proof}
+  Com efeito, para cada $x \in \mathcal{X}, \epsilon > 0$, existe algum $\alpha \in (0, \epsilon]$ tal que $\tilde{x} \in \mathcal{X}, d_X(x, \tilde{x}) \le 1 \implies d_Y(f(x), f(\tilde{x})) \le \alpha \le \epsilon$.
+\end{proof}
 
 \begin{theorem}
   Sejam $(X, d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X} \subseteq X$. Se $(f_n) \to f$ ponto a ponto, $f_n : \mathcal{X} \to Y$ são $\alpha$-limitadas para todo $n \in \mathbb{Z}_{> 0}$, então $f$ é $\alpha$-limitada.
@@ -35,7 +59,9 @@ Note que nem todas as funções $\alpha$-Hölder contínuas são $\beta$-limitad
 
 As funções $\alpha$-limitadas podem não ser o limite pontual de qualquer sequência de funções contínuas.
 
-\begin{example} A função de Dirichlet $1_\mathbb{Q} : [0, 1] \to \mathbb{R}$, também como função indicadora dos racionais, é $1$-limitada considerando a métrica usual de $\mathbb{R} \supset [0, 1]$, mas não é o limite pontual de nenhuma sequência de funções contínuas, pois é uma função da classe 2 de Baire (veja \cite{baire}). \end{example}
+\begin{example}
+  A função de Dirichlet $1_\mathbb{Q} : [0, 1] \to \mathbb{R}$, também como função indicadora dos racionais, é $1$-limitada considerando a métrica usual de $\mathbb{R} \supset [0, 1]$, mas não é o limite pontual de nenhuma sequência de funções contínuas, pois é uma função da classe 2 de Baire (veja \cite{baire}).
+\end{example}
 
 A aritmética com funções $\alpha$-limitadas não é a mesma que com funções contínuas definidas em $\mathbb{R}$.
 
@@ -50,19 +76,27 @@ O teorema acima permite considerar espaços vetoriais de mapas entre dois espaç
 
 O produto de duas funções $\alpha$-limitadas (com o mesmo domínio e contradomínio) pode não ser $\beta$-limitado para nenhum $\beta > 0$, assim como o recíproco de uma função $\alpha$-limitada (quando definido).
 
-\begin{example} $f : \mathbb{Z}_{> 0} \to \mathbb{Z}_{> 0}$ dada por $f(n) = n$ é $1$-limitada (considerando a métrica usual), mas $f^2$ coincide com $g : \mathbb{R} \to \mathbb{R}$, $g(x) = x^2$, portanto não é $\alpha$-limitada para nenhum $\alpha > 0$. \end{example}
+\begin{example}
+  $f : \mathbb{Z}_{> 0} \to \mathbb{Z}_{> 0}$ dada por $f(n) = n$ é $1$-limitada (considerando a métrica usual), mas $f^2$ coincide com $g : \mathbb{R} \to \mathbb{R}$, $g(x) = x^2$, portanto não é $\alpha$-limitada para nenhum $\alpha > 0$.
+\end{example}
 
-\begin{example} $f : [1, +\infty) \to \mathbb{R}$ dada por $f(x) = \frac{1}{x^2}$ é $1$-limitada, mas $\frac{1}{f}$ coincide com $g : \mathbb{R} \to \mathbb{R}$, $g(x) = x^2$, portanto não é $\alpha$-limitada para nenhum $\alpha > 0$. \end{example}
+\begin{example}
+  $f : [1, +\infty) \to \mathbb{R}$ dada por $f(x) = \frac{1}{x^2}$ é $1$-limitada, mas $\frac{1}{f}$ coincide com $g : \mathbb{R} \to \mathbb{R}$, $g(x) = x^2$, portanto não é $\alpha$-limitada para nenhum $\alpha > 0$.
+\end{example}
 
 O teorema de extensão para funções $\alpha$-limitadas não é muito forte.
 
 Os exemplos abaixo ilustram por que as condições do teorema são necessárias.
 
-\begin{example} Seja $X \coloneqq \{(x, \pm 1) \mid x \in \mathbb{Z}\} \subset \mathbb{Z}^2$. Considere $f : X \to \mathbb{Z}$ dada por $f(x, 1) = x$ e $f(x, -1) = 0$ para qualquer $x \in \mathbb{Z}$. Claramente, $f$ é $1$-limitada, considerando a métrica usual, mas $f$ não tem nenhuma extensão $\alpha$-limitada, para qualquer $\alpha > 0$, ao conjunto $\{(x, y) \mid x \in \mathbb{Z}, y \in \{-1,0,1\}\}$, pois $\overline{B}_1((x, 0)) \supset \{ (x, 1), (x, -1) \}$ e $f(x, 1) = x$, $f(x, -1) = 0$. \end{example}
+\begin{example}
+  Seja $X \coloneqq \{(x, \pm 1) \mid x \in \mathbb{Z}\} \subset \mathbb{Z}^2$. Considere $f : X \to \mathbb{Z}$ dada por $f(x, 1) = x$ e $f(x, -1) = 0$ para qualquer $x \in \mathbb{Z}$. Claramente, $f$ é $1$-limitada, considerando a métrica usual, mas $f$ não tem nenhuma extensão $\alpha$-limitada, para qualquer $\alpha > 0$, ao conjunto $\{(x, y) \mid x \in \mathbb{Z}, y \in \{-1,0,1\}\}$, pois $\overline{B}_1((x, 0)) \supset \{ (x, 1), (x, -1) \}$ e $f(x, 1) = x$, $f(x, -1) = 0$.
+\end{example}
 
 \input{figures/one_bounded.tex}
 
-\begin{example} Seja $s_n \in l^2(\mathbb{Z}_{> 0})$ a sequência com um $1$ na posição $n$-ésima e $0$'s nas outras posições, e $X = \{ s_n \mid n \in \mathbb{Z}_{> 0} \}$. $f : X \to \mathbb{Z}$ dada por $f(s_n) = n$ é $1$-limitada considerando a norma euclideana $l^2$, mas não tem nenhuma extensão $\alpha$-limitada ao conjunto $X \cup \{(0, 0, 0, \dots)\}$ para qualquer $\alpha \ge 0$. \end{example}
+\begin{example}
+  Seja $s_n \in l^2(\mathbb{Z}_{> 0})$ a sequência com um $1$ na posição $n$-ésima e $0$'s nas outras posições, e $X = \{ s_n \mid n \in \mathbb{Z}_{> 0} \}$. $f : X \to \mathbb{Z}$ dada por $f(s_n) = n$ é $1$-limitada considerando a norma euclideana $l^2$, mas não tem nenhuma extensão $\alpha$-limitada ao conjunto $X \cup \{(0, 0, 0, \dots)\}$ para qualquer $\alpha \ge 0$.
+\end{example}
 
 \input{figures/unit_circle.tex}
 
@@ -70,7 +104,8 @@ Os exemplos abaixo ilustram por que as condições do teorema são necessárias.
   Sejam $(X,d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X}, \tilde{\mathcal{X}} \subset X$, onde $\tilde{\mathcal{X}}$ é finito, e seja $f : \mathcal{X} \to Y$ uma função $(\alpha,\lambda)$-limitada. Existe $\beta \ge 0$ tal que $f$ tem uma extensão $(\beta,\lambda)$-limitada para $\mathcal{X} \cup \tilde{\mathcal{X}}$ se e somente se $f$ é limitada em $\overline{B}_{\lambda}(\tilde{x}) \cap \mathcal{X}$ para cada $\tilde{x} \in \tilde{\mathcal{X}}$.
 \end{theorem}
 
-\begin{proof} A necessidade dessa condição é evidente. Vamos então provar que ela é suficiente.
+\begin{proof}
+  A necessidade dessa condição é evidente. Vamos então provar que ela é suficiente.
 
   Podemos supor que $\tilde{\mathcal{X}} \cap \mathcal{X} = \varnothing$, já que obviamente $f$ é limitada em $\overline{B}_{\lambda}(x)$ para cada $x \in \mathcal{X}$.
 
@@ -83,12 +118,17 @@ Os exemplos abaixo ilustram por que as condições do teorema são necessárias.
 
 Este corolário e os exemplos subsequentes ilustram algumas propriedades interessantes das funções $\alpha$-limitadas, especialmente como elas podem ser estendidas de um conjunto compacto para incluir finitos pontos adicionais.
 
-\begin{corollary} Toda função $\alpha$-limitada definida em um conjunto compacto $\mathcal{X}$ possui uma extensão $\beta$-limitada para qualquer conjunto $\tilde{\mathcal{X}} \supseteq \mathcal{X}$ tal que $\tilde{\mathcal{X}} \setminus \mathcal{X}$ é finito. \end{corollary}
-
-\begin{proof} Como $\mathcal{X}$ é compacto, o conjunto $\{ \overline{B}_1(x) \mid x \in \mathcal{X} \} \supseteq \mathcal{X}$ possui uma subcobertura finita, que naturalmente também cobre $\overline{B}_1(x) \cap \mathcal{X} \subset \mathcal{X}$ para todos os $x \in \tilde{\mathcal{X}} \setminus \mathcal{X}$. Assim pode-se tomar $\beta$ como o maior valor entre $\alpha$ e a variação máxima da extenção em cada um dos pontos adicionados. \end{proof}
+\begin{corollary}
+  Toda função $\alpha$-limitada definida em um conjunto compacto $\mathcal{X}$ possui uma extensão $\beta$-limitada para qualquer conjunto $\tilde{\mathcal{X}} \supseteq \mathcal{X}$ tal que $\tilde{\mathcal{X}} \setminus \mathcal{X}$ é finito.
+\end{corollary}
+\begin{proof}
+  Como $\mathcal{X}$ é compacto, o conjunto $\{ \overline{B}_1(x) \mid x \in \mathcal{X} \} \supseteq \mathcal{X}$ possui uma subcobertura finita, que naturalmente também cobre $\overline{B}_1(x) \cap \mathcal{X} \subset \mathcal{X}$ para todos os $x \in \tilde{\mathcal{X}} \setminus \mathcal{X}$. Assim pode-se tomar $\beta$ como o maior valor entre $\alpha$ e a variação máxima da extenção em cada um dos pontos adicionados.
+\end{proof}
 
 Note que podemos ter $\beta < \alpha$ no teorema acima, já que $\alpha$ não precisa ser mínimo e $\tilde{\mathcal{X}} \setminus \mathcal{X}$ pode, por exemplo, ser vazio. Também não podemos assumir que $\beta = \alpha$ no teorema acima.
 
-\begin{example} Seja $X \coloneqq \{-1, 1\} \subset \mathbb{Z}$. A função $f : X \to \mathbb{Z}$ dada por $f(x) = 2x$ é $1$-limitada (considerando a métrica usual), mas não existe uma extensão $1$-limitada de $f$ para o conjunto $\{-1, 0, 1\}$. \end{example}
+\begin{example}
+  Seja $X \coloneqq \{-1, 1\} \subset \mathbb{Z}$. A função $f : X \to \mathbb{Z}$ dada por $f(x) = 2x$ é $1$-limitada (considerando a métrica usual), mas não existe uma extensão $1$-limitada de $f$ para o conjunto $\{-1, 0, 1\}$.
+\end{example}
 
 O que foi apresentado neste capítulo mostra as propriedades básicas das funções $(\alpha,\lambda)$-limitadas e como elas se comportam em comparação com funções contínuas em espaços métricos. Os teoremas e exemplos ilustram as características fundamentais dessas funções, e fornecem uma base para o estudo aprofundado das funções $(\alpha,\lambda)$-limitadas em contextos mais específicos, como o explorado no terceiro capítulo.

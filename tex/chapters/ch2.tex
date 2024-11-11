@@ -21,8 +21,14 @@ O \textit{símbolo} de uma matriz de Toeplitz é a função $a \in L^\infty(\mat
 
 Vamos agora apresentar a definição de uma álgebra $C^\ast$, que generalizam a álgebra de operadores limitados em um espaço de Hilbert. A teoria das álgebras $C^\ast$ é utilizada na prova de diversos resultados não apenas acerca de matrizes de Toeplitz, mas em toda a teoria dos operadores.
 
-\begin{definition*} Uma \textit{álgebra $C^\ast$} é uma álgebra de Banach complexa $\mathcal{A}$ munida de uma operação $^\ast : \mathcal{A} \to \mathcal{A}$, chamada de involução, tal que, para todos $a, b \in \mathcal{A}$ e $\lambda \in \mathbb{C}$, as seguintes propriedades são satisfeitas:
-  \begin{enumerate} \item $(a + b)^\ast = a^\ast + b^\ast$; \item $(\lambda a)^\ast = \overline{\lambda} a^\ast$; \item $(ab)^\ast = b^\ast a^\ast$; \item $(a^\ast)^\ast = a$; \item $|a^\ast a| = |a|^2$.
+\begin{definition*}
+  Uma \textit{álgebra $C^\ast$} é uma álgebra de Banach complexa $\mathcal{A}$ munida de uma operação $^\ast : \mathcal{A} \to \mathcal{A}$, chamada de involução, tal que, para todos $a, b \in \mathcal{A}$ e $\lambda \in \mathbb{C}$, as seguintes propriedades são satisfeitas:
+  \begin{enumerate}
+    \item $(a + b)^\ast = a^\ast + b^\ast$;
+    \item $(\lambda a)^\ast = \overline{\lambda} a^\ast$;
+    \item $(ab)^\ast = b^\ast a^\ast$;
+    \item $(a^\ast)^\ast = a$;
+    \item $|a^\ast a| = |a|^2$.
   \end{enumerate}
 \end{definition*}
 
@@ -34,13 +40,15 @@ Vamos agora a mais um tipo de matriz de Toeplitz. As matrizes de banda surgem na
   Uma matriz de Toeplitz $ M $ com entradas complexas é dita \textit{de banda $ k $} se $ m_{ij} = 0 $ para todos $ i \in I$ e $j \in J $, sendo $I$ o conjunto dos índices das linhas de $M$ e $J$ o conjunto dos índices das colunas, tais que $ |i - j| > k $.
 \end{definition*}
 
-\begin{theorem*}[Norma de matrizes de Toeplitz de banda] Seja \( M \) uma matriz de Toeplitz possivelmente infinita com entradas complexas e banda \( k \). Então, a norma espectral de \( M \), denotada por \( \| M \|_2 \), satisfaz \[ \| M \|_2 \leq (2k + 1) \cdot \max_{|i - j| \leq k} |m_{ij}|. \] \end{theorem*}
+\begin{theorem*}[Norma de matrizes de Toeplitz de banda]
+  Seja \( M \) uma matriz de Toeplitz possivelmente infinita com entradas complexas e banda \( k \). Então, a norma espectral de \( M \), denotada por \( \| M \|_2 \), satisfaz \[ \| M \|_2 \leq (2k + 1) \cdot \max_{|i - j| \leq k} |m_{ij}|. \]
+\end{theorem*}
 \begin{proof}
-É fato conhecido que para qualquer matriz $M$ temos $\| M \|_2 \leq \| M \|_\infty$.
+  É fato conhecido que para qualquer matriz $M$ temos $\| M \|_2 \leq \| M \|_\infty$.
 
-Em cada linha $i$, existem no máximo $2k + 1$ entradas não nulas, correspondentes aos índices $j$ tais que $\lvert i - j \rvert \leq k$.
+  Em cada linha $i$, existem no máximo $2k + 1$ entradas não nulas, correspondentes aos índices $j$ tais que $\lvert i - j \rvert \leq k$.
 
-Portanto, sendo $I$ o conjunto dos índices das linhas de $M$ e $J$ o conjunto dos índices das colunas, temos \[ \| M \|_2 \le \| M \|_\infty = \sup_{i \in I} \sum_{j \in J} |m_{ij}| \leq (2k + 1) \cdot \max_{|i - j| \leq k} |m_{ij}| \]
+  Portanto, sendo $I$ o conjunto dos índices das linhas de $M$ e $J$ o conjunto dos índices das colunas, temos \[ \| M \|_2 \le \| M \|_\infty = \sup_{i \in I} \sum_{j \in J} |m_{ij}| \leq (2k + 1) \cdot \max_{|i - j| \leq k} |m_{ij}| \]
 \end{proof}
 
 A matriz $ M_{n,k} $ definida em \ref{th:matrix-form-n-to-n} é um exemplo de matriz de Toeplitz de banda $ k $, em que os elementos $ m_{ij} $ são iguais a $ 1 $ se $ |i - j| \le k $ e $ 0 $ caso contrário. A norma espectral dessa matriz satisfaz $ \| M_{n,k} \|_2 = 2k + 1 $, conforme utilizado no \ref{th:asymptotic}.
