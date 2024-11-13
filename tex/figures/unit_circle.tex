@@ -15,7 +15,6 @@
           \pgfmathsetmacro{\angle}{\startOffset + (360 / \k) * ln(\i + 1)}
           \pgfmathsetmacro{\angleout}{\startOffset + (360 / \k) * ln(\i)}
 
-
           % Coordinates of the surrounding point at radius 2
           \path (\angle:5) coordinate (P\i);
           \draw[dashed] (0, 0) -- (P\i);

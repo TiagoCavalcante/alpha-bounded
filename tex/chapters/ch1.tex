@@ -122,7 +122,9 @@ Este corolário e os exemplos subsequentes ilustram algumas propriedades interes
   Toda função $\alpha$-limitada definida em um conjunto compacto $\mathcal{X}$ possui uma extensão $\beta$-limitada para qualquer conjunto $\tilde{\mathcal{X}} \supseteq \mathcal{X}$ tal que $\tilde{\mathcal{X}} \setminus \mathcal{X}$ é finito.
 \end{corollary}
 \begin{proof}
-  Como $\mathcal{X}$ é compacto, o conjunto $\{ \overline{B}_1(x) \mid x \in \mathcal{X} \} \supseteq \mathcal{X}$ possui uma subcobertura finita, que naturalmente também cobre $\overline{B}_1(x) \cap \mathcal{X} \subset \mathcal{X}$ para todos os $x \in \tilde{\mathcal{X}} \setminus \mathcal{X}$. Assim pode-se tomar $\beta$ como o maior valor entre $\alpha$ e a variação máxima da extenção em cada um dos pontos adicionados.
+  Como $\mathcal{X}$ é compacto, a cobertura $\{ B_1(x) \mid x \in \mathcal{X} \} \supseteq \mathcal{X}$ possui uma subcobertura finita $\{ B_1(x_1), \dots, B_1(x_n)\}$.
+
+  Logo $f$ é limitada por $\max\{\lvert f(x_1) \rvert + \alpha, \dots, \lvert f(x_n) \rvert + \alpha\}$, e podemos aplicar o teorema \ref{tietze}.
 \end{proof}
 
 Note que podemos ter $\beta < \alpha$ no teorema acima, já que $\alpha$ não precisa ser mínimo e $\tilde{\mathcal{X}} \setminus \mathcal{X}$ pode, por exemplo, ser vazio. Também não podemos assumir que $\beta = \alpha$ no teorema acima.
