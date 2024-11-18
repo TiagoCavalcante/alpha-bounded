@@ -1,0 +1,173 @@
+\section*{Apêndice}
+\addcontentsline{toc}{section}{Apêndice}
+\vspace{1cm}
+
+Neste apêndice, apresentamos alguns resultados adicionais sobre matrizes de Toeplitz que complementam o desenvolvimento teórico do trabalho. Embora não tenham sido utilizados diretamente nas provas apresentadas, esses resultados enriquecem a compreensão das propriedades dessas matrizes e podem ser úteis para estudos futuros relacionados.
+
+Primeiramente, vamos dar a definição de alguns espaços muito importantes no estudo das matrizes de Toeplitz.
+
+\begin{definition*}
+  Um \textit{espaço de Hilbert} é um espaço vetorial completo e normado sobre o corpo dos números complexos $\mathbb{C}$ ou reais $\mathbb{R}$, dotado de um produto interno $\langle \cdot , \cdot \rangle$ que satisfaz as seguintes propriedades para todos os vetores $x, y, z$ e escalar $\alpha$:
+  \begin{enumerate}
+    \item $\langle x, x \rangle \geq 0$, e $\langle x, x \rangle = 0$ se e somente se $x = 0$ (positividade definida).
+    \item $\langle x, y \rangle = \overline{\langle y, x \rangle}$ (conjugado simétrico).
+    \item $\langle \alpha x + y, z \rangle = \alpha \langle x, z \rangle + \langle y, z \rangle$ (linearidade no primeiro argumento).
+  \end{enumerate}
+\end{definition*}
+
+A norma $\|x\|$ no espaço de Hilbert é definida a partir do produto interno por $\|x\| = \sqrt{\langle x, x \rangle}$. A completude implica que toda sequência de Cauchy no espaço de Hilbert converge para um limite dentro do próprio espaço.
+
+\begin{definition*}
+  Para $p \geq 1$, o \textit{espaço de Hardy} $H^p(\mathbb{T})$ é definido como o subespaço de $L^p(\mathbb{T})$ composto por todas as funções $f \in L^p(\mathbb{T})$ cujas séries de Fourier possuem somente coeficientes não negativos. Mais formalmente,
+  \[
+    H^p(\mathbb{T}) = \left\{ f \in L^p(\mathbb{T}) \; \bigg| \; \hat{f}(n) = 0 \text{ para todo } n < 0 \right\},
+  \]
+  onde $\hat{f}(n)$ denota o n-ésimo coeficiente de Fourier de $f$.
+\end{definition*}
+
+Os espaços de Hardy são espaços de Hilbert quando $p = 2$ e desempenham um papel fundamental na análise complexa, teoria de operadores e teoria de sinais. Eles consistem em funções analíticas na circunferência unitária cuja norma $L^p$ é finita.
+
+Vamos agora apresentar a definição de uma álgebra $C^\ast$, que generalizam a álgebra de operadores limitados em um espaço de Hilbert. A teoria das álgebras $C^\ast$ é utilizada na prova de diversos resultados não apenas acerca de matrizes de Toeplitz, mas em toda a teoria dos operadores.
+
+\begin{definition*}
+  Uma \textit{álgebra de Banach} é uma álgebra $\mathcal{A}$ sobre o corpo dos números complexos $\mathbb{C}$ ou reais $\mathbb{R}$ que satisfaz as seguintes condições:
+
+  \begin{enumerate}
+    \item $\mathcal{A}$ é um espaço vetorial completo com a norma $\|\cdot\|$.
+    \item $\mathcal{A}$ é uma álgebra, ou seja, possui uma operação de multiplicação bilinear $(a, b) \mapsto ab$ para todos $a, b \in \mathcal{A}$.
+    \item Para todos $a, b \in \mathcal{A}$,
+    \[ \|ab\| \leq \|a\| \|b\|. \]
+  \end{enumerate}
+\end{definition*}
+
+\begin{definition*} Uma \textit{álgebra $C^\ast$} é uma álgebra de Banach complexa $\mathcal{A}$ munida de uma operação $^\ast : \mathcal{A} \to \mathcal{A}$, chamada de involução, tal que, para todos $a, b \in \mathcal{A}$ e $\lambda \in \mathbb{C}$, as seguintes propriedades são satisfeitas:
+  \begin{enumerate} \item $(a + b)^\ast = a^\ast + b^\ast$; \item $(\lambda a)^\ast = \overline{\lambda} a^\ast$; \item $(ab)^\ast = b^\ast a^\ast$; \item $(a^\ast)^\ast = a$; \item $|a^\ast a| = |a|^2$.
+  \end{enumerate}
+\end{definition*}
+
+Vamos agora a um tipo específico de matriz.
+
+As matrizes circulantes são um caso especial de matrizes de Toeplitz, onde cada linha é uma rotação cíclica da linha anterior. Elas possuem propriedades espectrais que facilitam a análise, especialmente no contexto de autovalores e autovetores.
+
+\begin{definition*}
+  Uma matriz de Toeplitz $ C \in \mathbb{C}^{n \times n} $ é dita \textit{circulante} se cada linha subsequente é uma rotação cíclica da linha anterior. Ou seja,
+  \[
+    C = \begin{pmatrix}
+      c_0     & c_{n-1} & \cdots  & c_2    & c_1     \\
+      c_1     & c_0     & c_{n-1} & \cdots & c_2     \\
+      \vdots  & c_1     & c_0     & \ddots & \vdots  \\
+      c_{n-2} & \vdots  & \ddots  & \ddots & c_{n-1} \\
+      c_{n-1} & c_{n-2} & \cdots  & c_1    & c_0     \\
+    \end{pmatrix}.
+  \]
+\end{definition*}
+
+\begin{theorem*}[Diagonalização de matrizes circulantes]
+  Toda matriz circulante $ C \in \mathbb{C}^{n \times n} $ pode ser diagonalizada pela matriz de Fourier $ F_n $ cujas entradas são dadas por
+  \[
+    (F_n)_{jk} = \frac{1}{\sqrt{n}} \omega_n^{jk},
+  \]
+  onde $ \omega_n = e^{2\pi i / n} $.
+
+  Ou seja,
+  \[
+    C = F_n \Lambda F_n^{-1},
+  \]
+  onde $ \Lambda $ é uma matriz diagonal cujos elementos são os valores de Fourier do vetor de primeira linha de $ C $.
+
+  Em particular, os autovalores de $ C $ são dados por
+  \[
+    \lambda_m = \sum_{j=0}^{n-1} c_j \omega_n^{jm}, \quad m = 0, 1, \dots, n-1,
+  \]
+  onde $ \omega_n = e^{2\pi i / n} $ é a raiz $ n $-ésima da unidade.
+\end{theorem*}
+\begin{proof}
+    Primeiramente, é fácil ver que $F_n$ é unitária, isto é, o produto $F_n F_n^*$ de $F_n$ pela sua adjunda é igual a matriz identidade.
+
+    Seja $P$ a matriz de permutação cíclica \[\begin{pmatrix}
+        0 & 0 & \dots & 0 & 1 \\
+        1 & 0 & \dots & 0 & 0 \\
+        0 & 1 & \dots & 0 & 0 \\
+        \vdots & \ddots & \ddots & \ddots & \vdots \\
+        0 & 0 & \dots & 1 & 0
+    \end{pmatrix}\] e seja $D = \diag(1, \omega_n, \omega_n^2, \dots, \omega_n^{n-1})$ a matriz com entradas $1$, $\omega_n$, \dots, $\omega_n^{n-1}$ na diagonal principal e zeros nas outras posições.
+
+    Sendo $(c_0, c_1, \dots, c_{n-1})$ a primeira linha de $C$, é fácil verificar que $C = c_0 I + c_1 P + c_2 P^2 + \cdots c_{n-1} P^{n-1}$, onde $I$ é a matriz identidade $n \times n$.
+
+    Como $\omega_n^n = 1$, temos \[ P (F_n)_k = \frac{1}{\sqrt{n}} \begin{pmatrix}
+        \omega_n^{(n-1) \cdot k} \\
+        \omega_n^{0 \cdot k} \\
+        \omega_n^{1 \cdot k} \\
+        \vdots \\
+        \omega_n^{(n - 2) \cdot k}
+    \end{pmatrix} = \omega_n^{-k} \frac{1}{\sqrt{n}} \begin{pmatrix}
+        \omega_n^{0 \cdot k} \\
+        \omega_n^{1 \cdot k} \\
+        \omega_n^{2 \cdot k} \\
+        \vdots \\
+        \omega_n^{(n - 1) \cdot k}
+    \end{pmatrix} = \omega_n^{-k} (F_n)_k \] onde $(F_n)_k$ é a $k$-ésima coluna de $F_n$.
+
+    Portanto $P F_n = F_n D$, e consequentemente $P^kF_n = F_nD^k$.
+
+    Mas também temos que \begin{align*}
+        C F_n &= \left( c_0 I_n + c_1 P + c_2 P^2 + \dots + c_{n-1} P^{n-1} \right) F_n \\
+        &= c_0 F_n + c_1 P F_n + c_2 P^2 F_n + \dots + c_{n-1} P^{n-1} F_n \\
+        &= F_n \left( c_0 I_n + c_1 D + c_2 D^2 + \dots + c_{n-1} D^{n-1} \right)
+    \end{align*}
+
+    Assim, $C F_n = F_n \Lambda$ onde \[\Lambda = c_0 I_n + c_1 D + c_2 D^2 + \dots + c_{n-1} D^{n-1}.\]
+    
+    Multiplicando à esquerda por $F_n^*$ e usando que $F_n F_n^* = I$ temos que $F_n^* C F_n = \Lambda$, completando a prova.
+\end{proof}
+
+As propriedades espectrais simplificadas das matrizes circulantes tornam-nas úteis para entender comportamentos assintóticos em contextos como o do terceiro capítulo.
+
+Mostramos agora um resultado importante sobre a inversa de uma matriz de Toeplitz, que é claro, é de grande utilidade na solução de sistemas lineares que podem ser representados por matrizes de Toeplitz.
+
+A fórmula de Gohberg-Semencul fornece uma representação explícita para a inversa de uma matriz de Toeplitz invertível, permitindo calcular inversas aproximadas de matrizes de Toeplitz de grandes dimensões.
+\begin{theorem*}[Fórmula de Gohberg-Semencul]
+  Seja $ T_n(a)$ uma matriz de Toeplitz $ n \times n$ gerada por um símbolo $ a \in L^\infty(\mathbb{T})$, tal que $ T_n(a)$ é invertível. Então, a inversa de $ T_n(a)$ pode ser expressa como
+  \[
+    T_n(a)^{-1} = X_n - U_n V_n^T,
+  \]
+  onde $ X_n$ é uma matriz de Toeplitz gerada pelo símbolo $1 / a$, e $ U_n$, $ V_n$ são vetores apropriados em $ \mathbb{C}^n$.
+\end{theorem*}
+Para uma prova, veja \cite{gohberg1972}.
+Essa fórmula é particularmente útil em problemas de processamento de sinais e resolução de sistemas lineares com estruturas especiais.
+
+Um resultado importante provado por Szegö em \cite{szego1915} e futuramente melhorado por ele e diversos outros matemáticos é o seguinte:
+\begin{theorem*}[Teorema do limite de Szegő]
+  Seja $A$ a matriz de Toeplitz correspondente à função real $a \in L^1(\mathbb{T})$, e $A_n$ sua seção finita $n \times n$. Se $\log a \in L^1(\mathbb{T})$ e $a(x) > 0$ para todo $x \in \mathbb{T}$, então \[\lim_{n\to \infty} \frac{\det A_n}{\det A_{n-1}} = \exp\left(\frac{1}{2\pi} \int_{0}^{2\pi} \log a\left(e^{i\theta}\right) \right)\text{.}\]
+\end{theorem*}
+
+Esse teorema e principalmente suas versões mais fortes tem aplicações na caracterização assintótica do espectro das matrizes $A_n$.
+
+Como mencionado, sob certas condições as matrizes de Toeplitz definem um operador limitado em $l^2(\mathbb{Z}_{> 0})$. Evidentemente generalizações desse fato foram estudadas para espaços de Hilbert. Isso motiva a definição de operadores de Toeplitz.
+
+Um operador de Toeplitz é um operador linear contínuo definido em um espaço de Hilbert, frequentemente relacionado a funções analíticas no círculo unitário. A conexão entre matrizes de Toeplitz e operadores de Toeplitz é estabelecida através da identificação de matrizes finitas com operadores lineares em espaços de dimensão finita.
+\begin{definition*}
+  Seja $H^2(\mathbb{T})$ o espaço de Hardy de funções na circunferência unitária $\mathbb{T}$. Para uma função limitada $a \in L^\infty(\mathbb{T})$, o \textit{operador de Toeplitz} $T(a) : H^2(\mathbb{T}) \to H^2(\mathbb{T})$ é definido por $T(a)f=P(af)$, onde $P : L^2(\mathbb{T}) \to H^2(\mathbb{T})$ é o operador de projeção de Szegő, que projeta uma função em $L^2(\mathbb{T})$ sobre o subespaço de Hardy $H^2(\mathbb{T})$.
+\end{definition*}
+De modo similar a definição para matrizes de Toeplitz, o símbolo $a$ do operador de Toeplitz $T(a)$ é a função em $L^\infty(\mathbb{T})$ a partir da qual o operador é definido. Esse símbolo desempenha um papel crucial na determinação das propriedades do operador.
+
+Apresentamos agora um resultado importante sobre o espectro de operadores de Toeplitz. O teorema do mapeamento espectral relaciona o espectro de um operador com o espectro de sua imagem através de uma função contínua.
+\begin{theorem*}[Teorema do Espectro de Toeplitz]
+  Seja $T(a)$ um operador de Toeplitz com símbolo $a \in L^\infty(\mathbb{T})$. Então, o espectro de $T(a)$, denotado por $\sigma(T(a))$, satisfaz $\sigma(T(a))=a(T)$, onde $\overline{a(\mathbb{T})}$ é o fecho da imagem de $a$ em $\mathbb{C}$.
+\end{theorem*}
+
+Veja \cite[p. 85]{Douglas1998} para a prova de um teorema mais geral, do qual este é um corolário imediato. O teorema apresentado em \cite{Douglas1998} é formulado utilizando álgebras $C^\ast$, e sua prova é completamente baseada em suas propriedades.
+
+Esse resultado permite determinar o espectro de um operador de Toeplitz diretamente a partir de seu símbolo, facilitando a análise espectral desses operadores.
+
+Os operadores de Toeplitz possuem aplicações em problemas do valor de borda de funções analíticas e equações integrais singulares.
+
+Por fim, apresentados a fatoração de Wiener-Hopf, uma técnica que permite decompor uma função em fatores que são analíticos dentro e fora do círculo unitário, o que é essencial na solução de certas equações integrais e na teoria de operadores de Toeplitz.
+\begin{theorem*}[Fatoração de Wiener-Hopf]
+  Se $a \in L^\infty(\mathbb{T})$ é invertível e $\log a \in L^1(\mathbb{T})$, então existe uma fatoração única $a(e^{i\theta}) = a_-(e^{i\theta}) a_+(e^{i\theta})$, onde $a_-$ e $a_+$ são funções com extensões analíticas dentro e fora do círculo unitário, respectivamente.
+\end{theorem*}
+Para uma prova, veja \cite{wiener1931}.
+
+A fatoração de Wiener-Hopf é aplicada na resolução de problemas em física matemática e engenharia, onde a estrutura de convolução é predominante.
+
+Os resultados apresentados neste capítulo destacam a profundidade e a riqueza da teoria de matrizes de Toeplitz. Como dito esses objetos possuem uma ampla gama de aplicações em diversas áreas, e são de extrema importância para a análise assintótica de diversas quantidades.

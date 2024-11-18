@@ -6,15 +6,17 @@ Nós utilizaremos a notação $\chi_k(i, j) = \begin{cases} 1 & \text{se } \lver
 
 Também denotaremos por $M_{n,k} \in \mathbb{Z}^{n \times n}$ a matriz definida por $m_{ij} = \chi_k(i, j)$.
 
-\begin{theorem} \label{th:matrix-form-n-to-n}
-  $a(n,k)$, para $0 \le k \le n - 1$, é dado por $\mathbf{1}_n^\intercal M_{n,k}^{n-1} \mathbf{1}_n$.
-\end{theorem}
+O teorema abaixo constitui essencialmente a demonstração da fórmula que calcula a quantidade de caminhos de determinado comprimento em um grafo a partir de sua matriz de adjacência. Optamos por incluí-lo em vez de uma descrição detalhada do grafo, pois acreditamos que isso proporciona um entendimento mais profundo da fórmula, que pode ser especialmente útil em uma generalização do teorema \ref{th:asymptotic}.
+
+\begin{theorem} \label{th:matrix-form-n-to-n} $a(n,k)$, para $0 \le k \le n - 1$, é dado por $\mathbf{1}_n^\intercal M_{n,k}^{n-1} \mathbf{1}_n$. \end{theorem}
+
 \begin{proof}
+
   Provaremos o fato mais forte de que o número de funções $k$-limitadas $f : [r] \to [n]$, $r \in [n]$, é dado por $\mathbf{1}_n^\intercal M_{n,k}^{r - 1} \mathbf{1}_n$, e que o número de tais funções com $f(r) = i$ é dado por $(M_{n,k}^{r - 1} \mathbf{1}_n)_i$. Procedemos por indução em $r$.
 
   De fato, se $r = 1$, toda função $f : [r] \to [n]$ é constante, portanto há $n$ tais funções (uma para cada elemento de $[n]$), e $n = \mathbf{1}_n^\intercal I \mathbf{1}_n = \mathbf{1}_n^\intercal M_{n,k}^{1 - 1} \mathbf{1}_n$, sendo $I$ a matriz identidade $n \times n$, como queríamos.
 
-  Se isso é válido para $r - 1$, então podemos encontrar o número de funções $f : [r] \to [n]$ contando o número de funções $k$-limitadas $g : [r-1] \to [n]$ das quais elas podem ser extensões. Se $f(r) = i$, então $f(r - 1) \in \{i - k, i - k + 1, \dots, i + k\} \cap [n]$, portanto a quantidade de tais funções $f$ é dada pela soma da quantidade de funções $k$-limitadas $g : [r-1] \to [n]$ com $g(r-1) \in \{i - k, i - k + 1, \dots, i + k\} \cap [n]$, que é $\sum_{j = 0}^{n-1} \chi_k(i, j) (M_{n,k}^{r-2} \mathbf{1}_n)_i$, que pela definição de multiplicação de matrizes é igual a $(M_{n,k} (M_{n,k}^{r-2} \mathbf{1}_n))_i = (M_{n,k}^{r-1} \mathbf{1}_n)_i$. Consequentemente, o número de todas as funções $k$-limitadas $f : [r] \to [n]$ é dado por $\mathbf{1}_n^\intercal M_{n,k}^{r-1} \mathbf{1}_n$, e o resultado segue para $n$, como queríamos.
+  Se isso é válido para $r - 1$, então podemos encontrar o número de funções $f : [r] \to [n]$ contando o número de funções $k$-limitadas $g : [r-1] \to [n]$ das quais elas podem ser extensões. Se $f(r) = i$, então $f(r - 1) \in \{i - k, i - k + 1, \dots, i + k\} \cap [n]$, portanto a quantidade de tais funções $f$ é dada pela soma da quantidade de funções $k$-limitadas $g : [r-1] \to [n]$ com $g(r-1) \in \{i - k, i - k + 1, \dots, i + k\} \cap [n]$, que é $\sum_{j = 0}^{n-1} \chi_k(i, j) (M_{n,k}^{r-1} \mathbf{1}_n)_i$, que pela definição de multiplicação de matrizes é igual a $(M_{n,k} (M_{n,k}^{r-1} \mathbf{1}_n))_i = (M_{n,k}^r \mathbf{1}_n)_i$. Consequentemente, o número de todas as funções $k$-limitadas $f : [r] \to [n]$ é dado por $\mathbf{1}_n^\intercal M_{n,k}^r \mathbf{1}_n$, e o resultado segue para $n$, como queríamos.
 
 \end{proof}
 
@@ -26,11 +28,7 @@ O código para calcular esses valores pode ser encontrado em \cite{github}. Valo
 
 Agora apresentamos a caracterização assintótica desta fórmula.
 
-\begin{theorem} \label{th:asymptotic}
-  Seja $k$ um inteiro positivo fixo. Então, $a(n, k) \sim n(2k+1)^{n-1}$.
-\end{theorem}
-\begin{proof}
-  Claramente, $M_{n,k}$ é a matriz de adjacência de um grafo com $n$ vértices, com o grau médio $\overline{d}$ igual a $(2k + 1) - \mathcal{O}(\frac{1}{n})$. Agora, pela desigualdade de Ërdos-Simonovits (veja \cite{erdossimonovits}), $n \overline{d}^{n-1} \le w_{n-1}$, onde $w_{n-1}$ é a quantidade de caminhos com comprimento $n-1$ no grafo. É fácil ver que $w_{n-1} = a(n, k)$. Portanto, $n ((2k + 1) - \mathcal{O}(\frac{1}{n}))^{n-1} \le a(n, k)$.
+\begin{theorem} \label{th:asymptotic} Seja $k$ um inteiro positivo fixo. Então, $a(n, k) \sim n(2k+1)^{n-1}$. \end{theorem} \begin{proof} Claramente, $M_{n,k}$ é a matriz de adjacência de um grafo com $n$ vértices, com o grau médio $\overline{d}$ igual a $(2k + 1) - \mathcal{O}(\frac{1}{n})$. Agora, pela desigualdade de Ërdos-Simonovits (veja \cite{erdossimonovits}), $n \overline{d}^{n-1} \le w_{n-1}$, onde $w_{n-1}$ é a quantidade de caminhos com comprimento $n-1$ no grafo. É fácil ver que $w_{n-1} = a(n, k)$. Portanto, substituindo o valor do grau médio obtemos $n ((2k + 1) - \mathcal{O}(\frac{1}{n}))^{n-1} \le a(n, k)$.
 
   Seja \[M_k = \begin{pmatrix} a_{0} & a_{-1} & a_{-2} & \cdots \\ a_{1} & a_{0} & a_{-1} & \cdots \\ a_2 & a_{1} & a_{0} & \cdots \\ \vdots & \vdots & \vdots & \ddots \end{pmatrix}\] a matriz infinita definida por $m_{ij} = \chi_k(i, j)$.
 
@@ -48,11 +46,11 @@ Agora apresentamos a caracterização assintótica desta fórmula.
 
   Pelo resultado provado em, por exemplo, \cite[p. 52]{bottcher}, temos que $\| M_{n,k} \| \le \| M_k \|$.
 
-  Mas os coeficientes de Fourier de $a$ são os coeficientes de Fourier do kernel de Dirichlet $D_k$, e $\| a \|_{\infty} = \esssup{t \in T} \lvert a(t)\rvert = \sup_{t \in T} \lvert a(t)\rvert$. É fato conhecido que $\sup_{t \in T} \lvert D_k(t)\rvert = 2k + 1$. Portanto, $\| M_k \| = 2k + 1$.
+  Mas os coeficientes de Fourier de $a$ são dados por \[a_n = \begin{cases} 1 & \text{se } \lvert i - j\rvert \le k \\ 0 & \text{se } \lvert i - j\rvert > k \end{cases} \] que são justamente os coeficientes de Fourier do kernel de Dirichlet $D_k$, e $\| a \|_{\infty} = \esssup{t \in T} \lvert a(t)\rvert = \sup_{t \in T} \lvert a(t)\rvert$. É fato conhecido que $\sup_{t \in T} \lvert D_k(t)\rvert = 2k + 1$. Portanto, $\| M_k \| = 2k + 1$.
 
   Concluímos a prova aplicando o teorema do confronto a ambas as desigualdades.
 \end{proof}
 
 Observe que o limite inferior da prova acima pode ser facilmente estendido a qualquer matriz que seja simétrica e tenha entradas não negativas usando a desigualdade de Blakley-Roy (veja \cite{blakley-roy}).
 
-Note que o limite inferior poderia também ser estabelecido usando somente resultados referentes à marizes de Toeplitz, mas optamos por apresentar a prova aqui presente devido a maior facilidade da sua adaptação a uma gama maior de matrizes.
+Note que o limite inferior poderia também ser estabelecido usando somente resultados referentes à matrizes de Toeplitz, mas optamos por apresentar a prova aqui presente devido a maior facilidade da sua adaptação a uma gama maior de matrizes.
