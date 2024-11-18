@@ -17,11 +17,11 @@ Em \cite{Toeplitz1911} Toeplitz mostra uma condição necessária e suficiente p
 
 Essa formulação e uma prova com notação moderna são encontrados em \cite[p. 1]{bottcher}.
 
-A norma \( \| a \|_{\infty} \) mencionada no teorema acima corresponde à norma \( L^\infty \), definida como
+A norma $\| a \|_{\infty}$ mencionada no teorema acima corresponde à norma $L^\infty$, definida como
 \[ \esssup_{t \in \mathbb{T}}\lvert a(t)\rvert \coloneqq \inf \{ C \geq 0 \mid |a(t)| \leq C \text{ para quase todo } t \in \mathbb{T} \}\text{.}
 \]
 
-Aqui, ``quase todo'' significa que a condição \( |a(t)| \leq C \) deve ser satisfeita para todos os \( t \in \mathbb{T} \), exceto possivelmente em um conjunto de medida zero. Intuitivamente, a norma \( L^\infty \) captura o valor máximo da função \( a \) exceto em um conjunto ``irrelevante'' de pontos.
+Aqui, ``quase todo'' significa que a condição $|a(t)| \leq C$ deve ser satisfeita para todos os $t \in \mathbb{T}$, exceto possivelmente em um conjunto de medida zero. Intuitivamente, a norma $L^\infty$ captura o valor máximo da função $a$ exceto em um conjunto ``irrelevante'' de pontos.
 
 O \textit{símbolo} de uma matriz de Toeplitz é a função $a \in L^\infty(\mathbb{T})$ que gera a matriz através de seus coeficientes de Fourier. Esse símbolo encapsula toda a informação necessária para caracterizar as propriedades espectrais e operacionais da matriz de Toeplitz.
 
@@ -33,50 +33,50 @@ Vamos agora a um tipo específico de matriz de Toeplitz. As matrizes de banda su
   Uma matriz de Toeplitz $ M $ com entradas complexas é dita \textit{de banda $ k $} se $ m_{ij} = 0 $ para todos $ i \in I$ e $j \in J $, sendo $I$ o conjunto dos índices das linhas de $M$ e $J$ o conjunto dos índices das colunas, tais que $ |i - j| > k $.
 \end{definition*}
 
-\begin{theorem}[Norma de matrizes de Toeplitz de banda] \label{norm} Seja \( M \) uma matriz de Toeplitz possivelmente infinita com entradas reias e banda \( k \). Então, a norma espectral de \( M \), denotada por \( \| M \|_2 \), satisfaz \[ \| M \|_2 \leq (2k + 1) \cdot \max_{|i - j| \leq k} |m_{ij}|. \] \end{theorem}
+\begin{theorem}[Norma de matrizes de Toeplitz de banda] \label{norm} Seja $M$ uma matriz de Toeplitz possivelmente infinita com entradas reias e banda $k$. Então, a norma espectral de $M$, denotada por $\| M \|_2$, satisfaz \[ \| M \|_2 \leq (2k + 1) \cdot \max_{|i - j| \leq k} |m_{ij}|. \] \end{theorem}
 
-Para provar o teorema anterior, será necessária a utilização da desigualdade \(\|M\|_2 \leq \|M\|_\infty\). A seguir, apresentamos uma prova dessa desigualdade para completude.
+Para provar o teorema anterior, será necessária a utilização da desigualdade $\|M\|_2 \leq \|M\|_\infty$. A seguir, apresentamos uma prova dessa desigualdade para completude.
 
 As normas de matrizes são normas de operadores, permitindo medir a distorção que uma matriz pode causar em um espaço vetorial. Consideremos um espaço vetorial $V$ equipado com uma norma $\| \cdot \|_p$, conhecida como norma $p$-norma, definida para $1 \leq p \leq \infty$ por
 \[
-\| v \|_p = \left( \sum_{i=1}^{n} |v_i|^p \right)^{1/p} \quad \text{para } p < \infty, \quad \text{e} \quad \| v \|_\infty = \max_{1 \leq i \leq n} |v_i|.
+  \| v \|_p = \left( \sum_{i=1}^{n} |v_i|^p \right)^{1/p} \quad \text{para } p < \infty, \quad \text{e} \quad \| v \|_\infty = \max_{1 \leq i \leq n} |v_i|.
 \]
 
 As $p$-normas satisfazem várias desigualdades importantes, como a desigualdade de Hölder e a desigualdade de Minkowski, que estabelecem relações entre diferentes normas $p$ e $q$ em espaços vetoriais.
 
 A norma de operador de uma matriz $M \in \mathbb{C}^{n \times n}$ associada à norma $p$-norma no espaço vetorial $V$ é definida por
 \[
-\| M \|_{p} = \sup_{\| v \|_p = 1} \| M v \|_p.
+  \| M \|_{p} = \sup_{\| v \|_p = 1} \| M v \|_p.
 \]
 
 Especificamente, para matrizes $ M \in \mathbb{C}^{n \times n} $, a norma espectral $\| M \|_2$ corresponde ao valor singular de $ M $ de maior módulo, enquanto a norma infinito $\| M \|_\infty$ é definida como o maior somatório das magnitudes das entradas em qualquer linha da matriz
 \[
-\| M \|_\infty = \max_{1 \leq i \leq n} \sum_{j=1}^{n} |m_{ij}|.
+  \| M \|_\infty = \max_{1 \leq i \leq n} \sum_{j=1}^{n} |m_{ij}|.
 \]
 
 \begin{theorem}
-Se $M \in \mathbb{C}^{n \times n} $ então
-\[
-\| M \|_2 \leq \| M \|_\infty.
-\]
+  Se $M \in \mathbb{C}^{n \times n} $ então
+  \[
+    \| M \|_2 \leq \| M \|_\infty.
+  \]
 \end{theorem}
 
 \begin{proof}
-Seja $\lambda$ o autovalor de $M$ de maior módulo. Pelo teorema do círculo de Gershgorin, provado pela primeira vez em \cite{Gerschgorin}, temos
-\[
-\lvert \lambda \rvert \in \bigcup_{i = 1}^n \overline{D}\left(m_{ii}, \sum_{j \ne i} \lvert m_{ij} \rvert\right) \subseteq \overline{D}\left(0, \max_{1 \leq i \leq n} \sum_{j=1}^{n} \lvert m_{ij}\rvert\right)
-\] onde $\overline{D}(c, r)$ é o disco complexo fechado de centro $c \in \mathbb{C}$ e raio $r \in \mathbb{R}_{\ge 0}$.
+  Seja $\lambda$ o autovalor de $M$ de maior módulo. Pelo teorema do círculo de Gershgorin, provado pela primeira vez em \cite{Gerschgorin}, temos
+  \[
+    \lvert \lambda \rvert \in \bigcup_{i = 1}^n \overline{D}\left(m_{ii}, \sum_{j \ne i} \lvert m_{ij} \rvert\right) \subseteq \overline{D}\left(0, \max_{1 \leq i \leq n} \sum_{j=1}^{n} \lvert m_{ij}\rvert\right)
+  \] onde $\overline{D}(c, r)$ é o disco complexo fechado de centro $c \in \mathbb{C}$ e raio $r \in \mathbb{R}_{\ge 0}$.
 
-Portanto, temos que
-\[
-\| M \|_2 = \lvert \lambda \lvert \leq \| M \|_\infty.
-\]
+  Portanto, temos que
+  \[
+    \| M \|_2 = \lvert \lambda \lvert \leq \| M \|_\infty.
+  \]
 \end{proof}
 
 \begin{proof}[Prova do teorema \ref{norm}]
-Em cada linha $i$, existem no máximo $k$ entradas não nulas acima da diagonal e $k$ abaixo, além da própria entrada na diagonal, totalizando no máximo $2k + 1$ entradas não nulas, correspondentes aos índices $j$ tais que $\lvert i - j \rvert \leq k$.
+  Em cada linha $i$, existem no máximo $k$ entradas não nulas acima da diagonal e $k$ abaixo, além da própria entrada na diagonal, totalizando no máximo $2k + 1$ entradas não nulas, correspondentes aos índices $j$ tais que $\lvert i - j \rvert \leq k$.
 
-Portanto, sendo $I$ o conjunto dos índices das linhas de $M$ e $J$ o conjunto dos índices das colunas, temos \[ \| M \|_2 \le \| M \|_\infty = \sup_{i \in I} \sum_{j \in J} |m_{ij}| \leq (2k + 1) \cdot \max_{|i - j| \leq k} |m_{ij}| \]
+  Portanto, sendo $I$ o conjunto dos índices das linhas de $M$ e $J$ o conjunto dos índices das colunas, temos \[ \| M \|_2 \le \| M \|_\infty = \sup_{i \in I} \sum_{j \in J} |m_{ij}| \leq (2k + 1) \cdot \max_{|i - j| \leq k} |m_{ij}| \]
 \end{proof}
 
 A matriz $ M_{n,k} $ definida no teorema \ref{th:matrix-form-n-to-n} é um exemplo de matriz de Toeplitz de banda $ k $, onde os elementos $ m_{ij} $ são iguais a $ 1 $ se $ |i - j| \le k $ e $ 0 $ caso contrário. A norma espectral dessa matriz satisfaz $ \| M_{n,k} \|_2 = 2k + 1 $, conforme utilizado no teorema \ref{th:asymptotic}.

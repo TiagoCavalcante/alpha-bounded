@@ -36,7 +36,7 @@ Vamos agora apresentar a definição de uma álgebra $C^\ast$, que generalizam a
     \item $\mathcal{A}$ é um espaço vetorial completo com a norma $\|\cdot\|$.
     \item $\mathcal{A}$ é uma álgebra, ou seja, possui uma operação de multiplicação bilinear $(a, b) \mapsto ab$ para todos $a, b \in \mathcal{A}$.
     \item Para todos $a, b \in \mathcal{A}$,
-    \[ \|ab\| \leq \|a\| \|b\|. \]
+          \[ \|ab\| \leq \|a\| \|b\|. \]
   \end{enumerate}
 \end{definition*}
 
@@ -82,43 +82,43 @@ As matrizes circulantes são um caso especial de matrizes de Toeplitz, onde cada
   onde $ \omega_n = e^{2\pi i / n} $ é a raiz $ n $-ésima da unidade.
 \end{theorem*}
 \begin{proof}
-    Primeiramente, é fácil ver que $F_n$ é unitária, isto é, o produto $F_n F_n^*$ de $F_n$ pela sua adjunda é igual a matriz identidade.
+  Primeiramente, é fácil ver que $F_n$ é unitária, isto é, o produto $F_n F_n^*$ de $F_n$ pela sua adjunda é igual a matriz identidade.
 
-    Seja $P$ a matriz de permutação cíclica \[\begin{pmatrix}
-        0 & 0 & \dots & 0 & 1 \\
-        1 & 0 & \dots & 0 & 0 \\
-        0 & 1 & \dots & 0 & 0 \\
-        \vdots & \ddots & \ddots & \ddots & \vdots \\
-        0 & 0 & \dots & 1 & 0
+  Seja $P$ a matriz de permutação cíclica \[\begin{pmatrix}
+      0      & 0      & \dots  & 0      & 1      \\
+      1      & 0      & \dots  & 0      & 0      \\
+      0      & 1      & \dots  & 0      & 0      \\
+      \vdots & \ddots & \ddots & \ddots & \vdots \\
+      0      & 0      & \dots  & 1      & 0
     \end{pmatrix}\] e seja $D = \diag(1, \omega_n, \omega_n^2, \dots, \omega_n^{n-1})$ a matriz com entradas $1$, $\omega_n$, \dots, $\omega_n^{n-1}$ na diagonal principal e zeros nas outras posições.
 
-    Sendo $(c_0, c_1, \dots, c_{n-1})$ a primeira linha de $C$, é fácil verificar que $C = c_0 I + c_1 P + c_2 P^2 + \cdots c_{n-1} P^{n-1}$, onde $I$ é a matriz identidade $n \times n$.
+  Sendo $(c_0, c_1, \dots, c_{n-1})$ a primeira linha de $C$, é fácil verificar que $C = c_0 I + c_1 P + c_2 P^2 + \cdots c_{n-1} P^{n-1}$, onde $I$ é a matriz identidade $n \times n$.
 
-    Como $\omega_n^n = 1$, temos \[ P (F_n)_k = \frac{1}{\sqrt{n}} \begin{pmatrix}
-        \omega_n^{(n-1) \cdot k} \\
-        \omega_n^{0 \cdot k} \\
-        \omega_n^{1 \cdot k} \\
-        \vdots \\
-        \omega_n^{(n - 2) \cdot k}
+  Como $\omega_n^n = 1$, temos \[ P (F_n)_k = \frac{1}{\sqrt{n}} \begin{pmatrix}
+      \omega_n^{(n-1) \cdot k} \\
+      \omega_n^{0 \cdot k}     \\
+      \omega_n^{1 \cdot k}     \\
+      \vdots                   \\
+      \omega_n^{(n - 2) \cdot k}
     \end{pmatrix} = \omega_n^{-k} \frac{1}{\sqrt{n}} \begin{pmatrix}
-        \omega_n^{0 \cdot k} \\
-        \omega_n^{1 \cdot k} \\
-        \omega_n^{2 \cdot k} \\
-        \vdots \\
-        \omega_n^{(n - 1) \cdot k}
+      \omega_n^{0 \cdot k} \\
+      \omega_n^{1 \cdot k} \\
+      \omega_n^{2 \cdot k} \\
+      \vdots               \\
+      \omega_n^{(n - 1) \cdot k}
     \end{pmatrix} = \omega_n^{-k} (F_n)_k \] onde $(F_n)_k$ é a $k$-ésima coluna de $F_n$.
 
-    Portanto $P F_n = F_n D$, e consequentemente $P^kF_n = F_nD^k$.
+  Portanto $P F_n = F_n D$, e consequentemente $P^kF_n = F_nD^k$.
 
-    Mas também temos que \begin{align*}
-        C F_n &= \left( c_0 I_n + c_1 P + c_2 P^2 + \dots + c_{n-1} P^{n-1} \right) F_n \\
-        &= c_0 F_n + c_1 P F_n + c_2 P^2 F_n + \dots + c_{n-1} P^{n-1} F_n \\
-        &= F_n \left( c_0 I_n + c_1 D + c_2 D^2 + \dots + c_{n-1} D^{n-1} \right)
-    \end{align*}
+  Mas também temos que \begin{align*}
+    C F_n & = \left( c_0 I_n + c_1 P + c_2 P^2 + \dots + c_{n-1} P^{n-1} \right) F_n \\
+          & = c_0 F_n + c_1 P F_n + c_2 P^2 F_n + \dots + c_{n-1} P^{n-1} F_n        \\
+          & = F_n \left( c_0 I_n + c_1 D + c_2 D^2 + \dots + c_{n-1} D^{n-1} \right)
+  \end{align*}
 
-    Assim, $C F_n = F_n \Lambda$ onde \[\Lambda = c_0 I_n + c_1 D + c_2 D^2 + \dots + c_{n-1} D^{n-1}.\]
-    
-    Multiplicando à esquerda por $F_n^*$ e usando que $F_n F_n^* = I$ temos que $F_n^* C F_n = \Lambda$, completando a prova.
+  Assim, $C F_n = F_n \Lambda$ onde \[\Lambda = c_0 I_n + c_1 D + c_2 D^2 + \dots + c_{n-1} D^{n-1}.\]
+
+  Multiplicando à esquerda por $F_n^*$ e usando que $F_n F_n^* = I$ temos que $F_n^* C F_n = \Lambda$, completando a prova.
 \end{proof}
 
 As propriedades espectrais simplificadas das matrizes circulantes tornam-nas úteis para entender comportamentos assintóticos em contextos como o do terceiro capítulo.
