@@ -87,80 +87,111 @@
   \en{Suppose, for a contradiction, that $f$ is not $\alpha$-bounded. Then there are $x_1, x_2 in \mathcal{X}$, $d_X(x_1, x_2) \le 1$, such that $d_Y(f(x_1), f(x_2)) \coloneqq k > \alpha$. As $(f_n) \to f$ pointwise, there is some $n in \mathbb{Z}_{> 0}$ with $d_Y(f_n(x_1), f(x_1)) < \frac{k - \alpha}{2}$ and $d_Y(f_n(x_2), f(x_2)) < \frac{k - \alpha}{2}$. Consequently, $d_Y(f_n(x_1), f_n(x_2)) > k - \frac{k - \alpha}{2} - \frac{k - \alpha}{2} = \alpha$, a contradiction.}
 \end{proof}
 
-As funções $\alpha$-limitadas podem não ser o limite pontual de qualquer sequência de funções contínuas.
+\pt{As funções $\alpha$-limitadas podem não ser o limite pontual de qualquer sequência de funções contínuas.}
+\en{The $\alpha$-bounded functions may not be the pointwise limit of any sequence of continuous functions.}
 
 \begin{example}
-  A função de Dirichlet $1_\mathbb{Q} \colon [0, 1] \to \mathbb{R}$, também como função indicadora dos racionais, é $1$-limitada considerando a métrica usual de $\mathbb{R} \supset [0, 1]$, mas não é o limite pontual de nenhuma sequência de funções contínuas, pois é uma função da classe 2 de Baire (veja \cite{baire}).
+  \pt{A função de Dirichlet $1_\mathbb{Q} \colon [0, 1] \to \mathbb{R}$, também como função indicadora dos racionais, é $1$-limitada considerando a métrica usual de $\mathbb{R} \supset [0, 1]$, mas não é o limite pontual de nenhuma sequência de funções contínuas, pois é uma função da classe 2 de Baire (veja \cite{baire}).}
+  \en{The Dirichlet function $1_\mathbb{Q} \colon [0, 1] \to \mathbb{R}$, also known as the indicator function of the rationals, is $1$-bounded considering the usual metric of $\mathbb{R} \supset [0, 1]$, but it is not the pointwise limit of any sequence of continuous functions, as it is a class 2 Baire function (see \cite{baire}).}
 \end{example}
 
-A aritmética com funções $\alpha$-limitadas não é a mesma que com funções contínuas definidas em $\mathbb{R}$.
+\pt{A aritmética com funções $\alpha$-limitadas não é a mesma que com funções contínuas definidas em $\mathbb{R}$.}
+\en{Arithmetic with $\alpha$-bounded functions is not the same as with continuous functions defined on $\mathbb{R}$.}
 
 \begin{theorem}
-  Sejam $(X, d_X)$ e $(Y, d_Y)$ espaços métricos e $(Y, +Y, \cdot_Y)$ um espaço vetorial sobre $\mathbb{R}$. Se $f \colon X \to Y$ e $g \colon X \to Y$ são duas funções $\alpha$-limitadas, então $f + g$ é $(2\alpha)$-limitada e $\gamma f$ é $(\gamma \alpha)$-limitada para todo $\gamma > 0$.
+  \pt{Sejam $(X, d_X)$ e $(Y, d_Y)$ espaços métricos e $(Y, +Y, \cdot_Y)$ um espaço vetorial sobre $\mathbb{R}$. Se $f \colon X \to Y$ e $g \colon X \to Y$ são duas funções $\alpha$-limitadas, então $f + g$ é $(2\alpha)$-limitada e $\gamma f$ é $(\gamma \alpha)$-limitada para todo $\gamma > 0$.}
+  \en{Let $(X, d_X)$ and $(Y, d_Y)$ be metric spaces and $(Y, +Y, \cdot_Y)$ a vector space over $\mathbb{R}$. If $f \colon X \to Y$ and $g \colon X \to Y$ are two $\alpha$-bounded functions, then $f + g$ is $(2\alpha)$-bounded and $\gamma f$ is $(\gamma \alpha)$-bounded for every $\gamma > 0$.}
 \end{theorem}
+
 \begin{proof}
-  Se $x \in X$ e $\tilde{x} \in X$, $d_X(x, \tilde{x}) \le 1$, então $f(\tilde{x}) \in \overline{B}_{\alpha}(f(x))$ e $g(\tilde{x}) \in \overline{B}_{\alpha}(g(x))$, portanto $(f + g)(\tilde{x}) = f(\tilde{x}) + g(\tilde{x}) \in \overline{B}_{2\alpha}((f + g)(x))$, e consequentemente $f + g$ é $(2\alpha)$-limitada. Analogamente, $(\gamma f)(\tilde{x}) \in \overline{B}_{\gamma \alpha}(f(x))$ e $\gamma f$ é $(\gamma \alpha)$-limitada.
+  \pt{Se $x \in X$ e $\tilde{x} \in X$, $d_X(x, \tilde{x}) \le 1$, então $f(\tilde{x}) \in \overline{B}_{\alpha}(f(x))$ e $g(\tilde{x}) \in \overline{B}_{\alpha}(g(x))$, portanto $(f + g)(\tilde{x}) = f(\tilde{x}) + g(\tilde{x}) \in \overline{B}_{2\alpha}((f + g)(x))$, e consequentemente $f + g$ é $(2\alpha)$-limitada. Analogamente, $(\gamma f)(\tilde{x}) \in \overline{B}_{\gamma \alpha}(f(x))$ e $\gamma f$ é $(\gamma \alpha)$-limitada.}
+    \en{If $x \in X$ and $\tilde{x} \in X$, $d_X(x, \tilde{x}) \le 1$, then $f(\tilde{x}) \in \overline{B}_{\alpha}(f(x))$ and $g(\tilde{x}) \in \overline{B}_{\alpha}(g(x))$, therefore $(f + g)(\tilde{x}) = f(\tilde{x}) + g(\tilde{x}) \in \overline{B}_{2\alpha}((f + g)(x))$, and consequently $f + g$ is $(2\alpha)$-bounded. Similarly, $(\gamma f)(\tilde{x}) \in \overline{B}_{\gamma \alpha}(f(x))$ and $\gamma f$ is $(\gamma \alpha)$-bounded.}
 \end{proof}
 
-O teorema acima permite considerar espaços vetoriais de mapas entre dois espaços métricos que são $\alpha$-limitados para algum $\alpha \ge 0$.
+\pt{O teorema acima permite considerar espaços vetoriais de mapas entre dois espaços métricos que são $\alpha$-limitados para algum $\alpha \ge 0$.}
+\en{The above theorem allows considering vector spaces of maps between two metric spaces that are $\alpha$-bounded for some $\alpha \ge 0$.}
 
-O produto de duas funções $\alpha$-limitadas (com o mesmo domínio e contradomínio) pode não ser $\beta$-limitado para nenhum $\beta > 0$, assim como o recíproco de uma função $\alpha$-limitada (quando definido).
+\pt{O produto de duas funções $\alpha$-limitadas (com o mesmo domínio e contradomínio) pode não ser $\beta$-limitado para nenhum $\beta > 0$, assim como o recíproco de uma função $\alpha$-limitada (quando definido).}
+\en{The product of two $\alpha$-bounded functions (with the same domain and codomain) may not be $\beta$-bounded for any $\beta > 0$, as well as the reciprocal of an $\alpha$-bounded function (when defined).}
 
 \begin{example}
-  $f \colon \mathbb{Z}_{> 0} \to \mathbb{Z}_{> 0}$ dada por $f(n) = n$ é $1$-limitada (considerando a métrica usual), mas $f^2$ coincide com $g \colon \mathbb{R} \to \mathbb{R}$, $g(x) = x^2$, portanto não é $\alpha$-limitada para nenhum $\alpha > 0$.
+  \pt{$f \colon \mathbb{Z}_{> 0} \to \mathbb{Z}_{> 0}$ dada por $f(n) = n$ é $1$-limitada (considerando a métrica usual), mas $f^2$ coincide com $g \colon \mathbb{R} \to \mathbb{R}$, $g(x) = x^2$, portanto não é $\alpha$-limitada para nenhum $\alpha > 0$.}
+  \en{$f \colon \mathbb{Z}_{> 0} \to \mathbb{Z}_{> 0}$ given by $f(n) = n$ is $1$-bounded (considering the usual metric), but $f^2$ coincides with $g \colon \mathbb{R} \to \mathbb{R}$, $g(x) = x^2$, therefore it is not $\alpha$-bounded for any $\alpha > 0$.}
 \end{example}
 
 \begin{example}
-  $f \colon [1, +\infty) \to \mathbb{R}$ dada por $f(x) = \frac{1}{x^2}$ é $1$-limitada, mas $\frac{1}{f}$ coincide com $g \colon \mathbb{R} \to \mathbb{R}$, $g(x) = x^2$, portanto não é $\alpha$-limitada para nenhum $\alpha > 0$.
+  \pt{$f \colon [1, +\infty) \to \mathbb{R}$ dada por $f(x) = \frac{1}{x^2}$ é $1$-limitada, mas $\frac{1}{f}$ coincide com $g \colon \mathbb{R} \to \mathbb{R}$, $g(x) = x^2$, portanto não é $\alpha$-limitada para nenhum $\alpha > 0$.}
+  \en{$f \colon [1, +\infty) \to \mathbb{R}$ given by $f(x) = \frac{1}{x^2}$ is $1$-bounded, but $\frac{1}{f}$ coincides with $g \colon \mathbb{R} \to \mathbb{R}$, $g(x) = x^2$, therefore it is not $\alpha$-bounded for any $\alpha > 0$.}
 \end{example}
 
-O teorema de extensão para funções $\alpha$-limitadas não é muito forte.
+\pt{O teorema de extensão para funções $\alpha$-limitadas não é muito forte.}
+\en{The extension theorem for $\alpha$-bounded functions is not very strong.}
 
 \begin{theorem} \label{tietze}
-  Sejam $(X,d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X}, \tilde{\mathcal{X}} \subset X$, onde $\tilde{\mathcal{X}}$ é finito, e seja $f \colon \mathcal{X} \to Y$ uma função $(\alpha,\lambda)$-limitada. Existe $\beta \ge 0$ tal que $f$ tem uma extensão $(\beta,\lambda)$-limitada para $\mathcal{X} \cup \tilde{\mathcal{X}}$ se e somente se $f$ é limitada em $\overline{B}_{\lambda}(\tilde{x}) \cap \mathcal{X}$ para cada $\tilde{x} \in \tilde{\mathcal{X}}$.
+  \pt{Sejam $(X,d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X}, \tilde{\mathcal{X}} \subset X$, onde $\tilde{\mathcal{X}}$ é finito, e seja $f \colon \mathcal{X} \to Y$ uma função $(\alpha,\lambda)$-limitada. Existe $\beta \ge 0$ tal que $f$ tem uma extensão $(\beta,\lambda)$-limitada para $\mathcal{X} \cup \tilde{\mathcal{X}}$ se e somente se $f$ é limitada em $\overline{B}_{\lambda}(\tilde{x}) \cap \mathcal{X}$ para cada $\tilde{x} \in \tilde{\mathcal{X}}$.}
+  \en{Let $(X,d_X)$ and $(Y, d_Y)$ be metric spaces, $\mathcal{X}, \tilde{\mathcal{X}} \subset X$, where $\tilde{\mathcal{X}}$ is finite, and let $f \colon \mathcal{X} \to Y$ be an $(\alpha,\lambda)$-bounded function. There exists $\beta \ge 0$ such that $f$ has a $(\beta,\lambda)$-bounded extension to $\mathcal{X} \cup \tilde{\mathcal{X}}$ if and only if $f$ is bounded on $\overline{B}_{\lambda}(\tilde{x}) \cap \mathcal{X}$ for each $\tilde{x} \in \tilde{\mathcal{X}}$.}
 \end{theorem}
 
 \begin{proof}
-  A necessidade dessa condição é evidente. Vamos então provar que ela é suficiente.
+  \pt{A necessidade dessa condição é evidente. Vamos então provar que ela é suficiente.
 
-  Podemos supor que $\tilde{\mathcal{X}} \cap \mathcal{X} = \varnothing$, já que obviamente $f$ é limitada em $\overline{B}_{\lambda}(x)$ para cada $x \in \mathcal{X}$.
+    Podemos supor que $\tilde{\mathcal{X}} \cap \mathcal{X} = \varnothing$, já que obviamente $f$ é limitada em $\overline{B}_{\lambda}(x)$ para cada $x \in \mathcal{X}$.
 
-  Procederemos por indução sobre o número $n$ de elementos em $\tilde{\mathcal{X}}$.
+    Procederemos por indução sobre o número $n$ de elementos em $\tilde{\mathcal{X}}$.
 
-  Para $n = 0$, o resultado é óbvio. Suponha que o resultado seja verdade para $n$, e $\tilde{\mathcal{X}}$ tenha $n+1$ elementos.
+    Para $n = 0$, o resultado é óbvio. Suponha que o resultado seja verdade para $n$, e $\tilde{\mathcal{X}}$ tenha $n+1$ elementos.
 
-  Fixe $\tilde{x} \in \tilde{\mathcal{X}}$ e $y \in Y$. Por hipótese, $f$ tem uma extensão $(\beta,\lambda)$-limitada para $\mathcal{X} \cup (\tilde{\mathcal{X}} \setminus {\tilde{x}})$. Defina $\tilde{f} \colon \mathcal{X} \cup \tilde{\mathcal{X}}$ por $\tilde{f}(\tilde{x}) = y$ e $\tilde{f}(x) = f(x)$ para cada $x \in \mathcal{X} \cup (\tilde{\mathcal{X}} \setminus {\tilde{x}})$. Claramente existe $\gamma \ge 0$ tal que $\tilde{f}$ é $(\gamma,\lambda)$-limitada em $x$ para cada $x$ diferente de $\tilde{x}$. Mas como $f$ é limitada em $\overline{B}_{\lambda}(\tilde{x}) \cap \mathcal{X}$, existe $M \ge 0$ tal que $\lvert f(x) \rvert \le M$ para cada $x \in \overline{B}_{\lambda}(\tilde{x}) \cap \mathcal{X}$. Portanto, $\lvert \tilde{f}(x)-\tilde{f}(\tilde{x})\rvert \le \lvert f(x)\rvert + \lvert -y\rvert \le M + \lvert-y\rvert$ para cada $x \in \overline{B}_{\lambda}(\tilde{x}) \cap \mathcal{X}$, e consequentemente, $\tilde{f}$ é $(\max\{M + \lvert-y\rvert, \gamma\},\lambda)$-limitada. Assim, o resultado também segue para $n+1$.
+    Fixe $\tilde{x} \in \tilde{\mathcal{X}}$ e $y \in Y$. Por hipótese, $f$ tem uma extensão $(\beta,\lambda)$-limitada para $\mathcal{X} \cup (\tilde{\mathcal{X}} \setminus {\tilde{x}})$. Defina $\tilde{f} \colon \mathcal{X} \cup \tilde{\mathcal{X}}$ por $\tilde{f}(\tilde{x}) = y$ e $\tilde{f}(x) = f(x)$ para cada $x \in \mathcal{X} \cup (\tilde{\mathcal{X}} \setminus {\tilde{x}})$. Claramente existe $\gamma \ge 0$ tal que $\tilde{f}$ é $(\gamma,\lambda)$-limitada em $x$ para cada $x$ diferente de $\tilde{x}$. Mas como $f$ é limitada em $\overline{B}_{\lambda}(\tilde{x}) \cap \mathcal{X}$, existe $M \ge 0$ tal que $\lvert f(x) \rvert \le M$ para cada $x \in \overline{B}_{\lambda}(\tilde{x}) \cap \mathcal{X}$. Portanto, $\lvert \tilde{f}(x)-\tilde{f}(\tilde{x})\rvert \le \lvert f(x)\rvert + \lvert -y\rvert \le M + \lvert-y\rvert$ para cada $x \in \overline{B}_{\lambda}(\tilde{x}) \cap \mathcal{X}$, e consequentemente, $\tilde{f}$ é $(\max\{M + \lvert-y\rvert, \gamma\},\lambda)$-limitada. Assim, o resultado também segue para $n+1$.}
+  \en{The necessity of this condition is evident. We will now prove that it is sufficient.
+
+    We can assume that $\tilde{\mathcal{X}} \cap \mathcal{X} = \varnothing$, since obviously $f$ is bounded on $\overline{B}_{\lambda}(x)$ for each $x \in \mathcal{X}$.
+
+    We proceed by induction on the number $n$ of elements in $\tilde{\mathcal{X}}$.
+
+    For $n = 0$, the result is obvious. Suppose the result holds for $n$, and $\tilde{\mathcal{X}}$ has $n+1$ elements.
+
+    Fix $\tilde{x} \in \tilde{\mathcal{X}}$ and $y \in Y$. By hypothesis, $f$ has a $(\beta,\lambda)$-bounded extension to $\mathcal{X} \cup (\tilde{\mathcal{X}} \setminus {\tilde{x}})$. Define $\tilde{f} \colon \mathcal{X} \cup \tilde{\mathcal{X}}$ by $\tilde{f}(\tilde{x}) = y$ and $\tilde{f}(x) = f(x)$ for each $x \in \mathcal{X} \cup (\tilde{\mathcal{X}} \setminus {\tilde{x}})$. Clearly, there exists $\gamma \ge 0$ such that $\tilde{f}$ is $(\gamma,\lambda)$-bounded at $x$ for each $x$ different from $\tilde{x}$. But since $f$ is bounded on $\overline{B}_{\lambda}(\tilde{x}) \cap \mathcal{X}$, there exists $M \ge 0$ such that $\lvert f(x) \rvert \le M$ for each $x \in \overline{B}_{\lambda}(\tilde{x}) \cap \mathcal{X}$. Therefore, $\lvert \tilde{f}(x)-\tilde{f}(\tilde{x})\rvert \le \lvert f(x)\rvert + \lvert -y\rvert \le M + \lvert-y\rvert$ for each $x \in \overline{B}_{\lambda}(\tilde{x}) \cap \mathcal{X}$, and consequently, $\tilde{f}$ is $(\max\{M + \lvert-y\rvert, \gamma\},\lambda)$-bounded. Thus, the result also holds for $n+1$.}
 \end{proof}
 
-Os exemplos abaixo ilustram por que as condições do teorema são necessárias.
+\pt{Os exemplos abaixo ilustram por que as condições do teorema são necessárias.}
+\en{The examples below illustrate why the conditions of the theorem are necessary.}
 
 \begin{example}
-  Seja $X \coloneqq \{(x, \pm 1) \mid x \in \mathbb{Z}\} \subset \mathbb{Z}^2$. Considere $f \colon X \to \mathbb{Z}$ dada por $f(x, 1) = x$ e $f(x, -1) = 0$ para qualquer $x \in \mathbb{Z}$. Claramente, $f$ é $1$-limitada, considerando a métrica usual, mas $f$ não tem nenhuma extensão $\alpha$-limitada, para qualquer $\alpha > 0$, ao conjunto $\{(x, y) \mid x \in \mathbb{Z}, y \in \{-1,0,1\}\}$, pois $\overline{B}_1((x, 0)) \supset \{ (x, 1), (x, -1) \}$ e $\lvert f(x, 1) - f(x, -1) \rvert = \lvert x - 0 \rvert$ é ilimitada.
+  \pt{Seja $X \coloneqq \{(x, \pm 1) \mid x \in \mathbb{Z}\} \subset \mathbb{Z}^2$. Considere $f \colon X \to \mathbb{Z}$ dada por $f(x, 1) = x$ e $f(x, -1) = 0$ para qualquer $x \in \mathbb{Z}$. Claramente, $f$ é $1$-limitada, considerando a métrica usual, mas $f$ não tem nenhuma extensão $\alpha$-limitada, para qualquer $\alpha > 0$, ao conjunto $\{(x, y) \mid x \in \mathbb{Z}, y \in \{-1,0,1\}\}$, pois $\overline{B}_1((x, 0)) \supset \{ (x, 1), (x, -1) \}$ e $\lvert f(x, 1) - f(x, -1) \rvert = \lvert x - 0 \rvert$ é ilimitada.}
+  \en{Let $X \coloneqq \{(x, \pm 1) \mid x \in \mathbb{Z}\} \subset \mathbb{Z}^2$. Consider $f \colon X \to \mathbb{Z}$ defined by $f(x, 1) = x$ and $f(x, -1) = 0$ for any $x \in \mathbb{Z}$. Clearly, $f$ is $1$-bounded, considering the usual metric, but $f$ has no $\alpha$-bounded extension, for any $\alpha > 0$, to the set $\{(x, y) \mid x \in \mathbb{Z}, y \in \{-1,0,1\}\}$, because $\overline{B}_1((x, 0)) \supset \{ (x, 1), (x, -1) \}$ and $\lvert f(x, 1) - f(x, -1) \rvert = \lvert x - 0 \rvert$ is unbounded.}
 \end{example}
 
 \input{figures/one_bounded.tex}
 
 \begin{example}
-  Seja $s_n \in l^2(\mathbb{Z}_{> 0})$ a sequência com um $1$ na posição $n$-ésima e $0$'s nas outras posições, e $X = \{ s_n \mid n \in \mathbb{Z}_{> 0} \}$. $f \colon X \to \mathbb{Z}$ dada por $f(s_n) = n$ é $1$-limitada considerando a norma euclideana $l^2$, mas não tem nenhuma extensão $\alpha$-limitada ao conjunto $X \cup \{(0, 0, 0, \dots)\}$ para qualquer $\alpha > 0$, pois $f$ é ilimitada em $\overline{B}_1((0, 0, 0, \dots))$.
+  \pt{Seja $s_n \in l^2(\mathbb{Z}_{> 0})$ a sequência com um $1$ na posição $n$-ésima e $0$'s nas outras posições, e $X = \{ s_n \mid n \in \mathbb{Z}_{> 0} \}$. $f \colon X \to \mathbb{Z}$ dada por $f(s_n) = n$ é $1$-limitada considerando a norma euclideana $l^2$, mas não tem nenhuma extensão $\alpha$-limitada ao conjunto $X \cup \{(0, 0, 0, \dots)\}$ para qualquer $\alpha > 0$, pois $f$ é ilimitada em $\overline{B}_1((0, 0, 0, \dots))$.}
+  \en{Let $s_n \in l^2(\mathbb{Z}_{> 0})$ be the sequence with a $1$ in the $n$-th position and $0$'s in the other positions, and let $X = \{ s_n \mid n \in \mathbb{Z}_{> 0} \}$. The function $f \colon X \to \mathbb{Z}$ given by $f(s_n) = n$ is $1$-bounded considering the Euclidean $l^2$ norm, but it has no $\alpha$-bounded extension to the set $X \cup \{(0, 0, 0, \dots)\}$ for any $\alpha > 0$, since $f$ is unbounded in $\overline{B}_1((0, 0, 0, \dots))$.}
 \end{example}
 
 \input{figures/unit_circle.tex}
 
-O corolário a seguir e os exemplos subsequentes ilustram algumas propriedades interessantes das funções $\alpha$-limitadas, especialmente como elas podem ser estendidas de um conjunto compacto para incluir finitos pontos adicionais.
+\pt{O corolário a seguir e os exemplos subsequentes ilustram algumas propriedades interessantes das funções $\alpha$-limitadas, especialmente como elas podem ser estendidas de um conjunto compacto para incluir finitos pontos adicionais.}
+\en{The following corollary and subsequent examples illustrate some interesting properties of $\alpha$-bounded functions, especially how they can be extended from a compact set to include finitely many additional points.}
 
 \begin{corollary}
-  Toda função $\alpha$-limitada definida em um conjunto compacto $\mathcal{X}$ possui uma extensão $\beta$-limitada para qualquer conjunto $\tilde{\mathcal{X}} \supseteq \mathcal{X}$ tal que $\tilde{\mathcal{X}} \setminus \mathcal{X}$ é finito.
+  \pt{Toda função $\alpha$-limitada definida em um conjunto compacto $\mathcal{X}$ possui uma extensão $\beta$-limitada para qualquer conjunto $\tilde{\mathcal{X}} \supseteq \mathcal{X}$ tal que $\tilde{\mathcal{X}} \setminus \mathcal{X}$ é finito.}
+  \en{Every $\alpha$-bounded function defined on a compact set $\mathcal{X}$ has a $\beta$-bounded extension for any set $\tilde{\mathcal{X}} \supseteq \mathcal{X}$ such that $\tilde{\mathcal{X}} \setminus \mathcal{X}$ is finite.}
 \end{corollary}
 \begin{proof}
-  Como $\mathcal{X}$ é compacto, a cobertura $\{ B_1(x) \mid x \in \mathcal{X} \} \supseteq \mathcal{X}$ possui uma subcobertura finita $\{ B_1(x_1), \dots, B_1(x_n)\}$.
+  \pt{Como $\mathcal{X}$ é compacto, a cobertura $\{ B_1(x) \mid x \in \mathcal{X} \} \supseteq \mathcal{X}$ possui uma subcobertura finita $\{ B_1(x_1), \dots, B_1(x_n)\}$.}
+  \en{Since $\mathcal{X}$ is compact, the cover $\{ B_1(x) \mid x \in \mathcal{X} \} \supseteq \mathcal{X}$ has a finite subcover $\{ B_1(x_1), \dots, B_1(x_n)\}$.}
 
-  Logo $f$ é limitada por $\max\{\lvert f(x_1) \rvert + \alpha, \dots, \lvert f(x_n) \rvert + \alpha\}$, e podemos aplicar o teorema \ref{tietze}.
+  \pt{Logo $f$ é limitada por $\max\{\lvert f(x_1) \rvert + \alpha, \dots, \lvert f(x_n) \rvert + \alpha\}$, e podemos aplicar o teorema \ref{tietze}.}
+  \en{Thus, $f$ is bounded by $\max\{\lvert f(x_1) \rvert + \alpha, \dots, \lvert f(x_n) \rvert + \alpha\}$, and we can apply Theorem \ref{tietze}.}
 \end{proof}
 
-Note que podemos ter $\beta < \alpha$ no teorema acima, já que $\alpha$ não precisa ser mínimo e $\tilde{\mathcal{X}} \setminus \mathcal{X}$ pode, por exemplo, ser vazio. Também não podemos assumir que $\beta = \alpha$ no teorema acima.
+\pt{Note que podemos ter $\beta < \alpha$ no teorema acima, já que $\alpha$ não precisa ser mínimo e $\tilde{\mathcal{X}} \setminus \mathcal{X}$ pode, por exemplo, ser vazio. Também não podemos assumir que $\beta = \alpha$ no teorema acima.}
+\en{Note that we can have $\beta < \alpha$ in the above theorem, since $\alpha$ does not need to be minimal and $\tilde{\mathcal{X}} \setminus \mathcal{X}$ can, for example, be empty. We also cannot assume that $\beta = \alpha$ in the above theorem.}
 
 \begin{example}
-  Seja $X \coloneqq \{-1, 1\} \subset \mathbb{Z}$. A função $f \colon X \to \mathbb{Z}$ dada por $f(x) = 2x$ é $1$-limitada (considerando a métrica usual), mas não existe uma extensão $1$-limitada de $f$ para o conjunto $\{-1, 0, 1\}$ pois $\lvert f(1) - f(-1) \rvert > 1$.
+  \pt{Seja $X \coloneqq \{-1, 1\} \subset \mathbb{Z}$. A função $f \colon X \to \mathbb{Z}$ dada por $f(x) = 2x$ é $1$-limitada (considerando a métrica usual), mas não existe uma extensão $1$-limitada de $f$ para o conjunto $\{-1, 0, 1\}$ pois $\lvert f(1) - f(-1) \rvert > 1$.}
+  \en{Let $X \coloneqq \{-1, 1\} \subset \mathbb{Z}$. The function $f \colon X \to \mathbb{Z}$ given by $f(x) = 2x$ is $1$-bounded (considering the usual metric), but there does not exist a $1$-bounded extension of $f$ to the set $\{-1, 0, 1\}$ since $\lvert f(1) - f(-1) \rvert > 1$.}
 \end{example}
 
-O que foi apresentado neste capítulo mostra as propriedades básicas das funções $(\alpha,\lambda)$-limitadas e como elas se comportam em comparação com funções contínuas em espaços métricos. Os teoremas e exemplos ilustram as características fundamentais dessas funções, e fornecem uma base para o estudo aprofundado das funções $(\alpha,\lambda)$-limitadas em contextos mais específicos, como o explorado no terceiro capítulo.
+\pt{O que foi apresentado neste capítulo mostra as propriedades básicas das funções $(\alpha,\lambda)$-limitadas e como elas se comportam em comparação com funções contínuas em espaços métricos. Os teoremas e exemplos ilustram as características fundamentais dessas funções, e fornecem uma base para o estudo aprofundado das funções $(\alpha,\lambda)$-limitadas em contextos mais específicos, como o explorado no terceiro capítulo.}
+\en{What has been presented in this chapter shows the basic properties of $(\alpha,\lambda)$-bounded functions and how they behave in comparison to continuous functions in metric spaces. Theorems and examples illustrate the fundamental characteristics of these functions and provide a foundation for the in-depth study of $(\alpha,\lambda)$-bounded functions in more specific contexts, such as those explored in the third chapter.}
