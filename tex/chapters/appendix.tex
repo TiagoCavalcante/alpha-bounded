@@ -1,6 +1,12 @@
 \phantomsection
-\section*{Apêndice}
-\addcontentsline{toc}{section}{Apêndice}
+\pt{
+  \section*{Apêndice}
+  \addcontentsline{toc}{section}{Apêndice}
+}
+\en{
+  \section*{Appendix}
+  \addcontentsline{toc}{section}{Appendix}
+}
 \vspace{1cm}
 
 \pt{Neste apêndice, apresentamos alguns resultados adicionais sobre matrizes de Toeplitz que complementam o desenvolvimento teórico do trabalho. Embora não tenham sido utilizados diretamente nas provas apresentadas, esses resultados enriquecem a compreensão das propriedades dessas matrizes e podem ser úteis para estudos futuros relacionados.}
@@ -207,7 +213,7 @@
 \pt{A fórmula de Gohberg-Semencul fornece uma representação explícita para a inversa de uma matriz de Toeplitz invertível, permitindo calcular inversas aproximadas de matrizes de Toeplitz de grandes dimensões.}
 \en{The Gohberg-Semencul formula provides an explicit representation for the inverse of an invertible Toeplitz matrix, allowing the computation of approximate inverses of large-dimensional Toeplitz matrices.}
 
-\begin{theorem*}[Fórmula de Gohberg-Semencul]
+\begin{theorem*}[\pt{Fórmula de Gohberg-Semencul}\en{Gohberg-Semencul formula}]
   \pt{Seja $ T_n(a)$ uma matriz de Toeplitz $ n \times n$ gerada por um símbolo $ a \in L^\infty(\mathbb{T})$, tal que $ T_n(a)$ é invertível. Então, a inversa de $ T_n(a)$ pode ser expressa como
     \[
       T_n(a)^{-1} = X_n - U_n V_n^T,
@@ -229,7 +235,7 @@
 \pt{Um resultado importante provado por Szegö em \cite{szego1915} e futuramente melhorado por ele e diversos outros matemáticos é o seguinte:}
 \en{An important result proved by Szegö in \cite{szego1915} and later improved by him and various other mathematicians is the following:}
 
-\begin{theorem*}[Teorema do limite de Szegő]
+\begin{theorem*}[\pt{Teorema do limite de Szegő}\en{Szegő limit theorem}]
   \pt{Seja $A$ a matriz de Toeplitz correspondente à função real $a \in L^1(\mathbb{T})$, e $A_n$ sua seção finita $n \times n$. Se $\log a \in L^1(\mathbb{T})$ e $a(x) > 0$ para todo $x \in \mathbb{T}$, então \[\lim_{n\to \infty} \frac{\det A_n}{\det A_{n-1}} = \exp\left(\frac{1}{2\pi} \int_{0}^{2\pi} \log a\left(e^{i\theta}\right) d\theta \right)\text{.}\]}
   \en{Let $A$ be the Toeplitz matrix corresponding to the real function $a \in L^1(\mathbb{T})$, and $A_n$ its finite $n \times n$ section. If $\log a \in L^1(\mathbb{T})$ and $a(x) > 0$ for all $x \in \mathbb{T}$, then \[\lim_{n\to \infty} \frac{\det A_n}{\det A_{n-1}} = \exp\left(\frac{1}{2\pi} \int_{0}^{2\pi} \log a\left(e^{i\theta}\right) d\theta \right)\text{.}\]}
 \end{theorem*}
@@ -254,7 +260,7 @@
 \pt{Apresentamos agora um resultado importante sobre o espectro de operadores de Toeplitz. O teorema do mapeamento espectral relaciona o espectro de um operador com o espectro de sua imagem através de uma função contínua.}
 \en{We now present an important result about the spectrum of Toeplitz operators. The spectral mapping theorem relates the spectrum of an operator with the spectrum of its image through a continuous function.}
 
-\begin{theorem*}[Teorema do Espectro de Toeplitz]
+\begin{theorem*}[\pt{Teorema do espectro de Toeplitz}\en{Toeplitz spectrum theorem}]
   \pt{Seja $T(a)$ um operador de Toeplitz com símbolo $a \in L^\infty(\mathbb{T})$. Então, o espectro de $T(a)$, denotado por $\sigma(T(a))$, satisfaz $\sigma(T(a))=a(\mathbb{T})$, onde $\overline{a(\mathbb{T})}$ é o fecho da imagem de $a$ em $\mathbb{C}$.}
   \en{Let $T(a)$ be a Toeplitz operator with symbol $a \in L^\infty(\mathbb{T})$. Then, the spectrum of $T(a)$, denoted by $\sigma(T(a))$, satisfies $\sigma(T(a))=a(\mathbb{T})$, where $\overline{a(\mathbb{T})}$ is the closure of the image of $a$ in $\mathbb{C}$.}
 \end{theorem*}
@@ -271,7 +277,7 @@
 \pt{Por fim, apresentados a fatoração de Wiener-Hopf, uma técnica que permite decompor uma função em fatores que são analíticos dentro e fora do círculo unitário, o que é essencial na solução de certas equações integrais e na teoria de operadores de Toeplitz.}
 \en{Finally, we present the Wiener-Hopf factorization, a technique that allows decomposing a function into factors that are analytic inside and outside the unit circle, which is essential in solving certain integral equations and in the theory of Toeplitz operators.}
 
-\begin{theorem*}[Fatoração de Wiener-Hopf]
+\begin{theorem*}[\pt{Fatoração de Wiener-Hopf}\en{Wiener-Hopf factorization}]
   \pt{Se $a \in L^\infty(\mathbb{T})$ é invertível e $\log a \in L^1(\mathbb{T})$, então existe uma fatoração única $a(e^{i\theta}) = a_-(e^{i\theta}) a_+(e^{i\theta})$, onde $a_-$ e $a_+$ são funções com extensões analíticas dentro e fora do círculo unitário, respectivamente.}
   \en{If $a \in L^\infty(\mathbb{T})$ is invertible and $\log a \in L^1(\mathbb{T})$, then there exists a unique factorization $a(e^{i\theta}) = a_-(e^{i\theta}) a_+(e^{i\theta})$, where $a_-$ and $a_+$ are functions with analytic extensions inside and outside the unit circle, respectively.}
 \end{theorem*}

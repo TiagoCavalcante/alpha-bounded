@@ -1,86 +1,129 @@
-\section{Resultados da teoria de matrizes de Toeplitz} \vspace{1cm}
+\section{
+  \pt{Resultados da teoria de matrizes de Toeplitz}
+  \en{Results from the theory of Toeplitz matrices}
+ }
+\vspace{1cm}
 
-\par Em \cite{Toeplitz1911} Otto Toeplitz apresenta as $L$-formas, anteriormente estudadas em sua tese de habilitação para a universidade Universidade de Göttingen. Posteriormente seus estudos foram adaptados para o que hoje chamamos de matrizes de Toeplitz.
+\pt{Em \cite{Toeplitz1911} Otto Toeplitz apresenta as $L$-formas, anteriormente estudadas em sua tese de habilitação para a universidade Universidade de Göttingen. Posteriormente seus estudos foram adaptados para o que hoje chamamos de matrizes de Toeplitz.}
+\en{In \cite{Toeplitz1911} Otto Toeplitz introduces the $L$-forms, previously studied in his postdoctoral thesis at the University of Göttingen. Later, his studies were adapted to what we now call Toeplitz matrices.}
 
-Uma matriz de Toeplitz é uma matriz com entradas complexas possivelmente infinita da forma \[ \begin{pmatrix} a_{0} & a_{-1} & a_{-2} & \cdots \\ a_{1} & a_{0} & a_{-1} & \cdots \\ a_2 & a_{1} & a_{0} & \cdots \\ \vdots & \vdots & \vdots & \ddots \end{pmatrix}\text{.} \]
+\pt{Uma matriz de Toeplitz é uma matriz com entradas complexas possivelmente infinita da forma}
+\en{A Toeplitz matrix is a possibly infinite matrix with complex entries of the form}
+\[ \begin{pmatrix} a_{0} & a_{-1} & a_{-2} & \cdots \\ a_{1} & a_{0} & a_{-1} & \cdots \\ a_2 & a_{1} & a_{0} & \cdots \\ \vdots & \vdots & \vdots & \ddots \end{pmatrix}\text{.} \]
 
-As matrizes de Toeplitz possuem uma ampla gama de aplicações, que vão desde teoria dos operadores, análise harmonica, teoria da informação e processamento de sinais à mecânica quântica.
+\pt{As matrizes de Toeplitz possuem uma ampla gama de aplicações, que vão desde teoria dos operadores, análise harmonica, teoria da informação e processamento de sinais à mecânica quântica.}
+\en{Toeplitz matrices have a wide range of applications, from operator theory, harmonic analysis, information theory, and signal processing to quantum mechanics.}
 
-Essas matrizes são especialmente úteis quando a sequência $\{a_n\}$ determina os coeficientes de Fourier de uma determinada função, uma vez que isso possibilita utilizar ferramentas da análise para calcular, por exemplo, a norma do operador em $l^2(\mathbb{Z}_{> 0})$ que a matriz representa.
+\pt{Essas matrizes são especialmente úteis quando a sequência $\{a_n\}$ determina os coeficientes de Fourier de uma determinada função, uma vez que isso possibilita utilizar ferramentas da análise para calcular, por exemplo, a norma do operador em $l^2(\mathbb{Z}_{> 0})$ que a matriz representa.}
+\en{These matrices are especially useful when the sequence $\{a_n\}$ determines the Fourier coefficients of a given function, as this allows the use of analytical tools to calculate, for example, the norm of the operator on $l^2(\mathbb{Z}_{> 0})$ that the matrix represents.}
 
-Em \cite{Toeplitz1911} Toeplitz mostra uma condição necessária e suficiente para que uma matriz de Toeplitz induza um operador limitado em $l^2(\mathbb{Z}_{> 0})$, é claro, utilizando a linguagem das $L$-formas.
+\pt{Em \cite{Toeplitz1911} Toeplitz mostra uma condição necessária e suficiente para que uma matriz de Toeplitz induza um operador limitado em $l^2(\mathbb{Z}_{> 0})$, é claro, utilizando a linguagem das $L$-formas.}
+\en{In \cite{Toeplitz1911} Toeplitz demonstrates a necessary and sufficient condition for a Toeplitz matrix to induce a bounded operator on $l^2(\mathbb{Z}_{> 0})$, of course, using the language of $L$-forms.}
 
-\begin{theorem*}[Operadores limitados induzidos por matrizes de Toeplitz]
-  A matriz infinita \[A = \begin{pmatrix} a_{0} & a_{-1} & a_{-2} & \cdots \\ a_{1} & a_{0} & a_{-1} & \cdots \\ a_2 & a_{1} & a_{0} & \cdots \\ \vdots & \vdots & \vdots & \ddots \end{pmatrix}\] induz um operador limitado em $l^2(\mathbb{Z}_{>0})$ se e somente se os números $\{a_n\}$ são os coeficientes de Fourier de uma função integrável $a \in L^\infty(\mathbb{T})$ definida no círculo unitário complexo, \[a_n = \frac{1}{2\pi} \int_{0}^{2\pi} a(e^{i \theta})e^{-i n \theta} \d{\theta}, \quad n \in \mathbb{Z}\text{.}\]
-  Nesse caso, a norma do operador $A$ é igual à \[\|a\|_{\infty} \coloneqq \esssup_{t \in \mathbb{T}}\lvert a(t)\rvert\text{.}\]
+\begin{theorem*}[\pt{Operadores limitados induzidos por matrizes de Toeplitz}\en{Bounded operators induced by Toeplitz matrices}]
+  \pt{A matriz infinita}
+  \en{The infinite matrix}
+  \[A = \begin{pmatrix} a_{0} & a_{-1} & a_{-2} & \cdots \\ a_{1} & a_{0} & a_{-1} & \cdots \\ a_2 & a_{1} & a_{0} & \cdots \\ \vdots & \vdots & \vdots & \ddots \end{pmatrix}\]
+  \pt{induz um operador limitado em $l^2(\mathbb{Z}_{>0})$ se e somente se os números $\{a_n\}$ são os coeficientes de Fourier de uma função integrável $a \in L^\infty(\mathbb{T})$ definida no círculo unitário complexo,}
+  \en{induces a bounded operator on $l^2(\mathbb{Z}_{>0})$ if and only if the numbers $\{a_n\}$ are the Fourier coefficients of an integrable function $a \in L^\infty(\mathbb{T})$ defined on the complex unit circle,}
+  \[a_n = \frac{1}{2\pi} \int_{0}^{2\pi} a(e^{i \theta})e^{-i n \theta} \d{\theta}, \quad n \in \mathbb{Z}\text{.}\]
+  \pt{Nesse caso, a norma do operador $A$ é igual à}
+  \en{In this case, the norm of the operator $A$ is equal to}
+  \[\|a\|_{\infty} \coloneqq \esssup_{t \in \mathbb{T}}\lvert a(t)\rvert\text{.}\]
 \end{theorem*}
 
-Essa formulação e uma prova com notação moderna são encontrados em \cite[p. 1]{bottcher}.
+\pt{Essa formulação e uma prova com notação moderna são encontrados em \cite[p. 1]{bottcher}.}
+\en{This formulation and a proof with modern notation can be found in \cite[p. 1]{bottcher}.}
 
-A norma $\| a \|_{\infty}$ mencionada no teorema acima corresponde à norma $L^\infty$, definida como
-\[ \esssup_{t \in \mathbb{T}}\lvert a(t)\rvert \coloneqq \inf \{ C \geq 0 \mid |a(t)| \leq C \text{ para quase todo } t \in \mathbb{T} \}\text{.}
+\pt{A norma $\| a \|_{\infty}$ mencionada no teorema acima corresponde à norma $L^\infty$, definida como}
+\en{The norm $\| a \|_{\infty}$ mentioned in the above theorem corresponds to the $L^\infty$ norm, defined as}
+\[ \esssup_{t \in \mathbb{T}}\lvert a(t)\rvert \coloneqq \inf \{ C \geq 0 \mid |a(t)| \leq C \text{ \pt{para quase todo}\en{for almost every} } t \in \mathbb{T} \}\text{.}
 \]
 
-Aqui, ``quase todo'' significa que a condição $|a(t)| \leq C$ deve ser satisfeita para todos os $t \in \mathbb{T}$, exceto possivelmente em um conjunto de medida zero. Intuitivamente, a norma $L^\infty$ captura o valor máximo da função $a$ exceto em um conjunto ``irrelevante'' de pontos.
+\pt{Aqui, ``quase todo'' significa que a condição $|a(t)| \leq C$ deve ser satisfeita para todos os $t \in \mathbb{T}$, exceto possivelmente em um conjunto de medida zero. Intuitivamente, a norma $L^\infty$ captura o valor máximo da função $a$ exceto em um conjunto ``irrelevante'' de pontos.}
+\en{Here, ``almost everywhere'' means that the condition $|a(t)| \leq C$ must be satisfied for all $t \in \mathbb{T}$, except possibly on a set of measure zero. Intuitively, the $L^\infty$ norm captures the maximum value of the function $a$ except on an ``irrelevant'' set of points.}
 
-O \textit{símbolo} de uma matriz de Toeplitz é a função $a \in L^\infty(\mathbb{T})$ que gera a matriz através de seus coeficientes de Fourier. Esse símbolo encapsula toda a informação necessária para caracterizar as propriedades espectrais e operacionais da matriz de Toeplitz.
+\pt{O \textit{símbolo} de uma matriz de Toeplitz é a função $a \in L^\infty(\mathbb{T})$ que gera a matriz através de seus coeficientes de Fourier. Esse símbolo encapsula toda a informação necessária para caracterizar as propriedades espectrais e operacionais da matriz de Toeplitz.}
+\en{The \textit{symbol} of a Toeplitz matrix is the function $a \in L^\infty(\mathbb{T})$ that generates the matrix through its Fourier coefficients. This symbol encapsulates all the necessary information to characterize the spectral and operational properties of the Toeplitz matrix.}
 
-Em diversos casos, pode-se utilizar a norma do operador em $l^2(\mathbb{Z}_{> 0})$ induzido por uma matriz de Toeplitz para estudar o limite da sequência das normas de matrizes que são ou estão relacionadas à matrizes de Toeplitz, ou vice-versa. Grande parte dos teoremas acerca dessa relação são provados usando a teoria das álgebras $C^\ast$, assim como outros resultados da teoria das matrizes de Toeplitz. Essa estratégia é apresentada com profundidade em \cite{bottcher}. Na prova de \ref{th:asymptotic} usamos um resultado básico sobre essa relação.
+\pt{Em diversos casos, pode-se utilizar a norma do operador em $l^2(\mathbb{Z}_{> 0})$ induzido por uma matriz de Toeplitz para estudar o limite da sequência das normas de matrizes que são ou estão relacionadas à matrizes de Toeplitz, ou vice-versa. Grande parte dos teoremas acerca dessa relação são provados usando a teoria das álgebras $C^\ast$, assim como outros resultados da teoria das matrizes de Toeplitz. Essa estratégia é apresentada com profundidade em \cite{bottcher}. Na prova de \ref{th:asymptotic} usamos um resultado básico sobre essa relação.}
+\en{In various cases, one can use the norm of the operator on $l^2(\mathbb{Z}_{> 0})$ induced by a Toeplitz matrix to study the limit of the sequence of norms of matrices that are or are related to Toeplitz matrices, or vice versa. Many theorems about this relationship are proved using the theory of $C^\ast$-algebras, as well as other results from the theory of Toeplitz matrices. This strategy is presented in depth in \cite{bottcher}. In the proof of \ref{th:asymptotic}, we use a basic result about this relationship.}
 
-Vamos agora a um tipo específico de matriz de Toeplitz. As matrizes de banda surgem naturalmente em diversas aplicações, como na discretização de operadores diferenciais e em algoritmos eficientes de processamento de sinais. No contexto das matrizes de Toeplitz, a restrição de banda permite simplificar a análise espectral e facilita a obtenção de estimativas de norma, tornando-as ferramentas valiosas para a análise assintótica e a resolução de sistemas lineares estruturados.
+\pt{Vamos agora a um tipo específico de matriz de Toeplitz. As matrizes de banda surgem naturalmente em diversas aplicações, como na discretização de operadores diferenciais e em algoritmos eficientes de processamento de sinais. No contexto das matrizes de Toeplitz, a restrição de banda permite simplificar a análise espectral e facilita a obtenção de estimativas de norma, tornando-as ferramentas valiosas para a análise assintótica e a resolução de sistemas lineares estruturados.}
+\en{Let us now consider a specific type of Toeplitz matrix. Banded matrices naturally arise in various applications, such as in the discretization of differential operators and in efficient signal processing algorithms. Within the context of Toeplitz matrices, the band restriction simplifies spectral analysis and facilitates the estimation of norms, making them valuable tools for asymptotic analysis and the solution of structured linear systems.}
 
 \begin{definition*}
-  Uma matriz de Toeplitz $ M $ com entradas complexas é dita \textit{de banda $ k $} se $ m_{ij} = 0 $ para todos $ i \in I$ e $j \in J $, sendo $I$ o conjunto dos índices das linhas de $M$ e $J$ o conjunto dos índices das colunas, tais que $ |i - j| > k $.
+  \pt{Uma matriz de Toeplitz $ M $ com entradas complexas é dita \textit{de banda $ k $} se $ m_{ij} = 0 $ para todos $ i \in I$ e $j \in J $, sendo $I$ o conjunto dos índices das linhas de $M$ e $J$ o conjunto dos índices das colunas, tais que $ |i - j| > k $.}
+  \en{A Toeplitz matrix $ M $ with complex entries is said to be a \textit{banded matrix of width $ k $} if $ m_{ij} = 0 $ for all $ i \in I$ and $j in J$, where $I$ is the set of row indices of $M$ and $J$ is the set of column indices, such that $ |i - j| > k $.}
 \end{definition*}
 
-\begin{theorem}[Norma de matrizes de Toeplitz de banda] \label{norm} Seja $M$ uma matriz de Toeplitz possivelmente infinita com entradas reias e banda $k$. Então, a norma espectral de $M$, denotada por $\| M \|_2$, satisfaz \[ \| M \|_2 \leq (2k + 1) \cdot \max_{|i - j| \leq k} |m_{ij}|. \] \end{theorem}
+\begin{theorem}[Norma de matrizes de Toeplitz de banda] \label{norm}
+  \pt{Seja $M$ uma matriz de Toeplitz possivelmente infinita com entradas reias e banda $k$. Então, a norma espectral de $M$, denotada por $\| M \|_2$, satisfaz}
+  \en{Let $M$ be a possibly infinite Toeplitz matrix with real entries and band $k$. Then, the spectral norm of $M$, denoted by $\| M \|_2$, satisfies}
+  \[ \| M \|_2 \leq (2k + 1) \cdot \max_{|i - j| \leq k} |m_{ij}|. \]
+\end{theorem}
 
-Para provar o teorema anterior, será necessária a utilização da desigualdade $\|M\|_2 \leq \|M\|_\infty$. A seguir, apresentamos uma prova dessa desigualdade para completude.
+\pt{Para provar o teorema anterior, será necessária a utilização da desigualdade $\|M\|_2 \leq \|M\|_\infty$. A seguir, apresentamos uma prova dessa desigualdade para completude.}
+\en{To prove the previous theorem, it will be necessary to use the inequality $\|M\|_2 \leq \|M\|_\infty$. Below, we present a proof of this inequality for completeness.}
 
-As normas de matrizes são normas de operadores, permitindo medir a distorção que uma matriz pode causar em um espaço vetorial. Consideremos um espaço vetorial $V$ equipado com uma norma $\| \cdot \|_p$, conhecida como norma $p$-norma, definida para $1 \leq p \leq \infty$ por
+\pt{As normas de matrizes são normas de operadores, permitindo medir a distorção que uma matriz pode causar em um espaço vetorial. Consideremos um espaço vetorial $V$ equipado com uma norma $\| \cdot \|_p$, conhecida como norma $p$-norma, definida para $1 \leq p \leq \infty$ por}
+\en{Matrix norms are operator norms, allowing one to measure the distortion a matrix can cause in a vector space. Consider a vector space $V$ equipped with a norm $\| \cdot \|_p$, known as the $p$-norm, defined for $1 \leq p \leq \infty$ by}
 \[
   \| v \|_p = \left( \sum_{i=1}^{n} |v_i|^p \right)^{1/p} \quad \text{para } p < \infty, \quad \text{e} \quad \| v \|_\infty = \max_{1 \leq i \leq n} |v_i|.
 \]
 
-As $p$-normas satisfazem várias desigualdades importantes, como a desigualdade de Hölder e a desigualdade de Minkowski, que estabelecem relações entre diferentes normas $p$ e $q$ em espaços vetoriais.
+\pt{As $p$-normas satisfazem várias desigualdades importantes, como a desigualdade de Hölder e a desigualdade de Minkowski, que estabelecem relações entre diferentes normas $p$ e $q$ em espaços vetoriais.}
+\en{The $p$-norms satisfy several important inequalities, such as Hölder's inequality and Minkowski's inequality, which establish relationships between different $p$ and $q$ norms in vector spaces.}
 
-A norma de operador de uma matriz $M \in \mathbb{C}^{n \times n}$ associada à norma $p$-norma no espaço vetorial $V$ é definida por
+\pt{A norma de operador de uma matriz $M \in \mathbb{C}^{n \times n}$ associada à norma $p$-norma no espaço vetorial $V$ é definida por}
+\en{The operator norm of a matrix $M \in \mathbb{C}^{n \times n}$ associated with the $p$-norm in the vector space $V$ is defined by}
 \[
   \| M \|_{p} = \sup_{\| v \|_p = 1} \| M v \|_p.
 \]
 
-Especificamente, para matrizes $ M \in \mathbb{C}^{n \times n} $, a norma espectral $\| M \|_2$ corresponde ao valor singular de $ M $ de maior módulo, enquanto a norma infinito $\| M \|_\infty$ é definida como o maior somatório das magnitudes das entradas em qualquer linha da matriz
+\pt{Especificamente, para matrizes $ M \in \mathbb{C}^{n \times n} $, a norma espectral $\| M \|_2$ corresponde ao valor singular de $ M $ de maior módulo, enquanto a norma infinito $\| M \|_\infty$ é definida como o maior somatório das magnitudes das entradas em qualquer linha da matriz}
+\en{Specifically, for matrices $ M \in \mathbb{C}^{n \times n} $, the spectral norm $\| M \|_2$ corresponds to the largest singular value of $ M $, while the infinity norm $\| M \|_\infty$ is defined as the greatest sum of the magnitudes of the entries in any row of the matrix}
 \[
   \| M \|_\infty = \max_{1 \leq i \leq n} \sum_{j=1}^{n} |m_{ij}|.
 \]
 
 \begin{theorem}
-  Se $M \in \mathbb{C}^{n \times n} $ então
+  \pt{Se $M \in \mathbb{C}^{n \times n} $ então}
+  \en{If $M \in \mathbb{C}^{n \times n} $ then}
   \[
     \| M \|_2 \leq \| M \|_\infty.
   \]
 \end{theorem}
 
 \begin{proof}
-  Seja $\lambda$ o autovalor de $M$ de maior módulo. Pelo teorema do círculo de Gershgorin, provado pela primeira vez em \cite{Gerschgorin}, temos
+  \pt{Seja $\lambda$ o autovalor de $M$ de maior módulo. Pelo teorema do círculo de Gershgorin, provado pela primeira vez em \cite{Gerschgorin}, temos}
+  \en{Let $\lambda$ be the eigenvalue of $M$ with the largest modulus. By the Gershgorin circle theorem, first proven in \cite{Gerschgorin}, we have}
   \[
-    \lvert \lambda \rvert \in \bigcup_{i = 1}^n \overline{D}\left(m_{ii}, \sum_{j \ne i} \lvert m_{ij} \rvert\right) \subseteq \overline{D}\left(0, \max_{1 \leq i \leq n} \sum_{j=1}^{n} \lvert m_{ij}\rvert\right)
-  \] onde $\overline{D}(c, r)$ é o disco complexo fechado de centro $c \in \mathbb{C}$ e raio $r \in \mathbb{R}_{\ge 0}$.
+    \lvert \lambda \rvert \in \bigcup_{i = 1}^n \overline{D}\left(m_{ii}, \sum_{j \ne i} \lvert m_{ij} \rvert\right) \subseteq \overline{D}\left(0, \max_{1 leq i \leq n} \sum_{j=1}^{n} \lvert m_{ij}\rvert\right)
+  \] \pt{onde $\overline{D}(c, r)$ é o disco complexo fechado de centro $c \in \mathbb{C}$ e raio $r \in \mathbb{R}_{\ge 0}$.}
+  \en{where $\overline{D}(c, r)$ is the closed complex disk with center $c \in \mathbb{C}$ and radius $r \in \mathbb{R}_{\ge 0}$.}
 
-  Portanto, temos que
+  \pt{Portanto, temos que}
+  \en{Therefore, we have that}
   \[
     \| M \|_2 = \lvert \lambda \lvert \leq \| M \|_\infty.
   \]
 \end{proof}
 
 \begin{proof}[Prova do teorema \ref{norm}]
-  Em cada linha $i$, existem no máximo $k$ entradas não nulas acima da diagonal e $k$ abaixo, além da própria entrada na diagonal, totalizando no máximo $2k + 1$ entradas não nulas, correspondentes aos índices $j$ tais que $\lvert i - j \rvert \leq k$.
+  \pt{Em cada linha $i$, existem no máximo $k$ entradas não nulas acima da diagonal e $k$ abaixo, além da própria entrada na diagonal, totalizando no máximo $2k + 1$ entradas não nulas, correspondentes aos índices $j$ tais que $\lvert i - j \rvert \leq k$.}
+  \en{In each row $i$, there are at most $k$ non-zero entries above the diagonal and $k$ below, in addition to the entry on the diagonal itself, totaling at most $2k + 1$ non-zero entries, corresponding to the indices $j$ such that $\lvert i - j \rvert \leq k$.}
 
-  Portanto, sendo $I$ o conjunto dos índices das linhas de $M$ e $J$ o conjunto dos índices das colunas, temos \[ \| M \|_2 \le \| M \|_\infty = \sup_{i \in I} \sum_{j \in J} |m_{ij}| \leq (2k + 1) \cdot \max_{|i - j| \leq k} |m_{ij}| \]
+  \pt{Portanto, sendo $I$ o conjunto dos índices das linhas de $M$ e $J$ o conjunto dos índices das colunas, temos}
+  \en{Therefore, with $I$ being the set of row indices of $M$ and $J$ being the set of column indices, we have}
+  \[ \| M \|_2 \le \| M \|_\infty = \sup_{i \in I} \sum_{j \in J} |m_{ij}| \leq (2k + 1) \cdot \max_{|i - j| \leq k} |m_{ij}| \]
 \end{proof}
 
-A matriz $ M_{n,k} $ definida no teorema \ref{th:matrix-form-n-to-n} é um exemplo de matriz de Toeplitz de banda $ k $, onde os elementos $ m_{ij} $ são iguais a $ 1 $ se $ |i - j| \le k $ e $ 0 $ caso contrário. A norma espectral dessa matriz satisfaz $ \| M_{n,k} \|_2 = 2k + 1 $, conforme utilizado no teorema \ref{th:asymptotic}.
+\pt{A matriz $ M_{n,k} $ definida no teorema \ref{th:matrix-form-n-to-n} é um exemplo de matriz de Toeplitz de banda $ k $, onde os elementos $ m_{ij} $ são iguais a $ 1 $ se $ |i - j| \le k $ e $ 0 $ caso contrário. A norma espectral dessa matriz satisfaz $ \| M_{n,k} \|_2 = 2k + 1 $, conforme utilizado no teorema \ref{th:asymptotic}.}
+\en{The matrix $ M_{n,k} $ defined in theorem \ref{th:matrix-form-n-to-n} is an example of a banded Toeplitz matrix $ k $, where the elements $ m_{ij} $ are equal to $ 1 $ if $ |i - j| \le k $ and $ 0 $ otherwise. The spectral norm of this matrix satisfies $ \| M_{n,k} \|_2 = 2k + 1 $, as used in theorem \ref{th:asymptotic}.}
 
-Desse modo esse teorema pode ser usado para generalizar o limite superior de \ref{th:asymptotic} em casos onde não conseguimos calcular diretamente a norma da matrix de Toeplitz relacionada ao sistema.
+\pt{Desse modo esse teorema pode ser usado para generalizar o limite superior de \ref{th:asymptotic} em casos onde não conseguimos calcular diretamente a norma da matrix de Toeplitz relacionada ao sistema.}
+\en{Thus, this theorem can be used to generalize the upper limit of \ref{th:asymptotic} in cases where we cannot directly calculate the norm of the Toeplitz matrix related to the system.}
 
-Neste capítulo, foram estabelecidos os principais resultados da teoria de matrizes de Toeplitz que fundamentam as análises subsequentes deste trabalho. As propriedades e teoremas apresentados proporcionam as ferramentas matemáticas necessárias para a contagem de funções $k$-limitadas discutida no próximo capítulo.
+\pt{Neste capítulo, foram estabelecidos os principais resultados da teoria de matrizes de Toeplitz que fundamentam as análises subsequentes deste trabalho. As propriedades e teoremas apresentados proporcionam as ferramentas matemáticas necessárias para a contagem de funções $k$-limitadas discutida no próximo capítulo.}
+\en{In this chapter, the main results of the theory of Toeplitz matrices that underpin the subsequent analyses of this work have been established. The properties and theorems presented provide the mathematical tools necessary for the counting of $k$-bounded functions discussed in the next chapter.}

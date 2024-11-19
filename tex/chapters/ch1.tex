@@ -1,66 +1,90 @@
-\section{Funções \texorpdfstring{$(\alpha, \lambda)$}{(alpha, lambda)}-limitadas}
+\pt{\section{Funções \texorpdfstring{$(\alpha, \lambda)$}{(alpha, lambda)}-limitadas}}
+\en{\section{\texorpdfstring{$(\alpha, \lambda)$}{(alpha, lambda)}-bounded functions}}
 \vspace{1cm}
-A definição de $(\alpha,\lambda)$-limitada é inicialmente apresentada como uma propriedade pontual, assim como a definição de continuidade:
+
+\pt{A definição de $(\alpha,\lambda)$-limitada é inicialmente apresentada como uma propriedade pontual, assim como a definição de continuidade:}
+\en{The definition of $(\alpha,\lambda)$-bounded is initially presented as a pointwise property, just like the definition of continuity:}
+
 \begin{definition}
-  Sejam $\alpha, \lambda \ge 0$, $(X, d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X} \subseteq X$. Uma função $f \colon \mathcal{X} \to Y$ é dita \textit{$(\alpha,\lambda)$-limitada no ponto $x \in \mathcal{X}$} quando, para todo $\tilde{x} \in \mathcal{X}$ tal que $d_X(x, \tilde{x}) \le \lambda$, temos $d_Y(f(x), f(\tilde{x})) \le \alpha$.
+  \pt{Sejam $\alpha, \lambda \ge 0$, $(X, d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X} \subseteq X$. Uma função $f \colon \mathcal{X} \to Y$ é dita \textit{$(\alpha,\lambda)$-limitada no ponto $x \in \mathcal{X}$} quando, para todo $\tilde{x} \in \mathcal{X}$ tal que $d_X(x, \tilde{x}) \le \lambda$, temos $d_Y(f(x), f(\tilde{x})) \le \alpha$.}
+  \en{Let $\alpha, \lambda \ge 0$, $(X, d_X)$ and $(Y, d_Y)$ be metric spaces, $\mathcal{X} \subseteq X$. A function $f \colon \mathcal{X} \to Y$ is said to be \textit{$(\alpha,\lambda)$-bounded at the point $x \in \mathcal{X}$} when, for every $\tilde{x} \in \mathcal{X}$ such that $d_X(x, \tilde{x}) \le \lambda$, we have $d_Y(f(x), f(\tilde{x})) \le \alpha$.}
 \end{definition}
 
 \input{figures/alpha_bounded}
 \vspace{1cm}
 
 \begin{definition}
-  Sejam $\alpha, \lambda \ge 0$, $(X, d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X} \subseteq X$. Uma função $f \colon \mathcal{X} \to Y$ é dita \textit{$(\alpha,\lambda)$-limitada} quando, para todo $x$ em $\mathcal{X}$, $f$ é $(\alpha,\lambda)$-limitada no ponto $x$.
+  \pt{Sejam $\alpha, \lambda \ge 0$, $(X, d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X} \subseteq X$. Uma função $f \colon \mathcal{X} \to Y$ é dita \textit{$(\alpha,\lambda)$-limitada} quando, para todo $x$ em $\mathcal{X}$, $f$ é $(\alpha,\lambda)$-limitada no ponto $x$.}
+  \en{Let $\alpha, \lambda \ge 0$, $(X, d_X)$ and $(Y, d_Y)$ be metric spaces, $\mathcal{X} \subseteq X$. A function $f \colon \mathcal{X} \to Y$ is said to be \textit{$(\alpha,\lambda)$-bounded} when, for every $x$ in $\mathcal{X}$, $f$ is $(\alpha,\lambda)$-bounded at the point $x$.}
 \end{definition}
 
-Note que, para $\lambda = 1$, a definição acima adapta naturalmente a condição de Hölder para a ordem $0$ e coeficiente $\alpha$ (veja \cite{holder}). Também é importante notar que muitos resultados de funções contínuas não se estendem para funções $(\alpha, \lambda)$-limitadas. Veja o exemplo abaixo.
+\pt{Note que, para $\lambda = 1$, a definição acima adapta naturalmente a condição de Hölder para a ordem $0$ e coeficiente $\alpha$ (veja \cite{holder}). Também é importante notar que muitos resultados de funções contínuas não se estendem para funções $(\alpha, \lambda)$-limitadas. Veja o exemplo abaixo.}
+\en{Note that, for $\lambda = 1$, the above definition naturally adapts Hölder's condition for order $0$ and coefficient $\alpha$ (see \cite{holder}). It is also important to note that many results for continuous functions do not extend to $(\alpha, \lambda)$-bounded functions. See the example below.}
 
 \begin{example} \label{vitali}
-  Considere $V$ um conjunto de Vitali. A função $f \colon [0, 1] \to \mathbb{R}$, definida por $f(x) = 1_V$ se $x \in (0, 1)$ e $f(x) = 1 - x$ caso contrário, é $1$-limitada (considerando a métrica usual) mas não é contínua, não possui pontos fixos e não é Lebesgue integrável (veja \cite{vitali}).
+  \pt{Considere $V$ um conjunto de Vitali. A função $f \colon [0, 1] \to \mathbb{R}$, definida por $f(x) = 1_V$ se $x \in (0, 1)$ e $f(x) = 1 - x$ caso contrário, é $1$-limitada (considerando a métrica usual) mas não é contínua, não possui pontos fixos e não é Lebesgue integrável (veja \cite{vitali}).}
+  \en{Consider $V$ a Vitali set. The function $f \colon [0, 1] \to \mathbb{R}$, defined by $f(x) = 1_V$ if $x \in (0, 1)$ and $f(x) = 1 - x$ otherwise, is $1$-bounded (considering the usual metric) but is not continuous, has no fixed points, and is not Lebesgue integrable (see \cite{vitali}).}
 \end{example}
 
-Ao alterar a métrica, podemos considerar $\lambda = 1$ na definição acima sem perda de generalidade, porque $(X, d_X)$ é um espaço métrico se, e somente se, $(X, \lambda d_X)$ é um espaço métrico para todo $\lambda > 0$. Se desejarmos ter $d_X(x, \tilde{x}) \le \lambda$ para algum $\lambda > 0$, então podemos considerar o espaço métrico $(X, \frac{1}{\lambda} d_X)$ ao invés de $(X, d_X)$. Como nosso principal interesse neste trabalho são as funções $(k,1)$-limitadas, diremos que uma função é $\alpha$-limitada quando for $(\alpha,1)$-limitada.
+\pt{Ao alterar a métrica, podemos considerar $\lambda = 1$ na definição acima sem perda de generalidade, porque $(X, d_X)$ é um espaço métrico se, e somente se, $(X, \lambda d_X)$ é um espaço métrico para todo $\lambda > 0$. Se desejarmos ter $d_X(x, \tilde{x}) \le \lambda$ para algum $\lambda > 0$, então podemos considerar o espaço métrico $(X, \frac{1}{\lambda} d_X)$ ao invés de $(X, d_X)$. Como nosso principal interesse neste trabalho são as funções $(k,1)$-limitadas, diremos que uma função é $\alpha$-limitada quando for $(\alpha,1)$-limitada.}
+\en{By changing the metric, we can consider $\lambda = 1$ in the above definition without loss of generality, because $(X, d_X)$ is a metric space if and only if $(X, \lambda d_X)$ is a metric space for every $\lambda > 0$. If we wish to have $d_X(x, \tilde{x}) \le \lambda$ for some $\lambda > 0$, then we can consider the metric space $(X, \frac{1}{\lambda} d_X)$ instead of $(X, d_X)$. Since our main interest in this work is in $(k,1)$-bounded functions, we will say that a function is $\alpha$-bounded when it is $(\alpha,1)$-bounded.}
 
-Toda função $f \colon X \to \mathbb{R}$ definida em um subconjunto discreto de $\mathbb{R}$ é contínua considerando a métrica induzida por $\mathbb{R}$, mas pode não ser $\alpha$-limitada para qualquer $\alpha > 0$. Veja a seguir.
+\pt{Toda função $f \colon X \to \mathbb{R}$ definida em um subconjunto discreto de $\mathbb{R}$ é contínua considerando a métrica induzida por $\mathbb{R}$, mas pode não ser $\alpha$-limitada para qualquer $\alpha > 0$. Veja a seguir.}
+\en{Every function $f \colon X \to \mathbb{R}$ defined on a discrete subset of $\mathbb{R}$ is continuous considering the metric induced by $\mathbb{R}$, but it may not be $\alpha$-bounded for any $\alpha > 0$. See below.}
 
 \begin{example} \label{two_to_n}
-  $f \colon \mathbb{Z} \to \mathbb{Z}$ dada por $n \mapsto 2^n$ não é $\alpha$-limitada (considerando a métrica usual) para nenhum $\alpha > 0$, pois $f(n + 1) - f(n) = 2^{n}$ é ilimitada. Pela mesma razão, $g\colon \mathbb{Z} \to \mathbb{Z}$ dada por $n \mapsto n^2$ não é $\alpha$-limitada para nenhum $\alpha > 0$.
+  \pt{$f \colon \mathbb{Z} \to \mathbb{Z}$ dada por $n \mapsto 2^n$ não é $\alpha$-limitada (considerando a métrica usual) para nenhum $\alpha > 0$, pois $f(n + 1) - f(n) = 2^{n}$ é ilimitada. Pela mesma razão, $g\colon \mathbb{Z} \to \mathbb{Z}$ dada por $n \mapsto n^2$ não é $\alpha$-limitada para nenhum $\alpha > 0$.}
+  \en{$f \colon \mathbb{Z} \to \mathbb{Z}$ given by $n \mapsto 2^n$ is not $\alpha$-bounded (considering the usual metric) for any $\alpha > 0$, since $f(n + 1) - f(n) = 2^{n}$ is unbounded. For the same reason, $g\colon \mathbb{Z} \to \mathbb{Z}$ given by $n \mapsto n^2$ is not $\alpha$-bounded for any $\alpha > 0$.}
 \end{example}
 
-Abaixo estão alguns resultados imediatos da definição de função $\alpha$-limitada.
+\pt{Abaixo estão alguns resultados imediatos da definição de função $\alpha$-limitada.}
+\en{Below are some immediate results from the definition of $\alpha$-bounded function.}
 
 \begin{theorem}
-  Toda função $\alpha$-limitada é $(\alpha+\epsilon)$-limitada para todo $\epsilon > 0$.
+  \pt{Toda função $\alpha$-limitada é $(\alpha+\epsilon)$-limitada para todo $\epsilon > 0$.}
+  \en{Every $\alpha$-bounded function is $(\alpha+\epsilon)$-bounded for every $\epsilon > 0$.}
 \end{theorem}
 \begin{proof}
-  Evidente.
+  \pt{Evidente.}
+  \en{Evident.}
 \end{proof}
 
-Apresentamos agora a seguinte definição bem conhecida, para então relacioná-la com as funções $\alpha$-limitadas.
+\pt{Apresentamos agora a seguinte definição bem conhecida, para então relacioná-la com as funções $\alpha$-limitadas.}
+\en{We now present the following well-known definition, to then relate it to $\alpha$-bounded functions.}
 
 \begin{definition*}
-  Sejam $(X, d_X)$ e $(Y, d_Y)$ espaços métricos. Uma função $f \colon X \to Y$ é dita \textit{Lipschitz contínua} se existe uma constante real $K \ge 0$ tal que para quaiser $x_1, x_2 \in X$ vale que \[d_Y\left(f(x_1), f(x_2)\right) \le K d_x\left(x_1, x_2\right).\]
+  \pt{Sejam $(X, d_X)$ e $(Y, d_Y)$ espaços métricos. Uma função $f \colon X \to Y$ é dita \textit{Lipschitz contínua} se existe uma constante real $K \ge 0$ tal que para quaiser $x_1, x_2 \in X$ vale que \[d_Y\left(f(x_1), f(x_2)\right) \le K d_x\left(x_1, x_2\right).\]}
+  \en{Let $(X, d_X)$ and $(Y, d_Y)$ be metric spaces. A function $f \colon X \to Y$ is said to be \textit{Lipschitz continuous} if there exists a real constant $K \ge 0$ such that for any $x_1, x_2 in X$ it holds that \[d_Y\left(f(x_1), f(x_2)\right) \le K d_x\left(x_1, x_2\right).\]}
 \end{definition*}
 
 \begin{theorem}
-  Sejam $(X, d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X} \subseteq X$. Toda função Lipschitz contínua, com constante $K$, $f \colon \mathcal{X} \to Y$ é $K$-limitada.
+  \pt{Sejam $(X, d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X} \subseteq X$. Toda função Lipschitz contínua, com constante $K$, $f \colon \mathcal{X} \to Y$ é $K$-limitada.}
+  \en{Let $(X, d_X)$ and $(Y, d_Y)$ be metric spaces, $\mathcal{X} \subseteq X$. Every Lipschitz continuous function, with constant $K$, $f \colon \mathcal{X} \to Y$ is $K$-bounded.}
 \end{theorem}
 \begin{proof}
-  Para todo $x_1 \in \mathcal{X}$, $x_2 \in \mathcal{X}, d_X(x_1, x_2) \le 1$ e consequentemente $d_Y(f(x_1), f(x_2)) \le K d_X(x_1, x_2) \le K$.
-\end{proof}
-Note que nem todas as funções $\alpha$-Hölder contínuas são $\beta$-limitadas para algum $\beta > 0$. A função $\sqrt{\cdot} \colon \mathbb{R}^+ \to \mathbb{R}$ constitui um contraexemplo (considerando a métrica usual) pelo mesmo motivo mencionado no exemplo \ref{two_to_n}.
-
-\begin{theorem}
-  Sejam $(X, d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X} \subseteq X$, e $f \colon \mathcal{X} \to Y$ uma função. Se para todo $\epsilon > 0$ existe um $\alpha \in (0, \epsilon]$ tal que $f$ é $\alpha$-limitada, então $f$ é contínua.
-\end{theorem}
-\begin{proof}
-  Com efeito, para cada $x \in \mathcal{X}, \epsilon > 0$, existe algum $\alpha \in (0, \epsilon]$ tal que $\tilde{x} \in \mathcal{X}, d_X(x, \tilde{x}) \le 1 \implies d_Y(f(x), f(\tilde{x})) \le \alpha \le \epsilon$.
+  \pt{Para todo $x_1 \in \mathcal{X}$, $x_2 \in \mathcal{X}, d_X(x_1, x_2) \le 1$ e consequentemente $d_Y(f(x_1), f(x_2)) \le K d_X(x_1, x_2) \le K$.}
+  \en{For every $x_1 in \mathcal{X}$, $x_2 in \mathcal{X}, d_X(x_1, x_2) \le 1$ and consequently $d_Y(f(x_1), f(x_2)) \le K d_X(x_1, x_2) \le K$.}
 \end{proof}
 
+\pt{Note que nem todas as funções $\alpha$-Hölder contínuas são $\beta$-limitadas para algum $\beta > 0$. A função $\sqrt{\cdot} \colon \mathbb{R}^+ \to \mathbb{R}$ constitui um contraexemplo (considerando a métrica usual) pelo mesmo motivo mencionado no exemplo \ref{two_to_n}.}
+\en{Note that not all $\alpha$-Hölder continuous functions are $\beta$-bounded for some $\beta > 0$. The function $\sqrt{\cdot} \colon \mathbb{R}^+ \to \mathbb{R}$ constitutes a counterexample (considering the usual metric) for the same reason mentioned in example \ref{two_to_n}.}
+
 \begin{theorem}
-  Sejam $(X, d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X} \subseteq X$. Se $(f_n) \to f$ ponto a ponto, $f_n \colon \mathcal{X} \to Y$ são $\alpha$-limitadas para todo $n \in \mathbb{Z}_{> 0}$, então $f$ é $\alpha$-limitada.
+  \pt{Sejam $(X, d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X} \subseteq X$, e $f \colon \mathcal{X} \to Y$ uma função. Se para todo $\epsilon > 0$ existe um $\alpha \in (0, \epsilon]$ tal que $f$ é $\alpha$-limitada, então $f$ é contínua.}
+  \en{Let $(X, d_X)$ and $(Y, d_Y)$ be metric spaces, $\mathcal{X} \subseteq X$, and $f \colon \mathcal{X} \to Y$ a function. If for every $\epsilon > 0$ there exists an $\alpha \in (0, \epsilon]$ such that $f$ is $\alpha$-bounded, then $f$ is continuous.}
 \end{theorem}
 \begin{proof}
-  Suponha, por contradição, que $f$ não seja $\alpha$-limitada. Então existem $x_1, x_2 \in \mathcal{X}$, $d_X(x_1, x_2) \le 1$, tal que $d_Y(f(x_1), f(x_2)) \coloneqq k > \alpha$. Como $(f_n) \to f$ ponto a ponto, existe algum $n \in \mathbb{Z}_{> 0}$ com $d_Y(f_n(x_1), f(x_1)) < \frac{k - \alpha}{2}$ e $d_Y(f_n(x_2), f(x_2)) < \frac{k - \alpha}{2}$. Consequentemente, $d_Y(f_n(x_1), f_n(x_2)) > k - \frac{k - \alpha}{2} - \frac{k - \alpha}{2} = \alpha$, uma contradição.
+  \pt{Com efeito, para cada $x \in \mathcal{X}, \epsilon > 0$, existe algum $\alpha \in (0, \epsilon]$ tal que $\tilde{x} \in \mathcal{X}, d_X(x, \tilde{x}) \le 1 \implies d_Y(f(x), f(\tilde{x})) \le \alpha \le \epsilon$.}
+  \en{Indeed, for each $x in \mathcal{X}, \epsilon > 0$, there is some $\alpha \in (0, \epsilon]$ such that $\tilde{x} in \mathcal{X}, d_X(x, \tilde{x}) \le 1 \implies d_Y(f(x), f(\tilde{x})) \le \alpha \le \epsilon$.}
+\end{proof}
+
+\begin{theorem}
+  \pt{Sejam $(X, d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X} \subseteq X$. Se $(f_n) \to f$ ponto a ponto, $f_n \colon \mathcal{X} \to Y$ são $\alpha$-limitadas para todo $n \in \mathbb{Z}_{> 0}$, então $f$ é $\alpha$-limitada.}
+  \en{Let $(X, d_X)$ and $(Y, d_Y)$ be metric spaces, $\mathcal{X} \subseteq X$. If $(f_n) \to f$ pointwise, $f_n \colon \mathcal{X} \to Y$ are $\alpha$-bounded for every $n in \mathbb{Z}_{> 0}$, then $f$ is $\alpha$-bounded.}
+\end{theorem}
+\begin{proof}
+  \pt{Suponha, por contradição, que $f$ não seja $\alpha$-limitada. Então existem $x_1, x_2 \in \mathcal{X}$, $d_X(x_1, x_2) \le 1$, tal que $d_Y(f(x_1), f(x_2)) \coloneqq k > \alpha$. Como $(f_n) \to f$ ponto a ponto, existe algum $n \in \mathbb{Z}_{> 0}$ com $d_Y(f_n(x_1), f(x_1)) < \frac{k - \alpha}{2}$ e $d_Y(f_n(x_2), f(x_2)) < \frac{k - \alpha}{2}$. Consequentemente, $d_Y(f_n(x_1), f_n(x_2)) > k - \frac{k - \alpha}{2} - \frac{k - \alpha}{2} = \alpha$, uma contradição.}
+  \en{Suppose, for a contradiction, that $f$ is not $\alpha$-bounded. Then there are $x_1, x_2 in \mathcal{X}$, $d_X(x_1, x_2) \le 1$, such that $d_Y(f(x_1), f(x_2)) \coloneqq k > \alpha$. As $(f_n) \to f$ pointwise, there is some $n in \mathbb{Z}_{> 0}$ with $d_Y(f_n(x_1), f(x_1)) < \frac{k - \alpha}{2}$ and $d_Y(f_n(x_2), f(x_2)) < \frac{k - \alpha}{2}$. Consequently, $d_Y(f_n(x_1), f_n(x_2)) > k - \frac{k - \alpha}{2} - \frac{k - \alpha}{2} = \alpha$, a contradiction.}
 \end{proof}
 
 As funções $\alpha$-limitadas podem não ser o limite pontual de qualquer sequência de funções contínuas.
@@ -136,7 +160,7 @@ O corolário a seguir e os exemplos subsequentes ilustram algumas propriedades i
 Note que podemos ter $\beta < \alpha$ no teorema acima, já que $\alpha$ não precisa ser mínimo e $\tilde{\mathcal{X}} \setminus \mathcal{X}$ pode, por exemplo, ser vazio. Também não podemos assumir que $\beta = \alpha$ no teorema acima.
 
 \begin{example}
-  Seja $X \coloneqq \{-1, 1\} \subset \mathbb{Z}$. A função $f : X \to \mathbb{Z}$ dada por $f(x) = 2x$ é $1$-limitada (considerando a métrica usual), mas não existe uma extensão $1$-limitada de $f$ para o conjunto $\{-1, 0, 1\}$ pois $\lvert f(1) - f(-1) \rvert > 1$.
+  Seja $X \coloneqq \{-1, 1\} \subset \mathbb{Z}$. A função $f \colon X \to \mathbb{Z}$ dada por $f(x) = 2x$ é $1$-limitada (considerando a métrica usual), mas não existe uma extensão $1$-limitada de $f$ para o conjunto $\{-1, 0, 1\}$ pois $\lvert f(1) - f(-1) \rvert > 1$.
 \end{example}
 
 O que foi apresentado neste capítulo mostra as propriedades básicas das funções $(\alpha,\lambda)$-limitadas e como elas se comportam em comparação com funções contínuas em espaços métricos. Os teoremas e exemplos ilustram as características fundamentais dessas funções, e fornecem uma base para o estudo aprofundado das funções $(\alpha,\lambda)$-limitadas em contextos mais específicos, como o explorado no terceiro capítulo.
