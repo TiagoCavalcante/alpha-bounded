@@ -2,3 +2,4 @@ pdf/*
 !pdf/*.pdf
 **/svg-inkscape/*
 *.log
+pdf/main.pdf
