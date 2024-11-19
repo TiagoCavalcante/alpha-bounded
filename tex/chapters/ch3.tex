@@ -1,56 +1,93 @@
-\section{Contagem de funções \texorpdfstring{$k$}{k}-limitadas em \texorpdfstring{$[n]$}{[n]}} \vspace{1cm} Muitos problemas em combinatória podem ser descritos como um sistema de recorrências lineares homogêneas de primeira ordem, como mostrado em \cite{coulson}. Todo sistema de recorrências lineares homogêneas de primeira ordem pode ser expresso na forma de matriz. Às vezes, também é útil considerar sequências desses sistemas em $n$ recorrências, bem como entender seus comportamentos assintóticos à medida que $n \to \infty$, mas isso geralmente é uma tarefa difícil. Os resultados deste capítulo são úteis para entender o comportamento assintótico de sistemas cuja matriz correspondente é uma matriz de Toeplitz.
+\section{
+  \pt{Contagem de funções \texorpdfstring{$k$}{k}-limitadas em \texorpdfstring{$[n]$}{[n]}}
+  \en{Counting of $k$-bounded Functions on $[n]$}
+ }
+\vspace{1cm}
 
-Para cada par de inteiros positivos $n$ e $k$, $a(n,k)$ denota a quantidade de funções $k$-limitadas de $[n]$ para $[n]$.
+\pt{Muitos problemas em combinatória podem ser descritos como um sistema de recorrências lineares homogêneas de primeira ordem, como mostrado em \cite{coulson}. Todo sistema de recorrências lineares homogêneas de primeira ordem pode ser expresso na forma de matriz. Às vezes, também é útil considerar sequências desses sistemas em $n$ recorrências, bem como entender seus comportamentos assintóticos à medida que $n \to \infty$, mas isso geralmente é uma tarefa difícil. Os resultados deste capítulo são úteis para entender o comportamento assintótico de sistemas cuja matriz correspondente é uma matriz de Toeplitz.}
+\en{Many problems in combinatorics can be described as a system of first-order homogeneous linear recurrences, as shown in \cite{coulson}. Every first-order homogeneous linear recurrence system can be expressed in matrix form. Sometimes, it is also useful to consider sequences of these systems in $n$ recurrences, as well as to understand their asymptotic behaviors as $n \to \infty$, but this is generally a difficult task. The results of this chapter are useful for understanding the asymptotic behavior of systems whose corresponding matrix is a Toeplitz matrix.}
 
-Nós utilizaremos a notação $\chi_k(i, j) = \begin{cases} 1 & \text{se } \lvert i - j\rvert \le k \\ 0 & \text{se } \lvert i - j\rvert > k \end{cases}$.
+\pt{Para cada par de inteiros positivos $n$ e $k$, $a(n,k)$ denota a quantidade de funções $k$-limitadas de $[n]$ para $[n]$.}
+\en{For each pair of positive integers $n$ and $k$, $a(n,k)$ denotes the number of $k$-bounded functions from $[n]$ to $[n]$.}
 
-Também denotaremos por $M_{n,k} \in \mathbb{Z}^{n \times n}$ a matriz definida por $m_{ij} = \chi_k(i, j)$.
+\pt{Nós utilizaremos a notação $\chi_k(i, j) = \begin{cases} 1 & \text{se } \lvert i - j\rvert \le k \\ 0 & \text{se } \lvert i - j\rvert > k \end{cases}$.}
+\en{We will use the notation $\chi_k(i, j) = \begin{cases} 1 & \text{if } \lvert i - j\rvert \le k \\ 0 & \text{if } \lvert i - j\rvert > k \end{cases}$.}
 
-O teorema abaixo constitui essencialmente a demonstração da fórmula que calcula a quantidade de caminhos de determinado comprimento em um grafo a partir de sua matriz de adjacência. Optamos por incluí-lo em vez de uma descrição detalhada do grafo, pois acreditamos que isso proporciona um entendimento mais profundo da fórmula, que pode ser especialmente útil em uma generalização do teorema \ref{th:asymptotic}.
+\pt{Também denotaremos por $M_{n,k} \in \mathbb{Z}^{n \times n}$ a matriz definida por $m_{ij} = \chi_k(i, j)$.}
+\en{We will also denote by $M_{n,k} \in \mathbb{Z}^{n \times n}$ the matrix defined by $m_{ij} = \chi_k(i, j)$.}
 
-\begin{theorem} \label{th:matrix-form-n-to-n} $a(n,k)$, para $0 \le k \le n - 1$, é dado por $\mathbf{1}_n^\intercal M_{n,k}^{n-1} \mathbf{1}_n$. \end{theorem}
+\pt{O teorema abaixo constitui essencialmente a demonstração da fórmula que calcula a quantidade de caminhos de determinado comprimento em um grafo a partir de sua matriz de adjacência. Optamos por incluí-lo em vez de uma descrição detalhada do grafo, pois acreditamos que isso proporciona um entendimento mais profundo da fórmula, que pode ser especialmente útil em uma generalização do teorema \ref{th:asymptotic}.}
+\en{The theorem below essentially provides the proof of the formula that calculates the number of paths of a certain length in a graph from its adjacency matrix. We chose to include it instead of a detailed description of the graph, as we believe it offers a deeper understanding of the formula, which can be especially useful in a generalization of Theorem \ref{th:asymptotic}.}
 
+\begin{theorem} \label{th:matrix-form-n-to-n}
+  \pt{$a(n,k)$, para $0 \le k \le n - 1$, é dado por $\mathbf{1}_n^\intercal M_{n,k}^{n-1} \mathbf{1}_n$.}
+  \en{$a(n,k)$, for $0 \le k \le n - 1$, is given by $\mathbf{1}_n^\intercal M_{n,k}^{n-1} \mathbf{1}_n$.}
+\end{theorem}
 \begin{proof}
-
   Provaremos o fato mais forte de que o número de funções $k$-limitadas $f : [r] \to [n]$, $r \in [n]$, é dado por $\mathbf{1}_n^\intercal M_{n,k}^{r - 1} \mathbf{1}_n$, e que o número de tais funções com $f(r) = i$ é dado por $(M_{n,k}^{r - 1} \mathbf{1}_n)_i$. Procedemos por indução em $r$.
 
   De fato, se $r = 1$, toda função $f : [r] \to [n]$ é constante, portanto há $n$ tais funções (uma para cada elemento de $[n]$), e $n = \mathbf{1}_n^\intercal I \mathbf{1}_n = \mathbf{1}_n^\intercal M_{n,k}^{1 - 1} \mathbf{1}_n$, sendo $I$ a matriz identidade $n \times n$, como queríamos.
 
   Se isso é válido para $r - 1$, então podemos encontrar o número de funções $f : [r] \to [n]$ contando o número de funções $k$-limitadas $g : [r-1] \to [n]$ das quais elas podem ser extensões. Se $f(r) = i$, então $f(r - 1) \in \{i - k, i - k + 1, \dots, i + k\} \cap [n]$, portanto a quantidade de tais funções $f$ é dada pela soma da quantidade de funções $k$-limitadas $g : [r-1] \to [n]$ com $g(r-1) \in \{i - k, i - k + 1, \dots, i + k\} \cap [n]$, que é $\sum_{j = 0}^{n-1} \chi_k(i, j) (M_{n,k}^{r-1} \mathbf{1}_n)_i$, que pela definição de multiplicação de matrizes é igual a $(M_{n,k} (M_{n,k}^{r-1} \mathbf{1}_n))_i = (M_{n,k}^r \mathbf{1}_n)_i$. Consequentemente, o número de todas as funções $k$-limitadas $f : [r] \to [n]$ é dado por $\mathbf{1}_n^\intercal M_{n,k}^r \mathbf{1}_n$, e o resultado segue para $n$, como queríamos.
-
 \end{proof}
 
-Abaixo estão alguns valores usando esta fórmula.
+\pt{Abaixo estão alguns valores usando esta fórmula.}
+\en{Below are some values using this formula.}
 
 \input{data.tex}
 
-O código para calcular esses valores pode ser encontrado em \cite{github}. Valores muito maiores podem ser computados. Por exemplo, $a(200,199)$ (que resulta em um número com $463$ dígitos) pode ser computado em menos de $15$ segundos em um computador moderno.
+\pt{O código para calcular esses valores pode ser encontrado em \cite{github}. Valores muito maiores podem ser computados. Por exemplo, $a(200,199)$ (que resulta em um número com $463$ dígitos) pode ser computado em menos de $15$ segundos em um computador moderno.}
+\en{The code to calculate these values can be found in \cite{github}. Much larger values can be computed. For example, $a(200,199)$ (which results in a number with $463$ digits) can be computed in less than $15$ seconds on a modern computer.}
 
-Agora apresentamos a caracterização assintótica desta fórmula.
+\pt{Agora apresentamos a caracterização assintótica desta fórmula.}
+\en{We now present the asymptotic characterization of this formula.}
 
-\begin{theorem} \label{th:asymptotic} Seja $k$ um inteiro positivo fixo. Então, $a(n, k) \sim n(2k+1)^{n-1}$. \end{theorem} \begin{proof} Claramente, $M_{n,k}$ é a matriz de adjacência de um grafo com $n$ vértices, com o grau médio $\overline{d}$ igual a $(2k + 1) - \mathcal{O}(\frac{1}{n})$. Agora, pela desigualdade de Ërdos-Simonovits (veja \cite{erdossimonovits}), $n \overline{d}^{n-1} \le w_{n-1}$, onde $w_{n-1}$ é a quantidade de caminhos com comprimento $n-1$ no grafo. É fácil ver que $w_{n-1} = a(n, k)$. Portanto, substituindo o valor do grau médio obtemos $n ((2k + 1) - \mathcal{O}(\frac{1}{n}))^{n-1} \le a(n, k)$.
+\begin{theorem} \label{th:asymptotic}
+  \pt{Seja $k$ um inteiro positivo fixo. Então, $a(n, k) \sim n(2k+1)^{n-1}$.}
+  \en{Let $k$ be a fixed positive integer. Then, $a(n, k) \sim n(2k+1)^{n-1}$.}
+\end{theorem}
 
-  Seja \[M_k = \begin{pmatrix} a_{0} & a_{-1} & a_{-2} & \cdots \\ a_{1} & a_{0} & a_{-1} & \cdots \\ a_2 & a_{1} & a_{0} & \cdots \\ \vdots & \vdots & \vdots & \ddots \end{pmatrix}\] a matriz infinita definida por $m_{ij} = \chi_k(i, j)$.
+\begin{proof}
+  \pt{Claramente, $M_{n,k}$ é a matriz de adjacência de um grafo com $n$ vértices, com o grau médio $\overline{d}$ igual a $(2k + 1) - \mathcal{O}(\frac{1}{n})$. Agora, pela desigualdade de Érdos-Simonovits (veja \cite{erdossimonovits}), $n \overline{d}^{n-1} \le w_{n-1}$, onde $w_{n-1}$ é a quantidade de caminhos com comprimento $n-1$ no grafo. É fácil ver que $w_{n-1} = a(n, k)$. Portanto, substituindo o valor do grau médio obtemos $n ((2k + 1) - \mathcal{O}(\frac{1}{n}))^{n-1} \le a(n, k)$.}
+  \en{Clearly, $M_{n,k}$ is the adjacency matrix of a graph with $n$ vertices, with the average degree $\overline{d}$ equal to $(2k + 1) - \mathcal{O}(\frac{1}{n})$. Now, by the Erdős-Simonovits inequality (see \cite{erdossimonovits}), $n \overline{d}^{n-1} \le w_{n-1}$, where $w_{n-1}$ is the number of paths of length $n-1$ in the graph. It is easy to see that $w_{n-1} = a(n, k)$. Therefore, substituting the average degree value, we obtain $n ((2k + 1) - \mathcal{O}(\frac{1}{n}))^{n-1} \le a(n, k)$.}
 
-  Claramente apenas uma quantidade finita de termos de $\{a_n\}$ são não nulos, e consequentemente os termos de $\{ a_n \}$ são os coeficientes de Fourier do polinômio trigonométrico $a(x) = \sum_{n = -N}^N a_n e^{i n x}$, e pelo teorema dos operadores limitados induzidos por matrizes de Toeplitz mencionado no capítulo anterior, $M_k$ define um operador limitado em $l^2(\mathbb{Z}_{> 0})$, então $\|M_k\|_2 = \| a \|_{\infty}$ existe, já que todo polinômio trigonométrico é contínuo e consequentemente limitado em $\mathbb{T}$.
+  \pt{Seja \[M_k = \begin{pmatrix} a_{0} & a_{-1} & a_{-2} & \cdots \\ a_{1} & a_{0} & a_{-1} & \cdots \\ a_2 & a_{1} & a_{0} & \cdots \\ \vdots & \vdots & \vdots & \ddots \end{pmatrix}\] a matriz infinita definida por $m_{ij} = \chi_k(i, j)$.}
+  \en{Let \[M_k = \begin{pmatrix} a_{0} & a_{-1} & a_{-2} & \cdots \\ a_{1} & a_{0} & a_{-1} & \cdots \\ a_2 & a_{1} & a_{0} & \cdots \\ \vdots & \vdots & \vdots & \ddots \end{pmatrix}\] be the infinite matrix defined by $m_{ij} = \chi_k(i, j)$.}
 
-  Agora, pela desigualdade de Cauchy e a propriedade submultiplicativa de $\| \cdot \|_2$, temos que
-  \begin{align*}
-    \mathbf{1}_n^\intercal M_{n,k}^{n-1} \mathbf{1}_n & = \lvert \mathbf{1}_n^\intercal M_{n,k}^{n-1} \mathbf{1}_n\rvert      \\
-                                                      & \le \| \mathbf{1}_n^\intercal \|_2 \| M_{n,k}^{n-1} \mathbf{1}_n \|_2 \\
-                                                      & = \sqrt{n} \| M_{n,k}^{n-1} \mathbf{1}_n \|_2                         \\
-                                                      & \le \sqrt{n} \| M_{n,k}^{n-1} \|_2 \| \mathbf{1}_n \|_2               \\
-                                                      & = n \| M_{n,k}^{n-1} \|_2                                             \\
-                                                      & \le n \| M_{n,k} \|_2^{n-1}
-  \end{align*}
+  \pt{Claramente apenas uma quantidade finita de termos de $\{a_n\}$ são não nulos, e consequentemente os termos de $\{ a_n \}$ são os coeficientes de Fourier do polinômio trigonométrico $a(x) = \sum_{n = -N}^N a_n e^{i n x}$, e pelo teorema dos operadores limitados induzidos por matrizes de Toeplitz mencionado no capítulo anterior, $M_k$ define um operador limitado em $l^2(\mathbb{Z}_{> 0})$, então $\|M_k\|_2 = \| a \|_{\infty}$ existe, já que todo polinômio trigonométrico é contínuo e consequentemente limitado em $\mathbb{T}$.}
+  \en{Clearly, only a finite number of terms in $\{a_n\}$ are non-zero, and consequently the terms of $\{ a_n \}$ are the Fourier coefficients of the trigonometric polynomial $a(x) = \sum_{n = -N}^N a_n e^{i n x}$. By the theorem on bounded operators induced by Toeplitz matrices mentioned in the previous chapter, $M_k$ defines a bounded operator on $l^2(\mathbb{Z}_{> 0})$, so $\|M_k\|_2 = \| a \|_{\infty}$ exists, since every trigonometric polynomial is continuous and consequently bounded on $\mathbb{T}$.}
 
-  Pelo resultado provado em, por exemplo, \cite[p. 52]{bottcher}, temos que $\| M_{n,k} \| \le \| M_k \|$.
+  \pt{Agora, pela desigualdade de Cauchy e a propriedade submultiplicativa de $\| \cdot \|_2$, temos que
+    \begin{align*}
+      \mathbf{1}_n^\intercal M_{n,k}^{n-1} \mathbf{1}_n & = \lvert \mathbf{1}_n^\intercal M_{n,k}^{n-1} \mathbf{1}_n\rvert      \\
+                                                        & \le \| \mathbf{1}_n^\intercal \|_2 \| M_{n,k}^{n-1} \mathbf{1}_n \|_2 \\
+                                                        & = \sqrt{n} \| M_{n,k}^{n-1} \mathbf{1}_n \|_2                         \\
+                                                        & \le \sqrt{n} \| M_{n,k}^{n-1} \|_2 \| \mathbf{1}_n \|_2               \\
+                                                        & = n \| M_{n,k}^{n-1} \|_2                                             \\
+                                                        & \le n \| M_{n,k} \|_2^{n-1}
+    \end{align*}}
+  \en{Now, by the Cauchy-Schwarz inequality and the submultiplicative property of $\| \cdot \|_2$, we have that
+    \begin{align*}
+      \mathbf{1}_n^\intercal M_{n,k}^{n-1} \mathbf{1}_n & = \lvert \mathbf{1}_n^\intercal M_{n,k}^{n-1} \mathbf{1}_n\rvert      \\
+                                                        & \le \| \mathbf{1}_n^\intercal \|_2 \| M_{n,k}^{n-1} \mathbf{1}_n \|_2 \\
+                                                        & = \sqrt{n} \| M_{n,k}^{n-1} \mathbf{1}_n \|_2                         \\
+                                                        & \le \sqrt{n} \| M_{n,k}^{n-1} \|_2 \| \mathbf{1}_n \|_2               \\
+                                                        & = n \| M_{n,k}^{n-1} \|_2                                             \\
+                                                        & \le n \| M_{n,k} \|_2^{n-1}
+    \end{align*}}
 
-  Mas os coeficientes de Fourier de $a$ são dados por \[a_n = \begin{cases} 1 & \text{se } \lvert i - j\rvert \le k \\ 0 & \text{se } \lvert i - j\rvert > k \end{cases} \] que são justamente os coeficientes de Fourier do kernel de Dirichlet $D_k$, e $\| a \|_{\infty} = \esssup{t \in T} \lvert a(t)\rvert = \sup_{t \in T} \lvert a(t)\rvert$. É fato conhecido que $\sup_{t \in T} \lvert D_k(t)\rvert = 2k + 1$. Portanto, $\| M_k \| = 2k + 1$.
+  \pt{Pelo resultado provado em, por exemplo, \cite[p. 52]{bottcher}, temos que $\| M_{n,k} \| \le \| M_k \|$.}
+  \en{By the result proven in, for example, \cite[p. 52]{bottcher}, we have that $\| M_{n,k} \| \le \| M_k \|$.}
 
-  Concluímos a prova aplicando o teorema do confronto a ambas as desigualdades.
+  \pt{Mas os coeficientes de Fourier de $a$ são dados por \[a_n = \begin{cases} 1 & \text{se } \lvert i - j\rvert \le k \\ 0 & \text{se } \lvert i - j\rvert > k \end{cases} \] que são justamente os coeficientes de Fourier do kernel de Dirichlet $D_k$, e $\| a \|_{\infty} = \esssup{t \in T} \lvert a(t)\rvert = \sup_{t \in T} \lvert a(t)\rvert$. É fato conhecido que $\sup_{t \in T} \lvert D_k(t)\rvert = 2k + 1$. Portanto, $\| M_k \| = 2k + 1$.}
+  \en{But the Fourier coefficients of $a$ are given by \[a_n = \begin{cases} 1 & \text{if } \lvert i - j\rvert \le k \\ 0 & \text{if } \lvert i - j\rvert > k \end{cases} \] which are precisely the Fourier coefficients of the Dirichlet kernel $D_k$, and $\| a \|_{\infty} = \esssup{t \in T} \lvert a(t)\rvert = \sup_{t \in T} \lvert a(t)\rvert$. It is a well-known fact that $\sup_{t \in T} \lvert D_k(t)\rvert = 2k + 1$. Therefore, $\| M_k \| = 2k + 1$.}
+
+  \pt{Concluímos a prova aplicando o teorema do confronto a ambas as desigualdades.}
+  \en{We conclude the proof by applying the comparison theorem to both inequalities.}
 \end{proof}
 
-Observe que o limite inferior da prova acima pode ser facilmente estendido a qualquer matriz que seja simétrica e tenha entradas não negativas usando a desigualdade de Blakley-Roy (veja \cite{blakley-roy}).
+\pt{Observe que o limite inferior da prova acima pode ser facilmente estendido a qualquer matriz que seja simétrica e tenha entradas não negativas usando a desigualdade de Blakley-Roy (veja \cite{blakley-roy}).}
+\en{Note that the lower bound in the proof above can be easily extended to any matrix that is symmetric and has non-negative entries using the Blakley-Roy inequality (see \cite{blakley-roy}).}
 
-Note que o limite inferior poderia também ser estabelecido usando somente resultados referentes à matrizes de Toeplitz, mas optamos por apresentar a prova aqui presente devido a maior facilidade da sua adaptação a uma gama maior de matrizes.
+\pt{Note que o limite inferior poderia também ser estabelecido usando somente resultados referentes à matrizes de Toeplitz, mas optamos por apresentar a prova aqui presente devido a maior facilidade da sua adaptação a uma gama maior de matrizes.}
+\en{Note that the lower bound could also be established using only results related to Toeplitz matrices, but we chose to present the proof here due to its greater ease of adaptation to a broader range of matrices.}

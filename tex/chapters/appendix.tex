@@ -3,55 +3,85 @@
 \addcontentsline{toc}{section}{Apêndice}
 \vspace{1cm}
 
-Neste apêndice, apresentamos alguns resultados adicionais sobre matrizes de Toeplitz que complementam o desenvolvimento teórico do trabalho. Embora não tenham sido utilizados diretamente nas provas apresentadas, esses resultados enriquecem a compreensão das propriedades dessas matrizes e podem ser úteis para estudos futuros relacionados.
+\pt{Neste apêndice, apresentamos alguns resultados adicionais sobre matrizes de Toeplitz que complementam o desenvolvimento teórico do trabalho. Embora não tenham sido utilizados diretamente nas provas apresentadas, esses resultados enriquecem a compreensão das propriedades dessas matrizes e podem ser úteis para estudos futuros relacionados.}
+\en{In this appendix, we present some additional results on Toeplitz matrices that complement the theoretical development of the work. Although they were not directly used in the presented proofs, these results enrich the understanding of the properties of these matrices and may be useful for related future studies.}
 
-Primeiramente, vamos dar a definição de alguns espaços muito importantes no estudo das matrizes de Toeplitz.
+\pt{Primeiramente, vamos dar a definição de alguns espaços muito importantes no estudo das matrizes de Toeplitz.}
+\en{Firstly, we will provide the definition of some very important spaces in the study of Toeplitz matrices.}
 
 \begin{definition*}
-  Um \textit{espaço de Hilbert} é um espaço vetorial completo e normado sobre o corpo dos números complexos $\mathbb{C}$ ou reais $\mathbb{R}$, dotado de um produto interno $\langle \cdot , \cdot \rangle$ que satisfaz as seguintes propriedades para todos os vetores $x, y, z$ e escalar $\alpha$:
+  \pt{Um \textit{espaço de Hilbert} é um espaço vetorial completo e normado sobre o corpo dos números complexos $\mathbb{C}$ ou reais $\mathbb{R}$, dotado de um produto interno $\langle \cdot , \cdot \rangle$ que satisfaz as seguintes propriedades para todos os vetores $x, y, z$ e escalar $\alpha$:}
+  \en{A \textit{Hilbert space} is a complete and normed vector space over the field of complex numbers $\mathbb{C}$ or real numbers $\mathbb{R}$, equipped with an inner product $\langle \cdot , \cdot \rangle$ that satisfies the following properties for all vectors $x, y, z$ and scalar $\alpha$:}
   \begin{enumerate}
-    \item $\langle x, x \rangle \geq 0$, e $\langle x, x \rangle = 0$ se e somente se $x = 0$ (positividade definida).
-    \item $\langle x, y \rangle = \overline{\langle y, x \rangle}$ (conjugado simétrico).
-    \item $\langle \alpha x + y, z \rangle = \alpha \langle x, z \rangle + \langle y, z \rangle$ (linearidade no primeiro argumento).
+    \item \pt{$\langle x, x \rangle \geq 0$, e $\langle x, x \rangle = 0$ se e somente se $x = 0$ (positividade definida).}
+          \en{$\langle x, x \rangle \geq 0$, and $\langle x, x \rangle = 0$ if and only if $x = 0$ (positive definiteness).}
+    \item \pt{$\langle x, y \rangle = \overline{\langle y, x \rangle}$ (conjugado simétrico).}
+          \en{$\langle x, y \rangle = \overline{\langle y, x \rangle}$ (conjugate symmetry).}
+    \item \pt{$\langle \alpha x + y, z \rangle = \alpha \langle x, z \rangle + \langle y, z \rangle$ (linearidade no primeiro argumento).}
+          \en{$\langle \alpha x + y, z \rangle = \alpha \langle x, z \rangle + \langle y, z \rangle$ (linearity in the first argument).}
   \end{enumerate}
 \end{definition*}
 
-A norma $\|x\|$ no espaço de Hilbert é definida a partir do produto interno por $\|x\| = \sqrt{\langle x, x \rangle}$. A completude implica que toda sequência de Cauchy no espaço de Hilbert converge para um limite dentro do próprio espaço.
+\pt{A norma $\|x\|$ no espaço de Hilbert é definida a partir do produto interno por $\|x\| = \sqrt{\langle x, x \rangle}$. A completude implica que toda sequência de Cauchy no espaço de Hilbert converge para um limite dentro do próprio espaço.}
+\en{The norm $\|x\|$ in the Hilbert space is defined from the inner product by $\|x\| = \sqrt{\langle x, x \rangle}$. Completeness implies that every Cauchy sequence in the Hilbert space converges to a limit within the space itself.}
 
 \begin{definition*}
-  Para $p \geq 1$, o \textit{espaço de Hardy} $H^p(\mathbb{T})$ é definido como o subespaço de $L^p(\mathbb{T})$ composto por todas as funções $f \in L^p(\mathbb{T})$ cujas séries de Fourier possuem somente coeficientes não negativos. Mais formalmente,
+  \pt{Para $p \geq 1$, o \textit{espaço de Hardy} $H^p(\mathbb{T})$ é definido como o subespaço de $L^p(\mathbb{T})$ composto por todas as funções $f \in L^p(\mathbb{T})$ cujas séries de Fourier possuem somente coeficientes não negativos. Mais formalmente,}
+  \en{For $p \geq 1$, the \textit{Hardy space} $H^p(\mathbb{T})$ is defined as the subspace of $L^p(\mathbb{T})$ consisting of all functions $f \in L^p(\mathbb{T})$ whose Fourier series have only non-negative coefficients. More formally,}
   \[
     H^p(\mathbb{T}) = \left\{ f \in L^p(\mathbb{T}) \; \bigg| \; \hat{f}(n) = 0 \text{ para todo } n < 0 \right\},
   \]
-  onde $\hat{f}(n)$ denota o n-ésimo coeficiente de Fourier de $f$.
+  \pt{onde $\hat{f}(n)$ denota o n-ésimo coeficiente de Fourier de $f$.}
+  \en{where $\hat{f}(n)$ denotes the $n$-th Fourier coefficient of $f$.}
 \end{definition*}
 
-Os espaços de Hardy são espaços de Hilbert quando $p = 2$ e desempenham um papel fundamental na análise complexa, teoria de operadores e teoria de sinais. Eles consistem em funções analíticas na circunferência unitária cuja norma $L^p$ é finita.
+\pt{Os espaços de Hardy são espaços de Hilbert quando $p = 2$ e desempenham um papel fundamental na análise complexa, teoria de operadores e teoria de sinais. Eles consistem em funções analíticas na circunferência unitária cuja norma $L^p$ é finita.}
+\en{Hardy spaces are Hilbert spaces when $p = 2$ and play a fundamental role in complex analysis, operator theory, and signal theory. They consist of analytic functions on the unit circle whose $L^p$ norm is finite.}
 
-Vamos agora apresentar a definição de uma álgebra $C^\ast$, que generalizam a álgebra de operadores limitados em um espaço de Hilbert. A teoria das álgebras $C^\ast$ é utilizada na prova de diversos resultados não apenas acerca de matrizes de Toeplitz, mas em toda a teoria dos operadores.
+\pt{Vamos agora apresentar a definição de uma álgebra $C^\ast$, que generalizam a álgebra de operadores limitados em um espaço de Hilbert. A teoria das álgebras $C^\ast$ é utilizada na prova de diversos resultados não apenas acerca de matrizes de Toeplitz, mas em toda a teoria dos operadores.}
+\en{We will now present the definition of a $C^\ast$-algebra, which generalizes the algebra of bounded operators on a Hilbert space. The theory of $C^\ast$-algebras is used in the proof of various results not only concerning Toeplitz matrices but in the entire theory of operators.}
 
 \begin{definition*}
-  Uma \textit{álgebra de Banach} é uma álgebra $\mathcal{A}$ sobre o corpo dos números complexos $\mathbb{C}$ ou reais $\mathbb{R}$ que satisfaz as seguintes condições:
+  \pt{Uma \textit{álgebra de Banach} é uma álgebra $\mathcal{A}$ sobre o corpo dos números complexos $\mathbb{C}$ ou reais $\mathbb{R}$ que satisfaz as seguintes condições:}
+  \en{A \textit{Banach algebra} is an algebra $\mathcal{A}$ over the field of complex numbers $\mathbb{C}$ or real numbers $\mathbb{R}$ that satisfies the following conditions:}
 
   \begin{enumerate}
-    \item $\mathcal{A}$ é um espaço vetorial completo com a norma $\|\cdot\|$.
-    \item $\mathcal{A}$ é uma álgebra, ou seja, possui uma operação de multiplicação bilinear $(a, b) \mapsto ab$ para todos $a, b \in \mathcal{A}$.
-    \item Para todos $a, b \in \mathcal{A}$,
+    \item \pt{$\mathcal{A}$ é um espaço vetorial completo com a norma $\|\cdot\|$.}
+          \en{$\mathcal{A}$ is a complete vector space with norm $\|\cdot\|$.}
+    \item \pt{$\mathcal{A}$ é uma álgebra, ou seja, possui uma operação de multiplicação bilinear $(a, b) \mapsto ab$ para todos $a, b \in \mathcal{A}$.}
+          \en{$\mathcal{A}$ is an algebra, that is, it has a bilinear multiplication operation $(a, b) \mapsto ab$ for all $a, b \in \mathcal{A}$.}
+    \item \pt{Para todos $a, b \in \mathcal{A}$,}
+          \en{For all $a, b \in \mathcal{A}$,}
           \[ \|ab\| \leq \|a\| \|b\|. \]
   \end{enumerate}
 \end{definition*}
 
-\begin{definition*} Uma \textit{álgebra $C^\ast$} é uma álgebra de Banach complexa $\mathcal{A}$ munida de uma operação $^\ast : \mathcal{A} \to \mathcal{A}$, chamada de involução, tal que, para todos $a, b \in \mathcal{A}$ e $\lambda \in \mathbb{C}$, as seguintes propriedades são satisfeitas:
-  \begin{enumerate} \item $(a + b)^\ast = a^\ast + b^\ast$; \item $(\lambda a)^\ast = \overline{\lambda} a^\ast$; \item $(ab)^\ast = b^\ast a^\ast$; \item $(a^\ast)^\ast = a$; \item $|a^\ast a| = |a|^2$.
+\begin{definition*}
+  \pt{Uma \textit{álgebra $C^\ast$} é uma álgebra de Banach complexa $\mathcal{A}$ munida de uma operação $^\ast : \mathcal{A} \to \mathcal{A}$, chamada de involução, tal que, para todos $a, b \in \mathcal{A}$ e $\lambda \in \mathbb{C}$, as seguintes propriedades são satisfeitas:}
+  \en{A \textit{$C^\ast$-algebra} is a complex Banach algebra $\mathcal{A}$ equipped with an operation $^\ast : \mathcal{A} \to \mathcal{A}$, called involution, such that for all $a, b \in \mathcal{A}$ and $\lambda \in \mathbb{C}$, the following properties are satisfied:}
+  \begin{enumerate}
+    \item \pt{$(a + b)^\ast = a^\ast + b^\ast$;}
+          \en{$(a + b)^\ast = a^\ast + b^\ast$;}
+    \item \pt{$(\lambda a)^\ast = \overline{\lambda} a^\ast$;}
+          \en{$(\lambda a)^\ast = \overline{\lambda} a^\ast$;}
+    \item \pt{$(ab)^\ast = b^\ast a^\ast$;}
+          \en{$(ab)^\ast = b^\ast a^\ast$;}
+    \item \pt{$(a^\ast)^\ast = a$;}
+          \en{$(a^\ast)^\ast = a$;}
+    \item \pt{$|a^\ast a| = |a|^2$.}
+          \en{$|a^\ast a| = |a|^2$.}
   \end{enumerate}
 \end{definition*}
 
-Vamos agora a um tipo específico de matriz.
+\pt{Vamos agora a um tipo específico de matriz.}
+\en{Let us now consider a specific type of matrix.}
 
-As matrizes circulantes são um caso especial de matrizes de Toeplitz, onde cada linha é uma rotação cíclica da linha anterior. Elas possuem propriedades espectrais que facilitam a análise, especialmente no contexto de autovalores e autovetores.
+\pt{As matrizes circulantes são um caso especial de matrizes de Toeplitz, onde cada linha é uma rotação cíclica da linha anterior. Elas possuem propriedades espectrais que facilitam a análise, especialmente no contexto de autovalores e autovetores.}
+\en{Circulant matrices are a special case of Toeplitz matrices, where each row is a cyclic rotation of the previous row. They possess spectral properties that facilitate analysis, especially in the context of eigenvalues and eigenvectors.}
 
 \begin{definition*}
-  Uma matriz de Toeplitz $ C \in \mathbb{C}^{n \times n} $ é dita \textit{circulante} se cada linha subsequente é uma rotação cíclica da linha anterior. Ou seja,
+  \pt{Uma matriz de Toeplitz $ C \in \mathbb{C}^{n \times n} $ é dita \textit{circulante} se cada linha subsequente é uma rotação cíclica da linha anterior. Ou seja,}
+  \en{A Toeplitz matrix $ C \in \mathbb{C}^{n \times n} $ is said to be \textit{circulant} if each subsequent row is a cyclic rotation of the previous row. That is,}
   \[
     C = \begin{pmatrix}
       c_0     & c_{n-1} & \cdots  & c_2    & c_1     \\
@@ -64,111 +94,193 @@ As matrizes circulantes são um caso especial de matrizes de Toeplitz, onde cada
 \end{definition*}
 
 \begin{theorem*}[Diagonalização de matrizes circulantes]
-  Toda matriz circulante $ C \in \mathbb{C}^{n \times n} $ pode ser diagonalizada pela matriz de Fourier $ F_n $ cujas entradas são dadas por
-  \[
-    (F_n)_{jk} = \frac{1}{\sqrt{n}} \omega_n^{jk},
-  \]
-  onde $ \omega_n = e^{2\pi i / n} $.
+  \pt{Toda matriz circulante $ C \in \mathbb{C}^{n \times n} $ pode ser diagonalizada pela matriz de Fourier $ F_n $ cujas entradas são dadas por
+    \[
+      (F_n)_{jk} = \frac{1}{\sqrt{n}} \omega_n^{jk},
+    \]
+    onde $ \omega_n = e^{2\pi i / n} $.}
+  \en{Every circulant matrix $ C \in \mathbb{C}^{n \times n} $ can be diagonalized by the Fourier matrix $ F_n $ whose entries are given by
+    \[
+      (F_n)_{jk} = \frac{1}{\sqrt{n}} \omega_n^{jk},
+    \]
+    where $ \omega_n = e^{2\pi i / n} $.}
 
-  Ou seja,
+  \pt{Ou seja,
   \[
     C = F_n \Lambda F_n^{-1},
   \]
-  onde $ \Lambda $ é uma matriz diagonal cujos elementos são os valores de Fourier do vetor de primeira linha de $ C $.
-
-  Em particular, os autovalores de $ C $ são dados por
+  onde $ \Lambda $ é uma matriz diagonal cujos elementos são os valores de Fourier do vetor de primeira linha de $ C $.}
+  \en{That is,
   \[
-    \lambda_m = \sum_{j=0}^{n-1} c_j \omega_n^{jm}, \quad m = 0, 1, \dots, n-1,
+    C = F_n \Lambda F_n^{-1},
   \]
-  onde $ \omega_n = e^{2\pi i / n} $ é a raiz $ n $-ésima da unidade.
+  where $ \Lambda $ is a diagonal matrix whose elements are the Fourier values of the first row vector of $ C $.}
+
+  \pt{Em particular, os autovalores de $ C $ são dados por
+    \[
+      \lambda_m = \sum_{j=0}^{n-1} c_j \omega_n^{jm}, \quad m = 0, 1, \dots, n-1,
+    \]
+    onde $ \omega_n = e^{2\pi i / n} $ é a raiz $ n $-ésima da unidade.}
+  \en{In particular, the eigenvalues of $ C $ are given by
+    \[
+      \lambda_m = \sum_{j=0}^{n-1} c_j \omega_n^{jm}, \quad m = 0, 1, \dots, n-1,
+    \]
+    where $ \omega_n = e^{2\pi i / n} $ is the $n$-th root of unity.}
 \end{theorem*}
+
 \begin{proof}
-  Primeiramente, é fácil ver que $F_n$ é unitária, isto é, o produto $F_n F_n^*$ de $F_n$ pela sua adjunda é igual a matriz identidade.
+  \pt{Primeiramente, é fácil ver que $F_n$ é unitária, isto é, o produto $F_n F_n^*$ de $F_n$ pela sua adjunda é igual a matriz identidade.}
+  \en{Firstly, it is easy to see that $F_n$ is unitary, that is, the product $F_n F_n^*$ of $F_n$ with its adjoint equals the identity matrix.}
 
-  Seja $P$ a matriz de permutação cíclica \[\begin{pmatrix}
-      0      & 0      & \dots  & 0      & 1      \\
-      1      & 0      & \dots  & 0      & 0      \\
-      0      & 1      & \dots  & 0      & 0      \\
-      \vdots & \ddots & \ddots & \ddots & \vdots \\
-      0      & 0      & \dots  & 1      & 0
-    \end{pmatrix}\] e seja $D = \diag(1, \omega_n, \omega_n^2, \dots, \omega_n^{n-1})$ a matriz com entradas $1$, $\omega_n$, \dots, $\omega_n^{n-1}$ na diagonal principal e zeros nas outras posições.
+  \pt{Seja $P$ a matriz de permutação cíclica \[\begin{pmatrix}
+        0      & 0      & \dots  & 0      & 1      \\
+        1      & 0      & \dots  & 0      & 0      \\
+        0      & 1      & \dots  & 0      & 0      \\
+        \vdots & \ddots & \ddots & \ddots & \vdots \\
+        0      & 0      & \dots  & 1      & 0
+      \end{pmatrix}\] e seja $D = \diag(1, \omega_n, \omega_n^2, \dots, \omega_n^{n-1})$ a matriz com entradas $1$, $\omega_n$, \dots, $\omega_n^{n-1}$ na diagonal principal e zeros nas outras posições.}
+  \en{Let $P$ be the cyclic permutation matrix \[\begin{pmatrix}
+        0      & 0      & \dots  & 0      & 1      \\
+        1      & 0      & \dots  & 0      & 0      \\
+        0      & 1      & \dots  & 0      & 0      \\
+        \vdots & \ddots & \ddots & \ddots & \vdots \\
+        0      & 0      & \dots  & 1      & 0
+      \end{pmatrix}\] and let $D = \diag(1, \omega_n, \omega_n^2, \dots, \omega_n^{n-1})$ be the matrix with entries $1$, $\omega_n$, \dots, $\omega_n^{n-1}$ on the main diagonal and zeros elsewhere.}
 
-  Sendo $(c_0, c_1, \dots, c_{n-1})$ a primeira linha de $C$, é fácil verificar que $C = c_0 I + c_1 P + c_2 P^2 + \cdots c_{n-1} P^{n-1}$, onde $I$ é a matriz identidade $n \times n$.
+  \pt{Sendo $(c_0, c_1, \dots, c_{n-1})$ a primeira linha de $C$, é fácil verificar que $C = c_0 I + c_1 P + c_2 P^2 + \cdots c_{n-1} P^{n-1}$, onde $I$ é a matriz identidade $n \times n$.}
+  \en{Given $(c_0, c_1, \dots, c_{n-1})$ as the first row of $C$, it is easy to verify that $C = c_0 I + c_1 P + c_2 P^2 + \cdots + c_{n-1} P^{n-1}$, where $I$ is the $n \times n$ identity matrix.}
 
-  Como $\omega_n^n = 1$, temos \[ P (F_n)_k = \frac{1}{\sqrt{n}} \begin{pmatrix}
-      \omega_n^{(n-1) \cdot k} \\
-      \omega_n^{0 \cdot k}     \\
-      \omega_n^{1 \cdot k}     \\
-      \vdots                   \\
-      \omega_n^{(n - 2) \cdot k}
-    \end{pmatrix} = \omega_n^{-k} \frac{1}{\sqrt{n}} \begin{pmatrix}
-      \omega_n^{0 \cdot k} \\
-      \omega_n^{1 \cdot k} \\
-      \omega_n^{2 \cdot k} \\
-      \vdots               \\
-      \omega_n^{(n - 1) \cdot k}
-    \end{pmatrix} = \omega_n^{-k} (F_n)_k \] onde $(F_n)_k$ é a $k$-ésima coluna de $F_n$.
+  \pt{Como $\omega_n^n = 1$, temos \[ P (F_n)_k = \frac{1}{\sqrt{n}} \begin{pmatrix}
+        \omega_n^{(n-1) \cdot k} \\
+        \omega_n^{0 \cdot k}     \\
+        \omega_n^{1 \cdot k}     \\
+        \vdots                   \\
+        \omega_n^{(n - 2) \cdot k}
+      \end{pmatrix} = \omega_n^{-k} \frac{1}{\sqrt{n}} \begin{pmatrix}
+        \omega_n^{0 \cdot k} \\
+        \omega_n^{1 \cdot k} \\
+        \omega_n^{2 \cdot k} \\
+        \vdots               \\
+        \omega_n^{(n - 1) \cdot k}
+      \end{pmatrix} = \omega_n^{-k} (F_n)_k \] onde $(F_n)_k$ é a $k$-ésima coluna de $F_n$.}
+  \en{Since $\omega_n^n = 1$, we have \[ P (F_n)_k = \frac{1}{\sqrt{n}} \begin{pmatrix}
+        \omega_n^{(n-1) \cdot k} \\
+        \omega_n^{0 \cdot k}     \\
+        \omega_n^{1 \cdot k}     \\
+        \vdots                   \\
+        \omega_n^{(n - 2) \cdot k}
+      \end{pmatrix} = \omega_n^{-k} \frac{1}{\sqrt{n}} \begin{pmatrix}
+        \omega_n^{0 \cdot k} \\
+        \omega_n^{1 \cdot k} \\
+        \omega_n^{2 \cdot k} \\
+        \vdots               \\
+        \omega_n^{(n - 1) \cdot k}
+      \end{pmatrix} = \omega_n^{-k} (F_n)_k \] where $(F_n)_k$ is the $k$-th column of $F_n$.}
 
-  Portanto $P F_n = F_n D$, e consequentemente $P^kF_n = F_nD^k$.
+  \pt{Portanto $P F_n = F_n D$, e consequentemente $P^kF_n = F_nD^k$.}
+  \en{Therefore, $P F_n = F_n D$, and consequently $P^k F_n = F_n D^k$.}
 
-  Mas também temos que \begin{align*}
-    C F_n & = \left( c_0 I_n + c_1 P + c_2 P^2 + \dots + c_{n-1} P^{n-1} \right) F_n \\
-          & = c_0 F_n + c_1 P F_n + c_2 P^2 F_n + \dots + c_{n-1} P^{n-1} F_n        \\
-          & = F_n \left( c_0 I_n + c_1 D + c_2 D^2 + \dots + c_{n-1} D^{n-1} \right)
-  \end{align*}
+  \pt{Mas também temos que \begin{align*}
+      C F_n & = \left( c_0 I_n + c_1 P + c_2 P^2 + \dots + c_{n-1} P^{n-1} \right) F_n \\
+            & = c_0 F_n + c_1 P F_n + c_2 P^2 F_n + \dots + c_{n-1} P^{n-1} F_n        \\
+            & = F_n \left( c_0 I_n + c_1 D + c_2 D^2 + \dots + c_{n-1} D^{n-1} \right)
+    \end{align*}}
+  \en{But we also have that \begin{align*}
+      C F_n & = \left( c_0 I_n + c_1 P + c_2 P^2 + \dots + c_{n-1} P^{n-1} \right) F_n \\
+            & = c_0 F_n + c_1 P F_n + c_2 P^2 F_n + \dots + c_{n-1} P^{n-1} F_n        \\
+            & = F_n \left( c_0 I_n + c_1 D + c_2 D^2 + \dots + c_{n-1} D^{n-1} \right)
+    \end{align*}}
 
-  Assim, $C F_n = F_n \Lambda$ onde \[\Lambda = c_0 I_n + c_1 D + c_2 D^2 + \dots + c_{n-1} D^{n-1}.\]
+  \pt{Assim, $C F_n = F_n \Lambda$ onde \[\Lambda = c_0 I_n + c_1 D + c_2 D^2 + \dots + c_{n-1} D^{n-1}.\]}
+  \en{Thus, $C F_n = F_n \Lambda$ where \[\Lambda = c_0 I_n + c_1 D + c_2 D^2 + \dots + c_{n-1} D^{n-1}.\]}
 
-  Multiplicando à esquerda por $F_n^*$ e usando que $F_n F_n^* = I$ temos que $F_n^* C F_n = \Lambda$, completando a prova.
+  \pt{Multiplicando à esquerda por $F_n^*$ e usando que $F_n F_n^* = I$ temos que $F_n^* C F_n = \Lambda$, completando a prova.}
+  \en{Multiplying on the left by $F_n^*$ and using that $F_n F_n^* = I$, we have $F_n^* C F_n = \Lambda$, completing the proof.}
 \end{proof}
 
-As propriedades espectrais simplificadas das matrizes circulantes tornam-nas úteis para entender comportamentos assintóticos em contextos como o do terceiro capítulo.
+\pt{As propriedades espectrais simplificadas das matrizes circulantes tornam-nas úteis para entender comportamentos assintóticos em contextos como o do terceiro capítulo.}
+\en{The simplified spectral properties of circulant matrices make them useful for understanding asymptotic behaviors in contexts such as that of the third chapter.}
 
-Mostramos agora um resultado importante sobre a inversa de uma matriz de Toeplitz, que é claro, é de grande utilidade na solução de sistemas lineares que podem ser representados por matrizes de Toeplitz.
+\pt{Mostramos agora um resultado importante sobre a inversa de uma matriz de Toeplitz, que é claro, é de grande utilidade na solução de sistemas lineares que podem ser representados por matrizes de Toeplitz.}
+\en{We now present an important result about the inverse of a Toeplitz matrix, which is, of course, highly useful in solving linear systems that can be represented by Toeplitz matrices.}
 
-A fórmula de Gohberg-Semencul fornece uma representação explícita para a inversa de uma matriz de Toeplitz invertível, permitindo calcular inversas aproximadas de matrizes de Toeplitz de grandes dimensões.
+\pt{A fórmula de Gohberg-Semencul fornece uma representação explícita para a inversa de uma matriz de Toeplitz invertível, permitindo calcular inversas aproximadas de matrizes de Toeplitz de grandes dimensões.}
+\en{The Gohberg-Semencul formula provides an explicit representation for the inverse of an invertible Toeplitz matrix, allowing the computation of approximate inverses of large-dimensional Toeplitz matrices.}
+
 \begin{theorem*}[Fórmula de Gohberg-Semencul]
-  Seja $ T_n(a)$ uma matriz de Toeplitz $ n \times n$ gerada por um símbolo $ a \in L^\infty(\mathbb{T})$, tal que $ T_n(a)$ é invertível. Então, a inversa de $ T_n(a)$ pode ser expressa como
-  \[
-    T_n(a)^{-1} = X_n - U_n V_n^T,
-  \]
-  onde $ X_n$ é uma matriz de Toeplitz gerada pelo símbolo $1 / a$, e $ U_n$, $ V_n$ são vetores apropriados em $ \mathbb{C}^n$.
+  \pt{Seja $ T_n(a)$ uma matriz de Toeplitz $ n \times n$ gerada por um símbolo $ a \in L^\infty(\mathbb{T})$, tal que $ T_n(a)$ é invertível. Então, a inversa de $ T_n(a)$ pode ser expressa como
+    \[
+      T_n(a)^{-1} = X_n - U_n V_n^T,
+    \]
+    onde $ X_n$ é uma matriz de Toeplitz gerada pelo símbolo $1 / a$, e $ U_n$, $ V_n$ são vetores apropriados em $ \mathbb{C}^n$.}
+  \en{Let $ T_n(a)$ be an $n \times n$ Toeplitz matrix generated by a symbol $ a \in L^\infty(\mathbb{T})$, such that $ T_n(a)$ is invertible. Then, the inverse of $ T_n(a)$ can be expressed as
+    \[
+      T_n(a)^{-1} = X_n - U_n V_n^T,
+    \]
+    where $ X_n$ is a Toeplitz matrix generated by the symbol $1 / a$, and $ U_n$, $ V_n$ are appropriate vectors in $ \mathbb{C}^n$.}
 \end{theorem*}
-Para uma prova, veja \cite{gohberg1972}.
-Essa fórmula é particularmente útil em problemas de processamento de sinais e resolução de sistemas lineares com estruturas especiais.
 
-Um resultado importante provado por Szegö em \cite{szego1915} e futuramente melhorado por ele e diversos outros matemáticos é o seguinte:
+\pt{Para uma prova, veja \cite{gohberg1972}.}
+\en{For a proof, see \cite{gohberg1972}.}
+
+\pt{Essa fórmula é particularmente útil em problemas de processamento de sinais e resolução de sistemas lineares com estruturas especiais.}
+\en{This formula is particularly useful in signal processing problems and solving linear systems with special structures.}
+
+\pt{Um resultado importante provado por Szegö em \cite{szego1915} e futuramente melhorado por ele e diversos outros matemáticos é o seguinte:}
+\en{An important result proved by Szegö in \cite{szego1915} and later improved by him and various other mathematicians is the following:}
+
 \begin{theorem*}[Teorema do limite de Szegő]
-  Seja $A$ a matriz de Toeplitz correspondente à função real $a \in L^1(\mathbb{T})$, e $A_n$ sua seção finita $n \times n$. Se $\log a \in L^1(\mathbb{T})$ e $a(x) > 0$ para todo $x \in \mathbb{T}$, então \[\lim_{n\to \infty} \frac{\det A_n}{\det A_{n-1}} = \exp\left(\frac{1}{2\pi} \int_{0}^{2\pi} \log a\left(e^{i\theta}\right) \right)\text{.}\]
+  \pt{Seja $A$ a matriz de Toeplitz correspondente à função real $a \in L^1(\mathbb{T})$, e $A_n$ sua seção finita $n \times n$. Se $\log a \in L^1(\mathbb{T})$ e $a(x) > 0$ para todo $x \in \mathbb{T}$, então \[\lim_{n\to \infty} \frac{\det A_n}{\det A_{n-1}} = \exp\left(\frac{1}{2\pi} \int_{0}^{2\pi} \log a\left(e^{i\theta}\right) d\theta \right)\text{.}\]}
+  \en{Let $A$ be the Toeplitz matrix corresponding to the real function $a \in L^1(\mathbb{T})$, and $A_n$ its finite $n \times n$ section. If $\log a \in L^1(\mathbb{T})$ and $a(x) > 0$ for all $x \in \mathbb{T}$, then \[\lim_{n\to \infty} \frac{\det A_n}{\det A_{n-1}} = \exp\left(\frac{1}{2\pi} \int_{0}^{2\pi} \log a\left(e^{i\theta}\right) d\theta \right)\text{.}\]}
 \end{theorem*}
 
-Esse teorema e principalmente suas versões mais fortes tem aplicações na caracterização assintótica do espectro das matrizes $A_n$.
+\pt{Esse teorema e principalmente suas versões mais fortes tem aplicações na caracterização assintótica do espectro das matrizes $A_n$.}
+\en{This theorem, and especially its stronger versions, have applications in the asymptotic characterization of the spectrum of the matrices $A_n$.}
 
-Como mencionado, sob certas condições as matrizes de Toeplitz definem um operador limitado em $l^2(\mathbb{Z}_{> 0})$. Evidentemente generalizações desse fato foram estudadas para espaços de Hilbert. Isso motiva a definição de operadores de Toeplitz.
+\pt{Como mencionado, sob certas condições as matrizes de Toeplitz definem um operador limitado em $l^2(\mathbb{Z}_{> 0})$. Evidentemente generalizações desse fato foram estudadas para espaços de Hilbert. Isso motiva a definição de operadores de Toeplitz.}
+\en{As mentioned, under certain conditions Toeplitz matrices define a bounded operator on $l^2(\mathbb{Z}_{> 0})$. Evidently, generalizations of this fact have been studied for Hilbert spaces. This motivates the definition of Toeplitz operators.}
 
-Um operador de Toeplitz é um operador linear contínuo definido em um espaço de Hilbert, frequentemente relacionado a funções analíticas no círculo unitário. A conexão entre matrizes de Toeplitz e operadores de Toeplitz é estabelecida através da identificação de matrizes finitas com operadores lineares em espaços de dimensão finita.
+\pt{Um operador de Toeplitz é um operador linear contínuo definido em um espaço de Hilbert, frequentemente relacionado a funções analíticas no círculo unitário. A conexão entre matrizes de Toeplitz e operadores de Toeplitz é estabelecida através da identificação de matrizes finitas com operadores lineares em espaços de dimensão finita.}
+\en{A Toeplitz operator is a continuous linear operator defined on a Hilbert space, often related to analytic functions on the unit circle. The connection between Toeplitz matrices and Toeplitz operators is established through the identification of finite matrices with linear operators in finite-dimensional spaces.}
+
 \begin{definition*}
-  Seja $H^2(\mathbb{T})$ o espaço de Hardy de funções na circunferência unitária $\mathbb{T}$. Para uma função limitada $a \in L^\infty(\mathbb{T})$, o \textit{operador de Toeplitz} $T(a) : H^2(\mathbb{T}) \to H^2(\mathbb{T})$ é definido por $T(a)f=P(af)$, onde $P : L^2(\mathbb{T}) \to H^2(\mathbb{T})$ é o operador de projeção de Szegő, que projeta uma função em $L^2(\mathbb{T})$ sobre o subespaço de Hardy $H^2(\mathbb{T})$.
+  \pt{Seja $H^2(\mathbb{T})$ o espaço de Hardy de funções na circunferência unitária $\mathbb{T}$. Para uma função limitada $a \in L^\infty(\mathbb{T})$, o \textit{operador de Toeplitz} $T(a) : H^2(\mathbb{T}) \to H^2(\mathbb{T})$ é definido por $T(a)f=P(af)$, onde $P : L^2(\mathbb{T}) \to H^2(\mathbb{T})$ é o operador de projeção de Szegő, que projeta uma função em $L^2(\mathbb{T})$ sobre o subespaço de Hardy $H^2(\mathbb{T})$.}
+  \en{Let $H^2(\mathbb{T})$ be the Hardy space of functions on the unit circle $\mathbb{T}$. For a bounded function $a \in L^\infty(\mathbb{T})$, the \textit{Toeplitz operator} $T(a) : H^2(\mathbb{T}) \to H^2(\mathbb{T})$ is defined by $T(a)f=P(af)$, where $P : L^2(\mathbb{T}) \to H^2(\mathbb{T})$ is the Szegő projection operator, which projects a function in $L^2(\mathbb{T})$ onto the Hardy subspace $H^2(\mathbb{T})$.}
 \end{definition*}
-De modo similar a definição para matrizes de Toeplitz, o símbolo $a$ do operador de Toeplitz $T(a)$ é a função em $L^\infty(\mathbb{T})$ a partir da qual o operador é definido. Esse símbolo desempenha um papel crucial na determinação das propriedades do operador.
 
-Apresentamos agora um resultado importante sobre o espectro de operadores de Toeplitz. O teorema do mapeamento espectral relaciona o espectro de um operador com o espectro de sua imagem através de uma função contínua.
+\pt{De modo similar a definição para matrizes de Toeplitz, o símbolo $a$ do operador de Toeplitz $T(a)$ é a função em $L^\infty(\mathbb{T})$ a partir da qual o operador é definido. Esse símbolo desempenha um papel crucial na determinação das propriedades do operador.}
+\en{Similarly to the definition for Toeplitz matrices, the symbol $a$ of the Toeplitz operator $T(a)$ is the function in $L^\infty(\mathbb{T})$ from which the operator is defined. This symbol plays a crucial role in determining the properties of the operator.}
+
+\pt{Apresentamos agora um resultado importante sobre o espectro de operadores de Toeplitz. O teorema do mapeamento espectral relaciona o espectro de um operador com o espectro de sua imagem através de uma função contínua.}
+\en{We now present an important result about the spectrum of Toeplitz operators. The spectral mapping theorem relates the spectrum of an operator with the spectrum of its image through a continuous function.}
+
 \begin{theorem*}[Teorema do Espectro de Toeplitz]
-  Seja $T(a)$ um operador de Toeplitz com símbolo $a \in L^\infty(\mathbb{T})$. Então, o espectro de $T(a)$, denotado por $\sigma(T(a))$, satisfaz $\sigma(T(a))=a(T)$, onde $\overline{a(\mathbb{T})}$ é o fecho da imagem de $a$ em $\mathbb{C}$.
+  \pt{Seja $T(a)$ um operador de Toeplitz com símbolo $a \in L^\infty(\mathbb{T})$. Então, o espectro de $T(a)$, denotado por $\sigma(T(a))$, satisfaz $\sigma(T(a))=a(\mathbb{T})$, onde $\overline{a(\mathbb{T})}$ é o fecho da imagem de $a$ em $\mathbb{C}$.}
+  \en{Let $T(a)$ be a Toeplitz operator with symbol $a \in L^\infty(\mathbb{T})$. Then, the spectrum of $T(a)$, denoted by $\sigma(T(a))$, satisfies $\sigma(T(a))=a(\mathbb{T})$, where $\overline{a(\mathbb{T})}$ is the closure of the image of $a$ in $\mathbb{C}$.}
 \end{theorem*}
 
-Veja \cite[p. 85]{Douglas1998} para a prova de um teorema mais geral, do qual este é um corolário imediato. O teorema apresentado em \cite{Douglas1998} é formulado utilizando álgebras $C^\ast$, e sua prova é completamente baseada em suas propriedades.
+\pt{Veja \cite[p. 85]{Douglas1998} para a prova de um teorema mais geral, do qual este é um corolário imediato. O teorema apresentado em \cite{Douglas1998} é formulado utilizando álgebras $C^\ast$, e sua prova é completamente baseada em suas propriedades.}
+\en{See \cite[p. 85]{Douglas1998} for the proof of a more general theorem, of which this is an immediate corollary. The theorem presented in \cite{Douglas1998} is formulated using $C^\ast$-algebras, and its proof is entirely based on their properties.}
 
-Esse resultado permite determinar o espectro de um operador de Toeplitz diretamente a partir de seu símbolo, facilitando a análise espectral desses operadores.
+\pt{Esse resultado permite determinar o espectro de um operador de Toeplitz diretamente a partir de seu símbolo, facilitando a análise espectral desses operadores.}
+\en{This result allows determining the spectrum of a Toeplitz operator directly from its symbol, facilitating the spectral analysis of these operators.}
 
-Os operadores de Toeplitz possuem aplicações em problemas do valor de borda de funções analíticas e equações integrais singulares.
+\pt{Os operadores de Toeplitz possuem aplicações em problemas do valor de borda de funções analíticas e equações integrais singulares.}
+\en{Toeplitz operators have applications in boundary value problems of analytic functions and singular integral equations.}
 
-Por fim, apresentados a fatoração de Wiener-Hopf, uma técnica que permite decompor uma função em fatores que são analíticos dentro e fora do círculo unitário, o que é essencial na solução de certas equações integrais e na teoria de operadores de Toeplitz.
+\pt{Por fim, apresentados a fatoração de Wiener-Hopf, uma técnica que permite decompor uma função em fatores que são analíticos dentro e fora do círculo unitário, o que é essencial na solução de certas equações integrais e na teoria de operadores de Toeplitz.}
+\en{Finally, we present the Wiener-Hopf factorization, a technique that allows decomposing a function into factors that are analytic inside and outside the unit circle, which is essential in solving certain integral equations and in the theory of Toeplitz operators.}
+
 \begin{theorem*}[Fatoração de Wiener-Hopf]
-  Se $a \in L^\infty(\mathbb{T})$ é invertível e $\log a \in L^1(\mathbb{T})$, então existe uma fatoração única $a(e^{i\theta}) = a_-(e^{i\theta}) a_+(e^{i\theta})$, onde $a_-$ e $a_+$ são funções com extensões analíticas dentro e fora do círculo unitário, respectivamente.
+  \pt{Se $a \in L^\infty(\mathbb{T})$ é invertível e $\log a \in L^1(\mathbb{T})$, então existe uma fatoração única $a(e^{i\theta}) = a_-(e^{i\theta}) a_+(e^{i\theta})$, onde $a_-$ e $a_+$ são funções com extensões analíticas dentro e fora do círculo unitário, respectivamente.}
+  \en{If $a \in L^\infty(\mathbb{T})$ is invertible and $\log a \in L^1(\mathbb{T})$, then there exists a unique factorization $a(e^{i\theta}) = a_-(e^{i\theta}) a_+(e^{i\theta})$, where $a_-$ and $a_+$ are functions with analytic extensions inside and outside the unit circle, respectively.}
 \end{theorem*}
-Para uma prova, veja \cite{wiener1931}.
 
-A fatoração de Wiener-Hopf é aplicada na resolução de problemas em física matemática e engenharia, onde a estrutura de convolução é predominante.
+\pt{Para uma prova, veja \cite{wiener1931}.}
+\en{For a proof, see \cite{wiener1931}.}
 
-Os resultados apresentados neste capítulo destacam a profundidade e a riqueza da teoria de matrizes de Toeplitz. Como dito esses objetos possuem uma ampla gama de aplicações em diversas áreas, e são de extrema importância para a análise assintótica de diversas quantidades.
+\pt{A fatoração de Wiener-Hopf é aplicada na resolução de problemas em física matemática e engenharia, onde a estrutura de convolução é predominante.}
+\en{The Wiener-Hopf factorization is applied in solving problems in mathematical physics and engineering, where the convolution structure is predominant.}
+
+\pt{Os resultados apresentados neste capítulo destacam a profundidade e a riqueza da teoria de matrizes de Toeplitz. Como dito esses objetos possuem uma ampla gama de aplicações em diversas áreas, e são de extrema importância para a análise assintótica de diversas quantidades.}
+\en{The results presented in this chapter highlight the depth and richness of the theory of Toeplitz matrices. As mentioned, these objects have a wide range of applications in various fields and are of utmost importance for the asymptotic analysis of various quantities.}

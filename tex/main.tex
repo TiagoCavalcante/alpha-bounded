@@ -1,5 +1,17 @@
 \documentclass[a4paper,12pt]{article}
-\usepackage[brazil]{babel}
+
+\newif\ifen
+\newif\ifpt
+
+\newcommand{\en}[1]{\ifen#1\fi}
+\newcommand{\pt}[1]{\ifpt#1\fi}
+
+% \entrue
+\pttrue
+
+\pt{\usepackage[brazil]{babel}}
+\en{\usepackage{babel}}
+
 \usepackage{amsthm, amsmath, amssymb, amsfonts, mathrsfs, mathtools}
 \usepackage{xfrac, cancel}
 \usepackage{seqsplit}
@@ -24,8 +36,10 @@
 \usepackage{setspace}
 \setstretch{1.2}
 
-\addto\captionsbrazil{
-  \renewcommand{\proofname}{Prova} % Muda "demonstração" para "prova"
+\pt{
+  \addto\captionsbrazil{
+    \renewcommand{\proofname}{Prova} % Muda "demonstração" para "prova"
+  }
 }
 
 % Commands
@@ -36,14 +50,28 @@
 \renewcommand\qedsymbol{$\blacksquare$}
 \newcommand{\textover}[2]{\overset{\mathclap{\scriptstyle #2}}{#1}}
 
-\newtheorem*{theorem*}{Teorema}
-\newtheorem{theorem}{Teorema}
-\newtheorem{corollary}{Corolário}
-\newtheorem{conjecture}{Conjectura}
-\theoremstyle{definition}
-\newtheorem{example}{Exemplo}
-\newtheorem*{definition*}{Definição}
-\newtheorem{definition}{Definição}
+\pt{
+  \newtheorem*{theorem*}{Teorema}
+  \newtheorem{theorem}{Teorema}
+  \newtheorem{corollary}{Corolário}
+  \newtheorem{conjecture}{Conjectura}
+
+  \theoremstyle{definition}
+  \newtheorem{example}{Exemplo}
+  \newtheorem*{definition*}{Definição}
+  \newtheorem{definition}{Definição}
+  }
+\en{
+  \newtheorem*{theorem*}{Theorem}
+  \newtheorem{theorem}{Theorem}
+  \newtheorem{corollary}{Corollary}
+  \newtheorem{conjecture}{Conjecture}
+
+  \theoremstyle{definition}
+  \newtheorem{example}{Example}
+  \newtheorem*{definition*}{Definition}
+  \newtheorem{definition}{Definition}
+}
 
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % Adds dots for sections
 \renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}} % Adds dots for subsections
@@ -77,8 +105,14 @@
 \include{pages/second_cover}
 \include{pages/dedicatory}
 \include{pages/acknowledgment}
-\include{pages/resumo}
-\include{pages/abstract}
+\pt{
+  \include{pages/resumo}
+  \include{pages/abstract}
+}
+\en{
+  \include{pages/abstract}
+  \include{pages/resumo}
+}
 \include{pages/notations.tex}
 \tableofcontents
 
