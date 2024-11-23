@@ -99,18 +99,18 @@
   \pt{Seja $\lambda$ o autovalor de $M$ de maior módulo. Pelo teorema do círculo de Gershgorin, provado pela primeira vez em \cite{Gerschgorin}, temos}
   \en{Let $\lambda$ be the eigenvalue of $M$ with the largest modulus. By the Gershgorin circle theorem, first proven in \cite{Gerschgorin}, we have}
   \[
-    \lvert \lambda \rvert \in \bigcup_{i = 1}^n \overline{D}\left(m_{ii}, \sum_{j \ne i} \lvert m_{ij} \rvert\right) \subseteq \overline{D}\left(0, \max_{1 leq i \leq n} \sum_{j=1}^{n} \lvert m_{ij}\rvert\right)
+    \lvert \lambda \rvert \in \bigcup_{i = 1}^n \overline{D}\left(m_{ii}, \sum_{j \ne i} \lvert m_{ij} \rvert\right) \subseteq \overline{D}\left(0, \max_{1 \leq i \leq n} \sum_{j=1}^{n} \lvert m_{ij}\rvert\right)
   \] \pt{onde $\overline{D}(c, r)$ é o disco complexo fechado de centro $c \in \mathbb{C}$ e raio $r \in \mathbb{R}_{\ge 0}$.}
   \en{where $\overline{D}(c, r)$ is the closed complex disk with center $c \in \mathbb{C}$ and radius $r \in \mathbb{R}_{\ge 0}$.}
 
   \pt{Portanto, temos que}
   \en{Therefore, we have that}
   \[
-    \| M \|_2 = \lvert \lambda \lvert \leq \| M \|_\infty.
+    \| M \|_2 = \lvert \lambda \rvert \leq \| M \|_\infty.
   \]
 \end{proof}
 
-\begin{proof}[Prova do teorema \ref{norm}]
+\begin{proof}[\pt{Prova do teorema}\en{Proof of theorem} \ref{norm}]
   \pt{Em cada linha $i$, existem no máximo $k$ entradas não nulas acima da diagonal e $k$ abaixo, além da própria entrada na diagonal, totalizando no máximo $2k + 1$ entradas não nulas, correspondentes aos índices $j$ tais que $\lvert i - j \rvert \leq k$.}
   \en{In each row $i$, there are at most $k$ non-zero entries above the diagonal and $k$ below, in addition to the entry on the diagonal itself, totaling at most $2k + 1$ non-zero entries, corresponding to the indices $j$ such that $\lvert i - j \rvert \leq k$.}
 

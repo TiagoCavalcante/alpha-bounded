@@ -90,16 +90,16 @@
   \en{A Toeplitz matrix $ C \in \mathbb{C}^{n \times n} $ is said to be \textit{circulant} if each subsequent row is a cyclic rotation of the previous row. That is,}
   \[
     C = \begin{pmatrix}
-      c_0     & c_{n-1} & \cdots  & c_2    & c_1     \\
-      c_1     & c_0     & c_{n-1} & \cdots & c_2     \\
-      \vdots  & c_1     & c_0     & \ddots & \vdots  \\
-      c_{n-2} & \vdots  & \ddots  & \ddots & c_{n-1} \\
-      c_{n-1} & c_{n-2} & \cdots  & c_1    & c_0     \\
+      c_0     & c_{n-1} & c_{n-2} & \cdots & c_1    \\
+      c_1     & c_0     & c_{n-1} & \cdots & c_2    \\
+      c_2     & c_1     & c_0     & \cdots & c_3    \\
+      \vdots  & \vdots  & \vdots  & \ddots & \vdots \\
+      c_{n-1} & c_{n-2} & c_{n-3} & \cdots & c_0
     \end{pmatrix}.
   \]
 \end{definition*}
 
-\begin{theorem*}[Diagonalização de matrizes circulantes]
+\begin{theorem*}[\pt{Diagonalização de matrizes circulantes}\en{Diagonalization of circulant matrices}]
   \pt{Toda matriz circulante $ C \in \mathbb{C}^{n \times n} $ pode ser diagonalizada pela matriz de Fourier $ F_n $ cujas entradas são dadas por
     \[
       (F_n)_{jk} = \frac{1}{\sqrt{n}} \omega_n^{jk},
