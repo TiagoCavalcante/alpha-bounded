@@ -6,8 +6,17 @@
 \newcommand{\en}[1]{\ifen#1\fi}
 \newcommand{\pt}[1]{\ifpt#1\fi}
 
-% \entrue
-\pttrue
+\ifdefined\english
+  \entrue
+\else
+  \ifdefined\portuguese
+    \pttrue
+  \else
+    % Change the following to switch the language
+    % \entrue
+    \pttrue
+  \fi
+\fi
 
 \pt{\usepackage[brazil]{babel}}
 \en{\usepackage{babel}}
