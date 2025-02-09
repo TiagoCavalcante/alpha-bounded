@@ -54,7 +54,7 @@
 
 \begin{definition*}
   \pt{Sejam $(X, d_X)$ e $(Y, d_Y)$ espaços métricos. Uma função $f \colon X \to Y$ é dita \textit{Lipschitz contínua} se existe uma constante real $K \ge 0$ tal que para quaiser $x_1, x_2 \in X$ vale que \[d_Y\left(f(x_1), f(x_2)\right) \le K d_X\left(x_1, x_2\right).\]}
-  \en{Let $(X, d_X)$ and $(Y, d_Y)$ be metric spaces. A function $f \colon X \to Y$ is said to be \textit{Lipschitz continuous} if there exists a real constant $K \ge 0$ such that for any $x_1, x_2 in X$ it holds that \[d_Y\left(f(x_1), f(x_2)\right) \le K d_X\left(x_1, x_2\right).\]}
+  \en{Let $(X, d_X)$ and $(Y, d_Y)$ be metric spaces. A function $f \colon X \to Y$ is said to be \textit{Lipschitz continuous} if there exists a real constant $K \ge 0$ such that for any $x_1, x_2 \in X$ it holds that \[d_Y\left(f(x_1), f(x_2)\right) \le K d_X\left(x_1, x_2\right).\]}
 \end{definition*}
 
 \begin{theorem}
@@ -63,7 +63,7 @@
 \end{theorem}
 \begin{proof}
   \pt{Para todo $x_1 \in \mathcal{X}$, $x_2 \in \mathcal{X}, d_X(x_1, x_2) \le 1$ e consequentemente $d_Y(f(x_1), f(x_2)) \le K d_X(x_1, x_2) \le K$.}
-  \en{For every $x_1 in \mathcal{X}$, $x_2 in \mathcal{X}, d_X(x_1, x_2) \le 1$ and consequently $d_Y(f(x_1), f(x_2)) \le K d_X(x_1, x_2) \le K$.}
+  \en{For every $x_1 \in \mathcal{X}$, $x_2 \in \mathcal{X}, d_X(x_1, x_2) \le 1$ and consequently $d_Y(f(x_1), f(x_2)) \le K d_X(x_1, x_2) \le K$.}
 \end{proof}
 
 \pt{Note que nem todas as funções $\alpha$-Hölder contínuas são $\beta$-limitadas para algum $\beta > 0$. A função $\sqrt{\cdot} \colon \mathbb{R}^+ \to \mathbb{R}$ constitui um contraexemplo (considerando a métrica usual) pelo mesmo motivo mencionado no exemplo \ref{two_to_n}.}
@@ -75,12 +75,12 @@
 \end{theorem}
 \begin{proof}
   \pt{Com efeito, para cada $x \in \mathcal{X}, \epsilon > 0$, existe algum $\alpha \in (0, \epsilon]$ tal que $\tilde{x} \in \mathcal{X}, d_X(x, \tilde{x}) \le 1 \implies d_Y(f(x), f(\tilde{x})) \le \alpha \le \epsilon$.}
-  \en{Indeed, for each $x in \mathcal{X}, \epsilon > 0$, there is some $\alpha \in (0, \epsilon]$ such that $\tilde{x} in \mathcal{X}, d_X(x, \tilde{x}) \le 1 \implies d_Y(f(x), f(\tilde{x})) \le \alpha \le \epsilon$.}
+  \en{Indeed, for each $x \in \mathcal{X}, \epsilon > 0$, there is some $\alpha \in (0, \epsilon]$ such that $\tilde{x} \in \mathcal{X}, d_X(x, \tilde{x}) \le 1 \implies d_Y(f(x), f(\tilde{x})) \le \alpha \le \epsilon$.}
 \end{proof}
 
 \begin{theorem}
   \pt{Sejam $(X, d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X} \subseteq X$. Se $(f_n) \to f$ ponto a ponto, $f_n \colon \mathcal{X} \to Y$ são $\alpha$-limitadas para todo $n \in \mathbb{Z}_{> 0}$, então $f$ é $\alpha$-limitada.}
-  \en{Let $(X, d_X)$ and $(Y, d_Y)$ be metric spaces, $\mathcal{X} \subseteq X$. If $(f_n) \to f$ pointwise, $f_n \colon \mathcal{X} \to Y$ are $\alpha$-bounded for every $n in \mathbb{Z}_{> 0}$, then $f$ is $\alpha$-bounded.}
+  \en{Let $(X, d_X)$ and $(Y, d_Y)$ be metric spaces, $\mathcal{X} \subseteq X$. If $(f_n) \to f$ pointwise, $f_n \colon \mathcal{X} \to Y$ are $\alpha$-bounded for every $n \in \mathbb{Z}_{> 0}$, then $f$ is $\alpha$-bounded.}
 \end{theorem}
 \begin{proof}
   \pt{Suponha, por contradição, que $f$ não seja $\alpha$-limitada. Então existem $x_1, x_2 \in \mathcal{X}$, $d_X(x_1, x_2) \le 1$, tal que $d_Y(f(x_1), f(x_2)) \coloneqq k > \alpha$. Como $(f_n) \to f$ ponto a ponto, existe algum $n \in \mathbb{Z}_{> 0}$ com $d_Y(f_n(x_1), f(x_1)) < \frac{k - \alpha}{2}$ e $d_Y(f_n(x_2), f(x_2)) < \frac{k - \alpha}{2}$. Consequentemente, $d_Y(f_n(x_1), f_n(x_2)) > k - \frac{k - \alpha}{2} - \frac{k - \alpha}{2} = \alpha$, uma contradição.}
