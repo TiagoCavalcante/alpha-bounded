@@ -59,11 +59,11 @@
 
 \begin{theorem}
   \pt{Sejam $(X, d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X} \subseteq X$. Toda função Lipschitz contínua, com constante $K$, $f \colon \mathcal{X} \to Y$ é $K$-limitada.}
-  \en{Let $(X, d_X)$ and $(Y, d_Y)$ be metric spaces, $\mathcal{X} \subseteq X$. Every Lipschitz continuous function, with constant $K$, $f \colon \mathcal{X} \to Y$ is $K$-bounded.}
+  \en{Let $(X, d_X)$ and $(Y, d_Y)$ be metric spaces, and $\mathcal{X} \subseteq X$. Every Lipschitz continuous function, with constant $K$, $f \colon \mathcal{X} \to Y$ is $K$-bounded.}
 \end{theorem}
 \begin{proof}
   \pt{Para todo $x_1, x_2 \in \mathcal{X}, d_X(x_1, x_2) \le 1$ e consequentemente $d_Y(f(x_1), f(x_2)) \le K d_X(x_1, x_2) \le K$.}
-  \en{For every $x_1, x_2 \in \mathcal{X}, d_X(x_1, x_2) \le 1$ and consequently $d_Y(f(x_1), f(x_2)) \le K d_X(x_1, x_2) \le K$.}
+  \en{For every $x_1, x_2 \in \mathcal{X}$, $d_X(x_1, x_2) \le 1$, hence $d_Y(f(x_1), f(x_2)) \le K d_X(x_1, x_2) \le K$.}
 \end{proof}
 
 \pt{Note que nem todas as funções $\alpha$-Hölder contínuas são $\beta$-limitadas para algum $\beta > 0$. A função $\sqrt{\cdot} \colon \mathbb{R}^+ \to \mathbb{R}$ constitui um contraexemplo (considerando a métrica usual) pelo mesmo motivo mencionado no exemplo \ref{two_to_n}.}
@@ -84,7 +84,7 @@
 \end{theorem}
 \begin{proof}
   \pt{Suponha, por contradição, que $f$ não seja $\alpha$-limitada. Então existem $x_1, x_2 \in \mathcal{X}$, $d_X(x_1, x_2) \le 1$, tal que $d_Y(f(x_1), f(x_2)) \coloneqq k > \alpha$. Como $(f_n) \to f$ ponto a ponto, existe algum $n \in \mathbb{Z}_{> 0}$ com $d_Y(f_n(x_1), f(x_1)) < \frac{k - \alpha}{2}$ e $d_Y(f_n(x_2), f(x_2)) < \frac{k - \alpha}{2}$. Consequentemente, $d_Y(f_n(x_1), f_n(x_2)) > k - \frac{k - \alpha}{2} - \frac{k - \alpha}{2} = \alpha$, uma contradição.}
-  \en{Suppose, for a contradiction, that $f$ is not $\alpha$-bounded. Then there are $x_1, x_2 in \mathcal{X}$, $d_X(x_1, x_2) \le 1$, such that $d_Y(f(x_1), f(x_2)) \coloneqq k > \alpha$. As $(f_n) \to f$ pointwise, there is some $n in \mathbb{Z}_{> 0}$ with $d_Y(f_n(x_1), f(x_1)) < \frac{k - \alpha}{2}$ and $d_Y(f_n(x_2), f(x_2)) < \frac{k - \alpha}{2}$. Consequently, $d_Y(f_n(x_1), f_n(x_2)) > k - \frac{k - \alpha}{2} - \frac{k - \alpha}{2} = \alpha$, a contradiction.}
+  \en{Suppose, for a contradiction, that $f$ is not $\alpha$-bounded. Then there are $x_1, x_2 \in \mathcal{X}$, $d_X(x_1, x_2) \le 1$, such that $d_Y(f(x_1), f(x_2)) \coloneqq k > \alpha$. As $(f_n) \to f$ pointwise, there is some $n \in \mathbb{Z}_{> 0}$ with $d_Y(f_n(x_1), f(x_1)) < \frac{k - \alpha}{2}$ and $d_Y(f_n(x_2), f(x_2)) < \frac{k - \alpha}{2}$. Consequently, $d_Y(f_n(x_1), f_n(x_2)) > k - \frac{k - \alpha}{2} - \frac{k - \alpha}{2} = \alpha$, a contradiction.}
 \end{proof}
 
 \pt{As funções $\alpha$-limitadas podem não ser o limite pontual de qualquer sequência de funções contínuas.}
