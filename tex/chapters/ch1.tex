@@ -46,7 +46,7 @@
 \end{theorem}
 \begin{proof}
   \pt{Evidente.}
-  \en{Evident.}
+  \en{Immediate.}
 \end{proof}
 
 \pt{Apresentamos agora a seguinte definição bem conhecida, para então relacioná-la com as funções $\alpha$-limitadas.}
@@ -62,8 +62,8 @@
   \en{Let $(X, d_X)$ and $(Y, d_Y)$ be metric spaces, $\mathcal{X} \subseteq X$. Every Lipschitz continuous function, with constant $K$, $f \colon \mathcal{X} \to Y$ is $K$-bounded.}
 \end{theorem}
 \begin{proof}
-  \pt{Para todo $x_1 \in \mathcal{X}$, $x_2 \in \mathcal{X}, d_X(x_1, x_2) \le 1$ e consequentemente $d_Y(f(x_1), f(x_2)) \le K d_X(x_1, x_2) \le K$.}
-  \en{For every $x_1 \in \mathcal{X}$, $x_2 \in \mathcal{X}, d_X(x_1, x_2) \le 1$ and consequently $d_Y(f(x_1), f(x_2)) \le K d_X(x_1, x_2) \le K$.}
+  \pt{Para todo $x_1, x_2 \in \mathcal{X}, d_X(x_1, x_2) \le 1$ e consequentemente $d_Y(f(x_1), f(x_2)) \le K d_X(x_1, x_2) \le K$.}
+  \en{For every $x_1, x_2 \in \mathcal{X}, d_X(x_1, x_2) \le 1$ and consequently $d_Y(f(x_1), f(x_2)) \le K d_X(x_1, x_2) \le K$.}
 \end{proof}
 
 \pt{Note que nem todas as funções $\alpha$-Hölder contínuas são $\beta$-limitadas para algum $\beta > 0$. A função $\sqrt{\cdot} \colon \mathbb{R}^+ \to \mathbb{R}$ constitui um contraexemplo (considerando a métrica usual) pelo mesmo motivo mencionado no exemplo \ref{two_to_n}.}
@@ -129,7 +129,7 @@
 
 \begin{theorem} \label{tietze}
   \pt{Sejam $(X,d_X)$ e $(Y, d_Y)$ espaços métricos, $\mathcal{X}, \tilde{\mathcal{X}} \subset X$, onde $\tilde{\mathcal{X}}$ é finito, e seja $f \colon \mathcal{X} \to Y$ uma função $(\alpha,\lambda)$-limitada. Existe $\beta \ge 0$ tal que $f$ tem uma extensão $(\beta,\lambda)$-limitada para $\mathcal{X} \cup \tilde{\mathcal{X}}$ se e somente se $f$ é limitada em $\overline{B}_{\lambda}(\tilde{x}) \cap \mathcal{X}$ para cada $\tilde{x} \in \tilde{\mathcal{X}}$.}
-  \en{Let $(X,d_X)$ and $(Y, d_Y)$ be metric spaces, $\mathcal{X}, \tilde{\mathcal{X}} \subset X$, where $\tilde{\mathcal{X}}$ is finite, and let $f \colon \mathcal{X} \to Y$ be an $(\alpha,\lambda)$-bounded function. There exists $\beta \ge 0$ such that $f$ has a $(\beta,\lambda)$-bounded extension to $\mathcal{X} \cup \tilde{\mathcal{X}}$ if and only if $f$ is bounded on $\overline{B}_{\lambda}(\tilde{x}) \cap \mathcal{X}$ for each $\tilde{x} \in \tilde{\mathcal{X}}$.}
+  \en{Let $(X,d_X)$ and $(Y, d_Y)$ be metric spaces, $\mathcal{X}, \tilde{\mathcal{X}} \subset X$, where $\tilde{\mathcal{X}}$ is finite, and let $f \colon \mathcal{X} \to Y$ be an $(\alpha,\lambda)$-bounded function. There exists $\beta \ge 0$ such that $f$ admits a $(\beta,\lambda)$-bounded extension to $\mathcal{X} \cup \tilde{\mathcal{X}}$ if and only if $f$ is bounded on $\overline{B}_{\lambda}(\tilde{x}) \cap \mathcal{X}$ for each $\tilde{x} \in \tilde{\mathcal{X}}$.}
 \end{theorem}
 
 \begin{proof}
@@ -150,7 +150,7 @@
 
     For $n = 0$, the result is obvious. Suppose the result holds for $n$, and $\tilde{\mathcal{X}}$ has $n+1$ elements.
 
-    Fix $\tilde{x} \in \tilde{\mathcal{X}}$ and $y \in Y$. By hypothesis, $f$ has a $(\beta,\lambda)$-bounded extension to $\mathcal{X} \cup (\tilde{\mathcal{X}} \setminus {\tilde{x}})$. Define $\tilde{f} \colon \mathcal{X} \cup \tilde{\mathcal{X}}$ by $\tilde{f}(\tilde{x}) = y$ and $\tilde{f}(x) = f(x)$ for each $x \in \mathcal{X} \cup (\tilde{\mathcal{X}} \setminus {\tilde{x}})$. Clearly, there exists $\gamma \ge 0$ such that $\tilde{f}$ is $(\gamma,\lambda)$-bounded at $x$ for each $x$ different from $\tilde{x}$. But since $f$ is bounded on $\overline{B}_{\lambda}(\tilde{x}) \cap \mathcal{X}$, there exists $M \ge 0$ such that $\lvert f(x) \rvert \le M$ for each $x \in \overline{B}_{\lambda}(\tilde{x}) \cap \mathcal{X}$. Therefore, $\lvert \tilde{f}(x)-\tilde{f}(\tilde{x})\rvert \le \lvert f(x)\rvert + \lvert -y\rvert \le M + \lvert-y\rvert$ for each $x \in \overline{B}_{\lambda}(\tilde{x}) \cap \mathcal{X}$, and consequently, $\tilde{f}$ is $(\max\{M + \lvert-y\rvert, \gamma\},\lambda)$-bounded. Thus, the result also holds for $n+1$.}
+    Fix $\tilde{x} \in \tilde{\mathcal{X}}$ and $y \in Y$. By hypothesis, $f$ admits a $(\beta,\lambda)$-bounded extension to $\mathcal{X} \cup (\tilde{\mathcal{X}} \setminus {\tilde{x}})$. Define $\tilde{f} \colon \mathcal{X} \cup \tilde{\mathcal{X}}$ by $\tilde{f}(\tilde{x}) = y$ and $\tilde{f}(x) = f(x)$ for each $x \in \mathcal{X} \cup (\tilde{\mathcal{X}} \setminus {\tilde{x}})$. Clearly, there exists $\gamma \ge 0$ such that $\tilde{f}$ is $(\gamma,\lambda)$-bounded at $x$ for each $x$ different from $\tilde{x}$. But since $f$ is bounded on $\overline{B}_{\lambda}(\tilde{x}) \cap \mathcal{X}$, there exists $M \ge 0$ such that $\lvert f(x) \rvert \le M$ for each $x \in \overline{B}_{\lambda}(\tilde{x}) \cap \mathcal{X}$. Therefore, $\lvert \tilde{f}(x)-\tilde{f}(\tilde{x})\rvert \le \lvert f(x)\rvert + \lvert -y\rvert \le M + \lvert-y\rvert$ for each $x \in \overline{B}_{\lambda}(\tilde{x}) \cap \mathcal{X}$, and consequently, $\tilde{f}$ is $(\max\{M + \lvert-y\rvert, \gamma\},\lambda)$-bounded. Thus, the result also holds for $n+1$.}
 \end{proof}
 
 \pt{Os exemplos abaixo ilustram por que as condições do teorema são necessárias.}
@@ -175,7 +175,7 @@
 
 \begin{corollary}
   \pt{Toda função $\alpha$-limitada definida em um conjunto compacto $\mathcal{X}$ possui uma extensão $\beta$-limitada para qualquer conjunto $\tilde{\mathcal{X}} \supseteq \mathcal{X}$ tal que $\tilde{\mathcal{X}} \setminus \mathcal{X}$ é finito.}
-  \en{Every $\alpha$-bounded function defined on a compact set $\mathcal{X}$ has a $\beta$-bounded extension for any set $\tilde{\mathcal{X}} \supseteq \mathcal{X}$ such that $\tilde{\mathcal{X}} \setminus \mathcal{X}$ is finite.}
+  \en{Every $\alpha$-bounded function defined on a compact set $\mathcal{X}$ admits a $\beta$-bounded extension to any set $\tilde{\mathcal{X}} \supseteq \mathcal{X}$ such that $\tilde{\mathcal{X}} \setminus \mathcal{X}$ is finite.}
 \end{corollary}
 \begin{proof}
   \pt{Como $\mathcal{X}$ é compacto, a cobertura $\{ B_1(x) \mid x \in \mathcal{X} \} \supseteq \mathcal{X}$ possui uma subcobertura finita $\{ B_1(x_1), \dots, B_1(x_n)\}$.}

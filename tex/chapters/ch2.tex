@@ -5,7 +5,7 @@
 \vspace{1cm}
 
 \pt{Em \cite{Toeplitz1911} Otto Toeplitz apresenta as $L$-formas, anteriormente estudadas em sua tese de habilitação para a universidade Universidade de Göttingen. Posteriormente seus estudos foram adaptados para o que hoje chamamos de matrizes de Toeplitz.}
-\en{In \cite{Toeplitz1911} Otto Toeplitz introduces the $L$-forms, previously studied in his postdoctoral thesis at the University of Göttingen. Later, his studies were adapted to what we now call Toeplitz matrices.}
+\en{In \cite{Toeplitz1911} Otto Toeplitz introduced the $L$-forms, previously studied in his postdoctoral thesis at the University of Göttingen. Later, his studies were adapted to what we now call Toeplitz matrices.}
 
 \pt{Uma matriz de Toeplitz é uma matriz com entradas complexas possivelmente infinita da forma}
 \en{A Toeplitz matrix is a possibly infinite matrix with complex entries of the form}
@@ -57,7 +57,7 @@
   \en{A Toeplitz matrix $ M $ with complex entries is said to be a \textit{banded matrix of width $ k $} if $ m_{ij} = 0 $ for all $ i \in I$ and $j in J$, where $I$ is the set of row indices of $M$ and $J$ is the set of column indices, such that $ |i - j| > k $.}
 \end{definition*}
 
-\begin{theorem}[Norma de matrizes de Toeplitz de banda] \label{norm}
+\begin{theorem}[\pt{Norma de matrizes de Toeplitz de banda}\en{Norm of banded Toeplitz matrices}] \label{norm}
   \pt{Seja $M$ uma matriz de Toeplitz possivelmente infinita com entradas reais e banda $k$. Então, a norma espectral de $M$, denotada por $\| M \|_2$, satisfaz}
   \en{Let $M$ be a possibly infinite Toeplitz matrix with real entries and band $k$. Then, the spectral norm of $M$, denoted by $\| M \|_2$, satisfies}
   \[ \| M \|_2 \leq (2k + 1) \cdot \max_{|i - j| \leq k} |m_{ij}|. \]
@@ -68,9 +68,12 @@
 
 \pt{As normas de matrizes são normas de operadores, permitindo medir a distorção que uma matriz pode causar em um espaço vetorial. Consideremos um espaço vetorial $V$ equipado com uma norma $\| \cdot \|_p$, conhecida como norma $p$-norma, definida para $1 \leq p \leq \infty$ por}
 \en{Matrix norms are operator norms, allowing one to measure the distortion a matrix can cause in a vector space. Consider a vector space $V$ equipped with a norm $\| \cdot \|_p$, known as the $p$-norm, defined for $1 \leq p \leq \infty$ by}
-\[
-  \| v \|_p = \left( \sum_{i=1}^{n} |v_i|^p \right)^{1/p} \quad \text{para } p < \infty, \quad \text{e} \quad \| v \|_\infty = \max_{1 \leq i \leq n} |v_i|.
-\]
+\pt{\[
+    \| v \|_p = \left( \sum_{i=1}^{n} |v_i|^p \right)^{1/p} \quad \text{para } p < \infty, \quad \text{e} \quad \| v \|_\infty = \max_{1 \leq i \leq n} |v_i|.
+  \]}
+\en{\[
+    \| v \|_p = \left( \sum_{i=1}^{n} |v_i|^p \right)^{1/p} \quad \text{for } p < \infty, \quad \text{and} \quad \| v \|_\infty = \max_{1 \leq i \leq n} |v_i|.
+  \]}
 
 \pt{As $p$-normas satisfazem várias desigualdades importantes, como a desigualdade de Hölder e a desigualdade de Minkowski, que estabelecem relações entre diferentes normas $p$ e $q$ em espaços vetoriais.}
 \en{The $p$-norms satisfy several important inequalities, such as Hölder's inequality and Minkowski's inequality, which establish relationships between different $p$ and $q$ norms in vector spaces.}
